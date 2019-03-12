@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_project_code/install
+
+Name: fjj_socket
+Description: Description of fjj_socket
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_project_code/install/lib 
+Requires: 

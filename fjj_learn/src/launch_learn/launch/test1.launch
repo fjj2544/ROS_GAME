@@ -1,0 +1,11 @@
+<!--封装了小海龟移动例程-->
+<launch>
+
+    <node name="my_little_turtle" type="turtlesim_node" pkg="turtlesim" />
+    <node name="keyboard_cmd" type="turtle_teleop_key" pkg="turtlesim" />
+
+</launch>
+
+
+
+

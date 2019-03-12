@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_project_code/devel
+
+Name: help_me_carry_test
+Description: Description of help_me_carry_test
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_project_code/devel/lib 
+Requires: 

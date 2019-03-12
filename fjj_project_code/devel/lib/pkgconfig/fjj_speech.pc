@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_project_code/devel
+
+Name: fjj_speech
+Description: Description of fjj_speech
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_project_code/devel/lib 
+Requires: 

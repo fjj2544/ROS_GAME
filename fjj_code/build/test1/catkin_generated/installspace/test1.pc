@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_code/install
+
+Name: test1
+Description: Description of test1
+Version: 0.0.0
+Cflags: -I/home/fjj/documents/fjj_ros_code/fjj_code/install/include
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_code/install/lib 
+Requires: message_runtime

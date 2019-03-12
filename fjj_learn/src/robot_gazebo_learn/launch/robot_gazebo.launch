@@ -1,0 +1,28 @@
+<launch>
+
+<!--set the launch arg-->
+  <arg name="robot" default="xbot-u"/>
+  <arg name="debug" default="false"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+
+  <!-- Start Gazebo with a blank world -->
+  <!--the arg name can be used to set your own world!-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find robot_gazebo_learn)/world/my_first.world"/>
+    <!--arg name="world_name" value="$(find turtlebot_gazebo)/worlds/playground.world"/-->
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <!-- Oh, you wanted a robot? -->
+  <!--include a x bot file-->
+  <!--记住创建地图和调用robot的阶段是分开的二者没有必要耦合在一起-->
+  <include file="$(find robot_sim_demo)/launch/include/$(arg robot).launch.xml" />
+
+  <!--node    name="rviz"    pkg="rviz"    type="rviz"    args="-d $(find robot_sim_demo)/my_robot.rviz" /-->
+  
+</launch>

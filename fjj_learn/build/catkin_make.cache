@@ -1,0 +1,2 @@
+help_me_carry_test:imgpcl_test:launch_learn:opencv_test:robot_gazebo_learn
+-DCATKIN_DEVEL_PREFIX=/home/fjj/documents/fjj_ros_code/fjj_learn/devel -DCMAKE_INSTALL_PREFIX=/home/fjj/documents/fjj_ros_code/fjj_learn/install -G Unix Makefiles

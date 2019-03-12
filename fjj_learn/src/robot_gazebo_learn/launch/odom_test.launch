@@ -1,0 +1,16 @@
+<launch>
+    <include file="$(find robot_sim_demo)/launch/robot_spawn.launch">
+    
+    </include>
+    
+    <node name="keyboard_cmd" pkg="robot_sim_demo" type="robot_keyboard_teleop.py"/>
+    
+    <include file="$(find navigation_sim_demo)/launch/odometry_localization_demo.launch">
+    
+    </include>
+    
+    <include file="$(find navigation_sim_demo)/launch/view_navigation.launch">
+
+    </include>
+
+</launch>

@@ -1,0 +1,5 @@
+# generated from catkin/cmake/template/order_packages.context.py.in
+source_root_dir = "/home/fjj/documents/fjj_ros_code/fjj_learn/src"
+whitelisted_packages = "".split(';') if "" != "" else []
+blacklisted_packages = "".split(';') if "" != "" else []
+underlay_workspaces = "/home/fjj/documents/course_code/ROS_FOR_BEGINER_COURSE_CODE/devel;/home/fjj/documents/project_code/devel;/home/fjj/documents/new_pack_code/my_robot_model/devel;/home/fjj/documents/fjj_ros_code/fjj_code/devel;/home/fjj/documents/course_code/roslearn/devel;/home/fjj/documents/course_code/ros_course_for_kinetic/devel;/home/fjj/documents/course_code/my_book_code/devel;/opt/ros/kinetic".split(';') if "/home/fjj/documents/course_code/ROS_FOR_BEGINER_COURSE_CODE/devel;/home/fjj/documents/project_code/devel;/home/fjj/documents/new_pack_code/my_robot_model/devel;/home/fjj/documents/fjj_ros_code/fjj_code/devel;/home/fjj/documents/course_code/roslearn/devel;/home/fjj/documents/course_code/ros_course_for_kinetic/devel;/home/fjj/documents/course_code/my_book_code/devel;/opt/ros/kinetic" != "" else []

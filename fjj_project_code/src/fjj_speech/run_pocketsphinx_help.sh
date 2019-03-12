@@ -1,0 +1,6 @@
+echo "riddle.launch start"
+gnome-terminal -x bash -c "pocketsphinx_continuous -inmic yes -dict `rospack find fjj_speech`/voice_lib/help_me_carry/help_me_carry.dic -lm `rospack find fjj_speech`/voice_lib/help_me_carry/help_me_carry.lm 
+;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;rosnode list;"
+
+
+sleep 1

@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/opencv_test/devel
+
+Name: test1
+Description: Description of test1
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/fjj/documents/fjj_ros_code/opencv_test/devel/lib 
+Requires: 
