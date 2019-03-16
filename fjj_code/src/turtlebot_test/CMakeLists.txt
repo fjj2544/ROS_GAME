@@ -196,11 +196,3 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-
-add_executable(client_follower
-  src/client_follower.cpp
-)
-add_dependencies(client_follower ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(client_follower
-  ${catkin_LIBRARIES}
-)
