@@ -7,7 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/fjj/documents/fjj_ros_code/fjj_code/devel:$CMAKE_PREFIX_PATH"
+export PATH="/home/fjj/documents/new_pack_code/my_robot_model/devel/bin:/opt/ros/kinetic/bin:/home/fjj/bin:/home/fjj/.local/bin:/home/fjj/bin:/home/fjj/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 export PWD="/home/fjj/documents/fjj_ros_code/fjj_code/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/fjj/documents/fjj_ros_code/fjj_code/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/fjj/documents/fjj_ros_code/fjj_code/src:$ROS_PACKAGE_PATH"

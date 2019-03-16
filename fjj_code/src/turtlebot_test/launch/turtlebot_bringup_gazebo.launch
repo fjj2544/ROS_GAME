@@ -1,0 +1,9 @@
+<launch>
+
+<include file="$(find turtlebot_gazebo_kinetic)/launch/turtlebot_world.launch">
+<arg name="world_file" value="$(find turtlebot_gazebo)/worlds/playground.world"/>
+</include>
+<node name="rviz" pkg="rviz" type="rviz">
+</node>
+</launch>
+<!--if we do not have a map , we may not find the way->

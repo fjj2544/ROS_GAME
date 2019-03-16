@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_code/devel
+
+Name: turtlebot_test
+Description: Description of turtlebot_test
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_code/devel/lib 
+Requires: message_runtime

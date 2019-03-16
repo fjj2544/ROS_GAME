@@ -7,6 +7,7 @@
 subdirs(gtest)
 subdirs(msg_demo)
 subdirs(navi_fjj)
+subdirs(turtlebot_test)
 subdirs(test1)
 subdirs(test2)
 subdirs(test_nav)

@@ -1,0 +1,10 @@
+<launch>
+    <!--加载模型，并且加载地图到gazebo中,这个地图只是加载一个世界，并没有加载地图,地图需要自己构建-->
+    <include file="$(find turtlebot_gazebo_kinetic)/launch/turtlebot_world.launch">
+      <arg name="world_file" value="$(find my_turtlebot)/worlds/my_test_worlds.world" />
+    </include>
+    <!--加载好　follower模块-->
+    <include file="$(find turtlebot_follower)/launch/follower.launch">
+    <arg name="simulation" value="true" />
+    </include>
+</launch>
