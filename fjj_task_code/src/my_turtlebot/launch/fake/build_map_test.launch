@@ -1,9 +1,0 @@
-<!--只要局部功能测试完全之后马上封装成一个集成环境,每次需要调整什么东西一定要有记录-->
-
-<launch>
-
-<include file="$(find my_turtlebot)/launch/fake/fake_turtlebot_kinect_nav.launch"/>
-
-<include file="$(find my_turtlebot)/launch/fake/gmapping_demo.launch"/>
-
-</launch>

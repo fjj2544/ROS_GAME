@@ -1,0 +1,4 @@
+<launch>
+<arg name="map" default="current_map" />
+<node name="map_server" pkg="map_server" type="map_saver" args="-f $(find my_turtlebot)/maps/$(arg map)"/>
+</launch>

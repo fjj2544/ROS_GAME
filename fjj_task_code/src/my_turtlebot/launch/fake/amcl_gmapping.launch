@@ -3,27 +3,25 @@
          Probably is a bug in the nodelet manager: https://github.com/ros/nodelet_core/issues/7 --> 
 <!--这一次利用了系统的参数，完全都是turtlebot自己的参数 -->
 <!--真实使用的时候必须加入3d传感器，然后用minial打开，其他都没有问题-->   
+<!--为什么建图精度这么差？为什么容易导航失误？-->
 <!--反正amcl 要么一直开着要么就等着建图完毕之后开着 反正就是slam 和　amcl混合使用-->
-    <arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)"/>  <!-- r200, kinect, asus_xtion_pro -->
-  
+<!--
+launch file:
+            kinect_gmapping.launch.xml
+            amcl.launch.xml
+            move_base.launch.xml
+node file:  rviz
+-->
     <!-- Gmapping -->
-    <arg name="custom_gmapping_launch_file" default="$(find turtlebot_navigation)/launch/includes/gmapping/$(arg 3d_sensor)_gmapping.launch.xml"/>
+    <arg name="custom_gmapping_launch_file" default="$(find my_turtlebot)/launch/fake/gmapping.launch.xml"/>
     <include file="$(arg custom_gmapping_launch_file)"/>
-
-       <!-- Localization -->
-    <arg name="initial_pose_x" default="0.0"/>
-    <arg name="initial_pose_y" default="0.0"/>
-    <arg name="initial_pose_a" default="0.0"/>
-
-    <include file="$(find turtlebot_navigation)/launch/includes/amcl/amcl.launch.xml">
-    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
-    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
-    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
-  </include>
+    
+    <include file="$(find my_turtlebot)/launch/fake/amcl.launch.xml"/>
     <!-- Move base 有了这个才能真正的实现导航功能-->
-    <include file="$(find my_turtlebot)/launch/fake/move_base.launch.xml"/>
+    <include file="$(find my_turtlebot)/launch/fake/move_base_gmapping.launch.xml"/>
+
     <!-- 启动rviz -->
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find my_turtlebot)/rviz/gmapping_move_base.rviz" />
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find my_turtlebot)/rviz/nav.rviz" />
 
 
 </launch>       
