@@ -1,0 +1,55 @@
+<launch>
+
+<!-- gazebo world -->
+  <arg name="world_file"  default="$(find my_turtlebot)/worlds/new_test_worlds.world"/>
+
+  <arg name="base"      value="$(optenv TURTLEBOT_BASE kobuki)"/> <!-- create, roomba -->
+  <arg name="battery"   value="$(optenv TURTLEBOT_BATTERY /proc/acpi/battery/BAT0)"/>  <!-- /proc/acpi/battery/BAT0 --> 
+  <arg name="gui" default="true"/>
+  <arg name="stacks"    value="$(optenv TURTLEBOT_STACKS hexagons)"/>  <!-- circles, hexagons --> 
+  <arg name="3d_sensor" value="$(optenv TURTLEBOT_3D_SENSOR kinect)"/>  <!-- kinect, asus_xtion_pro --> 
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="world_name" value="$(arg world_file)"/>
+  </include>
+  
+  <include file="$(find turtlebot_gazebo)/launch/includes/$(arg base).launch.xml">
+    <arg name="base" value="$(arg base)"/>
+    <arg name="stacks" value="$(arg stacks)"/>
+    <arg name="3d_sensor" value="$(arg 3d_sensor)"/>
+  </include>
+  
+  <!--这里建立了仿真环境 这里应该是加载了底盘控制器,这个地方应该是相当于move_base的存在-->
+    <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen" clear_params="true">
+        <rosparam file="$(find my_turtlebot)/config/fake_turtlebot.yaml" command="load" />
+        <param name="sim" value="true"/>
+    </node>
+
+      <!--也就是说这一句话是可有可无的，仿真环境也会发布这个消息-->
+   <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />-->
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0" />
+  </node>
+  
+  <!-- Fake laser -->
+  <node pkg="nodelet" type="nodelet" name="laserscan_nodelet_manager" args="manager"/>
+  <node pkg="nodelet" type="nodelet" name="depthimage_to_laserscan"
+        args="load depthimage_to_laserscan/DepthImageToLaserScanNodelet laserscan_nodelet_manager">
+    <param name="scan_height" value="10"/>
+    <!-- change start -->
+    <param name="output_frame_id" value="camera_depth_frame"/>**
+    <param name="range_min" value="0.45"/>
+    <remap from="image" to="camera/depth/image_raw"/>
+    <remap from="scan" to="scan"/>
+    <!-- change end -->
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="odom_map_broadcaster" args="0 0 0 0 0 0 /map /odom 100" />
+
+</launch>

@@ -1,0 +1,17 @@
+<launch>
+    <!-- We must specify an absolute topic name because if not it will be prefixed by "$(arg camera)".
+         Probably is a bug in the nodelet manager: https://github.com/ros/nodelet_core/issues/7 --> 
+<!--这一次利用了系统的参数，完全都是turtlebot自己的参数  
+<!--真实使用的时候必须加入3d传感器，然后用minial打开，其他都没有问题-->                        -->
+    <arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)"/>  <!-- r200, kinect, asus_xtion_pro -->
+  
+  <!-- Gmapping -->
+  <arg name="custom_gmapping_launch_file" default="$(find turtlebot_navigation)/launch/includes/gmapping/$(arg 3d_sensor)_gmapping.launch.xml"/>
+  <include file="$(arg custom_gmapping_launch_file)"/>
+
+  <!-- Move base -->
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"/>
+    <!-- 启动rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find my_turtlebot)/rviz/my_turtlebot_gmapping.rviz" />
+    
+</launch>       

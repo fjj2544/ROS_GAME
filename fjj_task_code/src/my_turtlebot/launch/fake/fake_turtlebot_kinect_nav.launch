@@ -1,0 +1,30 @@
+<!--这里完全就是设计一个仿真环境下面的turtlebot_model　　每次应该注明从哪个文件改编而来的 ros_gazebo 中来的-->
+<!--基本上我用的turtlebot的代码都是我自己的还有基本的备份，不需要进行很大的改动 但是现在有两个工作区，一个工作区还不完整这就是坑爹的地方-->
+<!--尽量不要改动源文件，否则就需要自己写，include的文件保证是一致的，仅仅是参数不同而已-->
+<!--记住value参数是不能改的,default参数才能改动,这个开发环境的建立非常关键-->
+<!--确实应该保证现在所有用到的包都在自己的工作空间之下，这样开发可能效率更高-->
+<!--这里面主要达到启动机器人的目的，通过调用gazebo_world创建的方式-->
+<!--但是机器人为什么会颤抖？机器人的模型为什么一直颤动？-->
+<launch>
+
+    <!--加载机器人并且建立了gazebo环境-->
+    <param name="/use_sim_time" value="false" />
+
+    <include file="$(find turtlebot_gazebo_kinetic)/launch/turtlebot_world.launch" >
+    
+    <arg name="world_file" value="$(find my_turtlebot)/worlds/new_test_worlds.world" />
+    
+    </include>
+    <!-- 加载机器人URDF/Xacro模型 -->
+     <!--设置所有的模型模型参数，设置一个robot出来-->
+
+    <!--这里建立了仿真环境 这里应该是加载了底盘控制器,这个地方应该是相当于move_base的存在-->
+    <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen" clear_params="true">
+        <rosparam file="$(find my_turtlebot)/config/fake_turtlebot.yaml" command="load" />
+        <param name="sim" value="true"/>
+    </node>
+    <!--也就是说这一句话是可有可无的，仿真环境也会发布这个消息-->
+   <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />-->
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+</launch>

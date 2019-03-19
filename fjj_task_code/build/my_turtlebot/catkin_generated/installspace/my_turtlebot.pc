@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_task_code/install
+
+Name: my_turtlebot
+Description: Description of my_turtlebot
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_task_code/install/lib 
+Requires: 

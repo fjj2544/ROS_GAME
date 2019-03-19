@@ -1,0 +1,28 @@
+<launch>
+  <!-- Map server -->
+
+    <!-- 设置地图的配置文件 -->
+    <arg name="map" default="map.yaml" />
+
+    <!-- 运行地图服务器，并且加载设置的地图-->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find my_turtlebot)/maps/$(arg map)"/>
+
+     <!-- Localization -->
+     <arg name="initial_pose_x" default="0.0"/>
+     <arg name="initial_pose_y" default="0.0"/>
+     <arg name="initial_pose_a" default="0.0"/>
+
+     <include file="$(find turtlebot_navigation)/launch/includes/amcl/amcl.launch.xml">
+       <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+       <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+       <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+     </include>
+    <!--为什么虚拟定位要加一个静态变换？-->
+    <!-- 对于虚拟定位，需要设置一个/odom与/map之间的静态坐标变换 -->
+    <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster" args="0 0 0 0 0 0 /map /odom 100" />
+
+    <!-- Move base -->
+    <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"/>
+   <node pkg="rviz" type="rviz" name="rviz"  args="-d $(find mrobot_navigation)/rviz/nav.rviz" />
+
+</launch>
