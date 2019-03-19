@@ -1,45 +1,57 @@
 <!-- 导航launch文件 -->
 <launch>
  <!--launch arg part-->
-  <arg name="map_file" default="$(find fjj_nav)/maps/maplab.yaml" />
-  <arg name="initial_pose_x" default="6.04879"/> <!-- 设置初始坐标 -->
-  <arg name="initial_pose_y" default="2.43695"/> 
+  <arg name="initial_pose_x" default="0"/> <!-- 设置初始坐标 -->
+  <arg name="initial_pose_y" default="0"/> 
   <arg name="initial_pose_a" default="0"/> 	
 
   <!-- 唤醒turtlebot -->
   <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
-  
   <include file="$(find turtlebot_follower)/launch/includes/velocity_smoother.launch.xml">
       <arg name="nodelet_manager"  value="/mobile_base_nodelet_manager"/>
       <arg name="navigation_topic" value="/cmd_vel_mux/input/navi"/>
   </include>
- 
+  <!--下面这个包已经不能用了-->
   <include file="$(find turtlebot_follower)/launch/includes/safety_controller.launch.xml"/>
 
-  <!--<include file="~/turtlebot/src/turtlebot_apps/turtlebot_follower/launch/follower.launch" /> -->
-  
-  <include file="$(find freenect_launch)/launch/freenect.launch">
+
+
+<!--这里面已经加上了传感器的tf，这个是单独的传感器tf-->
+<!--robot_confi-->
+
+<!--<include file="$(find freenect_launch)/launch/freenect.launch"/>-->
+
+  <arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)"/>  <!-- r200, kinect, asus_xtion_pro -->
+  <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
+    <arg name="rgb_processing" value="false" />
+    <arg name="depth_registration" value="false" />
+    <arg name="depth_processing" value="false" />
+    
+    <!-- We must specify an absolute topic name because if not it will be prefixed by "$(arg camera)".
+         Probably is a bug in the nodelet manager: https://github.com/ros/nodelet_core/issues/7 --> 
+    <arg name="scan_topic" value="/scan" />
   </include>
+
+<node pkg="map_server" type="map_server" name="map_server" args="$(find fjj_nav)/maps/314.yaml" />
 
   <!-- 加载地图 -->
  
-  <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" />
-    
+  
+  
+  <!--move_base part-->
   <!-- 设置amcl-->
- 
-
-  <include file="$(find turtlebot_navigation)/launch/includes/amcl/amcl.launch.xml">
+  <include file="$(find turtlebot_navigation)/launch/includes/amcl/kinect_amcl.launch.xml">
     <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
     <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
     <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
   </include>
-
   <!-- 加载move_base -->
   <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"/>
 
   <!-- 3D visualization -->
   <!-- Rviz -->
-  <node name="rviz" pkg="rviz" type="rviz" respawn="true" args="-d $(find fjj_nav)/rviz/navigation.rviz"/>
+  <include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch">
+  </include>
   <!-- 加载C++节点 -->
 
   <node pkg="nodelet" type="nodelet" name="turtlebot_follower"
@@ -58,10 +70,10 @@
     <param name="max_z" value="1.4" />
     <param name="goal_z" value="0.7" />
   </node>
-  
- <!--node pkg="fjj_nav" type="emergency" name="emergency"/--> 
+
+  <node pkg="fjj_nav" type="emergency" name="emergency"/> 
   <node pkg="fjj_nav" type="nav_help_me" name="nav_help_me" launch-prefix="xterm -e" /> 
-  <!--node name="find_person" pkg="imgpcl_test" type="find_person" output="screen" /-->
+  <node name="find_person" pkg="imgpcl_test" type="find_person" output="screen" />
 </launch>
 
 

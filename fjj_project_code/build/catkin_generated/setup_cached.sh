@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
+export CMAKE_PREFIX_PATH="/home/fjj/documents/fjj_ros_code/fjj_project_code/devel:$CMAKE_PREFIX_PATH"
 export PWD="/home/fjj/documents/fjj_ros_code/fjj_project_code/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/fjj/documents/fjj_ros_code/fjj_project_code/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/fjj/documents/fjj_ros_code/fjj_project_code/src:$ROS_PACKAGE_PATH"

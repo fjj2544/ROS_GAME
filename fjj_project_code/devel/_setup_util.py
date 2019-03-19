@@ -262,7 +262,7 @@ if __name__ == '__main__':
             sys.exit(1)
 
         # environment at generation time
-        CMAKE_PREFIX_PATH = '/home/fjj/documents/fjj_ros_code/fjj_project_code/devel;/home/fjj/documents/fjj_ros_code/fjj_learn/devel;/home/fjj/documents/course_code/ROS_FOR_BEGINER_COURSE_CODE/devel;/home/fjj/documents/project_code/devel;/home/fjj/documents/new_pack_code/my_robot_model/devel;/home/fjj/documents/fjj_ros_code/fjj_code/devel;/home/fjj/documents/course_code/roslearn/devel;/home/fjj/documents/course_code/ros_course_for_kinetic/devel;/home/fjj/documents/course_code/my_book_code/devel;/opt/ros/kinetic'.split(';')
+        CMAKE_PREFIX_PATH = '/home/fjj/documents/new_pack_code/catkin_geoogle_ws/devel_isolated/cartographer_rviz;/home/fjj/documents/new_pack_code/catkin_geoogle_ws/install_isolated;/home/fjj/documents/course_code/my_book_code/devel;/home/fjj/documents/new_pack_code/turtlebot_source_code/devel;/home/fjj/documents/fjj_ros_code/fjj_learn/devel;/home/fjj/documents/course_code/ROS_FOR_BEGINER_COURSE_CODE/devel;/home/fjj/documents/project_code/devel;/home/fjj/documents/new_pack_code/my_robot_model/devel;/home/fjj/documents/fjj_ros_code/fjj_code/devel;/home/fjj/documents/course_code/roslearn/devel;/home/fjj/documents/course_code/ros_course_for_kinetic/devel;/opt/ros/kinetic'.split(';')
         # prepend current workspace if not already part of CPP
         base_path = os.path.dirname(__file__)
         if base_path not in CMAKE_PREFIX_PATH:

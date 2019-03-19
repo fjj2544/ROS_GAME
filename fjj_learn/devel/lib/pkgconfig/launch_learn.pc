@@ -1,8 +1,0 @@
-prefix=/home/fjj/documents/fjj_ros_code/fjj_learn/devel
-
-Name: launch_learn
-Description: Description of launch_learn
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/fjj/documents/fjj_ros_code/fjj_learn/devel/lib 
-Requires: 

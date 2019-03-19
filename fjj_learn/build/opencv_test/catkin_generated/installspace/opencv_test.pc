@@ -1,8 +1,0 @@
-prefix=/home/fjj/documents/fjj_ros_code/fjj_learn/install
-
-Name: opencv_test
-Description: Description of opencv_test
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/fjj/documents/fjj_ros_code/fjj_learn/install/lib 
-Requires: 
