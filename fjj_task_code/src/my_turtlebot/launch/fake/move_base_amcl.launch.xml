@@ -13,14 +13,14 @@
   <arg name="custom_param_file" default="$(find turtlebot_navigation)/param/dummy.yaml"/>
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <rosparam file="$(find my_turtlebot)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find my_turtlebot)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />   
-    <rosparam file="$(find my_turtlebot)/param/local_costmap_params.yaml" command="load" />   
-    <rosparam file="$(find my_turtlebot)/param/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find my_turtlebot)/param/dwa_local_planner_params.yaml" command="load" />
-    <rosparam file="$(find my_turtlebot)/param/move_base_params.yaml" command="load" />
-    <rosparam file="$(find my_turtlebot)/param/global_planner_params.yaml" command="load" />
-    <rosparam file="$(find my_turtlebot)/param/navfn_global_planner_params.yaml" command="load" />
+    <rosparam file="$(find my_turtlebot)/param/amcl_move_base/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find my_turtlebot)/param/amcl_move_base/costmap_common_params.yaml" command="load" ns="local_costmap" />   
+    <rosparam file="$(find my_turtlebot)/param/amcl_move_base/local_costmap_params.yaml" command="load" />   
+    <rosparam file="$(find my_turtlebot)/param/amcl_move_base/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find my_turtlebot)/param/amcl_move_base/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find my_turtlebot)/param/amcl_move_base/move_base_params.yaml" command="load" />
+    <rosparam file="$(find my_turtlebot)/param/amcl_move_base/global_planner_params.yaml" command="load" />
+    <rosparam file="$(find my_turtlebot)/param/amcl_move_base/navfn_global_planner_params.yaml" command="load" />
     <!-- external params file that could be loaded into the move_base namespace -->
     <rosparam file="$(arg custom_param_file)" command="load" />
     
