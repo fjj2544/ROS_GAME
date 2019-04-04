@@ -1,0 +1,18 @@
+============================================================
+Time  2019/03/30 11:55:36 002 
+============================================================
+[2019/03/30 11:55:36 002] legacyuup  324  SYS_MSG_LOAD  
+[2019/03/30 11:55:36 002] legacyuup  237  UUP_MSG_START  
+[2019/03/30 11:55:36 002] legacyuup  239  legacyuup  legacyuup_a3226a  268436457  1504340178  
+[2019/03/30 11:55:36 003] legacyuup  282  User set url is   nil  
+[2019/03/30 11:55:36 003] transport  658  paramkvsport is   nil  
+[2019/03/30 11:55:36 003] transport  666  ns_enable=  1  
+[2019/03/30 11:55:36 003] transport  672  net.nettype=  standard  
+[2019/03/30 11:55:36 003] transport  711  url.full=  nil  
+[2019/03/30 11:55:36 003] transport  896  switch 80  
+[2019/03/30 11:55:36 003] transport  907  net type:  standard  
+[2019/03/30 11:55:36 003] transport  908  net operator:  def  
+[2019/03/30 11:55:36 003] transport  909  use proxy:  false  
+[2019/03/30 11:55:36 003] legacyuup  299  not login!  
+[2019/03/30 11:55:36 139] legacyuup  313  UUP_MSG_LGI_RESULT  
+[2019/03/30 11:55:36 139] legacyuup  333  SYS_MSG_UNLOAD  

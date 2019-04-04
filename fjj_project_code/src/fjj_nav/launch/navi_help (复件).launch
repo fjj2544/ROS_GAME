@@ -1,0 +1,99 @@
+<!-- 导航launch文件 -->
+<launch>
+ <!--主要就是设置机器人在rviz中相对于map的初始坐标点位-->
+  <arg name="initial_pose_x" default="0"/> <!-- 设置初始坐标 -->
+  <arg name="initial_pose_y" default="0"/> 
+  <arg name="initial_pose_a" default="0"/> 	
+  <!--############################################################启动机器人###########################################################################-->
+  
+  
+    <!--启动我们自己的机器人 只要机器人连接了之后就会识别出对应的机器人并且启动对应的驱动器-->
+    <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
+    
+    <!--下面这个地方启动joint_state_publisher而robot中启动了对应的robot_state_publisher-->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+   
+    <!--启动静态tf变换-->
+    <node name="base2laser" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 1 /base_link /laser 50"/>
+    
+    <!-- 里程计估算 这个地方是对于真实机器人的一个多传感器卡尔曼滤波 仿真的时候没有考虑用多个传感器的融合 odom 尝试至顶而下-->
+    <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf">
+        <remap from="robot_pose_ekf/odom_combined" to="odom_combined"/>
+        <param name="freq" value="10.0"/>
+        <param name="sensor_timeout" value="1.0"/>
+        <param name="publish_tf" value="true"/>
+        <param name="odom_used" value="true"/>
+        <param name="imu_used" value="false"/>
+        <param name="vo_used" value="false"/>
+        <param name="output_frame" value="odom"/>
+    </node>
+
+  <!--这里利用3d_sensor来启动关键的传感器节点，启动kinect-->
+  <arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)"/>  <!-- r200, kinect, asus_xtion_pro -->
+  <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
+    <arg name="rgb_processing" value="false" />
+    <arg name="depth_registration" value="false" />
+    <arg name="depth_processing" value="false" />
+    <arg name="scan_topic" value="/scan" />
+    <arg name="publish_tf"                      value="false"/>
+    <arg name="scan_processing"                 value="true"/>
+  </include>
+  <!--############################################################实现follower_me相关操作###########################################################################-->
+
+  <!--启动follower相关操作最后实现follower的部分功能-->
+  <include file="$(find turtlebot_follower)/launch/includes/velocity_smoother.launch.xml">
+      <arg name="nodelet_manager"  value="/mobile_base_nodelet_manager"/>
+      <arg name="navigation_topic" value="/cmd_vel_mux/input/navi"/>
+  </include>
+  <param name="camera/rgb/image_color/compressed/jpeg_quality" value="22"/>
+
+  <!--启动了摄像机管理节点，但是这个节点似乎是从某一个turtlebot里面抓出来的 也就是启动了turtlebot_follower 里面的关键节点-->
+  <node pkg="nodelet" type="nodelet" name="turtlebot_follower"
+        args="load turtlebot_follower/TurtlebotFollower camera/camera_nodelet_manager">
+  <!--remap the topic -->
+    <remap from="turtlebot_follower/cmd_vel" to="follower_velocity_smoother/raw_cmd_vel"/>
+    <remap from="depth/points" to="camera/depth/points"/>
+  <!--set the param-->
+    <param name="enabled" value="false" />
+    <param name="x_scale" value="7.0" /><!--changed!!!!! from 5.0->7.0-->
+    <param name="z_scale" value="2.0" />
+    <param name="min_x" value="-0.2" />
+    <param name="max_x" value="0.2" />
+    <param name="min_y" value="0.1" />
+    <param name="max_y" value="0.5" />
+    <param name="max_z" value="1.4" />
+    <param name="goal_z" value="0.7" />
+  </node>
+  <node name="switch" pkg="turtlebot_follower" type="switch.py"/>
+   <!--######################################################启动带有静态底图的amcl节点###########################################################################-->
+  <node pkg="map_server" type="map_server" name="map_server" args="$(find fjj_nav)/maps/314.yaml" />
+  <include file="$(find turtlebot_navigation)/launch/includes/amcl/amcl.launch.xml">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+  <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster" args="0 0 0 0 0 0 /map /odom 100" />
+  <!--这个其实是一个基类泛型-->
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"/>
+
+  <!--######################################################启动rviz可视化节点###########################################################################-->
+  <include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch">
+  <!--
+    view_blind_nav.launch       view_navigation.launch
+    view_model.launch           view_robot.launch
+    view_navigation_app.launch  view_teleop_navigation.launch
+  -->
+  </include>
+  <!--########################启动对应的辅助处理操作 可能还是需要加载静态坐标变换一般的都没有map的静态坐标变换###############################################################-->
+  
+  <node pkg="fjj_nav" type="emergency" name="emergency"/> 
+  <node pkg="fjj_nav" type="nav_help_me" name="nav_help_me" launch-prefix="xterm -e" /> 
+
+  <!--<node name="find_person" pkg="imgpcl_test" type="find_person" output="screen" />
+  -->
+</launch>
+
+
+
+
+

@@ -66,50 +66,16 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target install/local
+install/local/fast: install/local
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+.PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -122,16 +88,50 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install/local
-install/local/fast: install/local
+# Special rule for the target test
+test/fast: test
 
-.PHONY : install/local/fast
+.PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,184 +166,199 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/roscpp_generate_messages_py.dir/rule
+my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_py: my_turtlebot/CMakeFiles/roscpp_generate_messages_py.dir/rule
+actionlib_msgs_generate_messages_nodejs: my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : roscpp_generate_messages_py
+.PHONY : actionlib_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/roscpp_generate_messages_py.dir/build.make my_turtlebot/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+actionlib_msgs_generate_messages_nodejs/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+sound_play_generate_messages_py: my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_eus
+.PHONY : sound_play_generate_messages_py
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
+sound_play_generate_messages_py/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/build
+.PHONY : sound_play_generate_messages_py/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_eus: my_turtlebot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+actionlib_msgs_generate_messages_cpp: my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : roscpp_generate_messages_eus
+.PHONY : actionlib_msgs_generate_messages_cpp
 
 # fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/roscpp_generate_messages_eus.dir/build.make my_turtlebot/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
+actionlib_msgs_generate_messages_cpp/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+actionlib_msgs_generate_messages_py: my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_nodejs
+.PHONY : actionlib_msgs_generate_messages_py
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+actionlib_msgs_generate_messages_py/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+my_turtlebot/CMakeFiles/voice_assistant.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/voice_assistant.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/voice_assistant.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_cpp: my_turtlebot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+voice_assistant: my_turtlebot/CMakeFiles/voice_assistant.dir/rule
 
-.PHONY : roscpp_generate_messages_cpp
+.PHONY : voice_assistant
 
 # fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
+voice_assistant/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/voice_assistant.dir/build.make my_turtlebot/CMakeFiles/voice_assistant.dir/build
+.PHONY : voice_assistant/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+actionlib_msgs_generate_messages_lisp: my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_cpp
+.PHONY : actionlib_msgs_generate_messages_lisp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_cpp: my_turtlebot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+actionlib_msgs_generate_messages_eus: my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
 
-.PHONY : std_msgs_generate_messages_cpp
+.PHONY : actionlib_msgs_generate_messages_eus
 
 # fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
+actionlib_msgs_generate_messages_eus/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+my_turtlebot/CMakeFiles/new_test.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/new_test.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/new_test.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_nodejs: my_turtlebot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+new_test: my_turtlebot/CMakeFiles/new_test.dir/rule
 
-.PHONY : std_msgs_generate_messages_nodejs
+.PHONY : new_test
 
 # fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make my_turtlebot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
+new_test/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/new_test.dir/build.make my_turtlebot/CMakeFiles/new_test.dir/build
+.PHONY : new_test/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+my_turtlebot/CMakeFiles/sound_play_generate_messages_eus.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/sound_play_generate_messages_eus.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+sound_play_generate_messages_eus: my_turtlebot/CMakeFiles/sound_play_generate_messages_eus.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_lisp
+.PHONY : sound_play_generate_messages_eus
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+sound_play_generate_messages_eus/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_eus.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_eus.dir/build
+.PHONY : sound_play_generate_messages_eus/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+my_turtlebot/CMakeFiles/sound_talk.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/sound_talk.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/sound_talk.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_nodejs: my_turtlebot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+sound_talk: my_turtlebot/CMakeFiles/sound_talk.dir/rule
 
-.PHONY : roscpp_generate_messages_nodejs
+.PHONY : sound_talk
 
 # fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make my_turtlebot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
+sound_talk/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_talk.dir/build.make my_turtlebot/CMakeFiles/sound_talk.dir/build
+.PHONY : sound_talk/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_py: my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+sound_play_generate_messages_cpp: my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_py
+.PHONY : sound_play_generate_messages_cpp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make my_turtlebot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
+sound_play_generate_messages_cpp/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build
+.PHONY : sound_play_generate_messages_cpp/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+my_turtlebot/CMakeFiles/sound_play_generate_messages_lisp.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/sound_play_generate_messages_lisp.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: my_turtlebot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+sound_play_generate_messages_lisp: my_turtlebot/CMakeFiles/sound_play_generate_messages_lisp.dir/rule
 
-.PHONY : std_msgs_generate_messages_py
+.PHONY : sound_play_generate_messages_lisp
 
 # fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/std_msgs_generate_messages_py.dir/build.make my_turtlebot/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
+sound_play_generate_messages_lisp/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_lisp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_lisp.dir/build
+.PHONY : sound_play_generate_messages_lisp/fast
+
+# Convenience name for target.
+my_turtlebot/CMakeFiles/sound_play_generate_messages_nodejs.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/sound_play_generate_messages_nodejs.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sound_play_generate_messages_nodejs: my_turtlebot/CMakeFiles/sound_play_generate_messages_nodejs.dir/rule
+
+.PHONY : sound_play_generate_messages_nodejs
+
+# fast build rule for target.
+sound_play_generate_messages_nodejs/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_nodejs.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_nodejs.dir/build
+.PHONY : sound_play_generate_messages_nodejs/fast
 
 # Convenience name for target.
 my_turtlebot/CMakeFiles/client_follower.dir/rule:
@@ -361,64 +376,34 @@ client_follower/fast:
 .PHONY : client_follower/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+my_turtlebot/CMakeFiles/iat_publish.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/iat_publish.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/iat_publish.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_lisp: my_turtlebot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+iat_publish: my_turtlebot/CMakeFiles/iat_publish.dir/rule
 
-.PHONY : roscpp_generate_messages_lisp
+.PHONY : iat_publish
 
 # fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make my_turtlebot/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
+iat_publish/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/build
+.PHONY : iat_publish/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+my_turtlebot/CMakeFiles/tts_publish.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/tts_publish.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/tts_publish.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_eus: my_turtlebot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+tts_publish: my_turtlebot/CMakeFiles/tts_publish.dir/rule
 
-.PHONY : std_msgs_generate_messages_eus
+.PHONY : tts_publish
 
 # fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make my_turtlebot/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-my_turtlebot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: my_turtlebot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make my_turtlebot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-my_turtlebot/CMakeFiles/_catkin_empty_exported_target.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/_catkin_empty_exported_target.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: my_turtlebot/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/_catkin_empty_exported_target.dir/build.make my_turtlebot/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
+tts_publish/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/tts_publish.dir/build.make my_turtlebot/CMakeFiles/tts_publish.dir/build
+.PHONY : tts_publish/fast
 
 src/client_follower.o: src/client_follower.cpp.o
 
@@ -447,6 +432,195 @@ src/client_follower.cpp.s:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/client_follower.dir/build.make my_turtlebot/CMakeFiles/client_follower.dir/src/client_follower.cpp.s
 .PHONY : src/client_follower.cpp.s
 
+src/iat_publish.o: src/iat_publish.cpp.o
+
+.PHONY : src/iat_publish.o
+
+# target to build an object file
+src/iat_publish.cpp.o:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o
+.PHONY : src/iat_publish.cpp.o
+
+src/iat_publish.i: src/iat_publish.cpp.i
+
+.PHONY : src/iat_publish.i
+
+# target to preprocess a source file
+src/iat_publish.cpp.i:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.i
+.PHONY : src/iat_publish.cpp.i
+
+src/iat_publish.s: src/iat_publish.cpp.s
+
+.PHONY : src/iat_publish.s
+
+# target to generate assembly for a file
+src/iat_publish.cpp.s:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.s
+.PHONY : src/iat_publish.cpp.s
+
+src/linuxrec.o: src/linuxrec.c.o
+
+.PHONY : src/linuxrec.o
+
+# target to build an object file
+src/linuxrec.c.o:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/linuxrec.c.o
+.PHONY : src/linuxrec.c.o
+
+src/linuxrec.i: src/linuxrec.c.i
+
+.PHONY : src/linuxrec.i
+
+# target to preprocess a source file
+src/linuxrec.c.i:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/linuxrec.c.i
+.PHONY : src/linuxrec.c.i
+
+src/linuxrec.s: src/linuxrec.c.s
+
+.PHONY : src/linuxrec.s
+
+# target to generate assembly for a file
+src/linuxrec.c.s:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/linuxrec.c.s
+.PHONY : src/linuxrec.c.s
+
+src/new_test.o: src/new_test.cpp.o
+
+.PHONY : src/new_test.o
+
+# target to build an object file
+src/new_test.cpp.o:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/new_test.dir/build.make my_turtlebot/CMakeFiles/new_test.dir/src/new_test.cpp.o
+.PHONY : src/new_test.cpp.o
+
+src/new_test.i: src/new_test.cpp.i
+
+.PHONY : src/new_test.i
+
+# target to preprocess a source file
+src/new_test.cpp.i:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/new_test.dir/build.make my_turtlebot/CMakeFiles/new_test.dir/src/new_test.cpp.i
+.PHONY : src/new_test.cpp.i
+
+src/new_test.s: src/new_test.cpp.s
+
+.PHONY : src/new_test.s
+
+# target to generate assembly for a file
+src/new_test.cpp.s:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/new_test.dir/build.make my_turtlebot/CMakeFiles/new_test.dir/src/new_test.cpp.s
+.PHONY : src/new_test.cpp.s
+
+src/sound_talk.o: src/sound_talk.cpp.o
+
+.PHONY : src/sound_talk.o
+
+# target to build an object file
+src/sound_talk.cpp.o:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_talk.dir/build.make my_turtlebot/CMakeFiles/sound_talk.dir/src/sound_talk.cpp.o
+.PHONY : src/sound_talk.cpp.o
+
+src/sound_talk.i: src/sound_talk.cpp.i
+
+.PHONY : src/sound_talk.i
+
+# target to preprocess a source file
+src/sound_talk.cpp.i:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_talk.dir/build.make my_turtlebot/CMakeFiles/sound_talk.dir/src/sound_talk.cpp.i
+.PHONY : src/sound_talk.cpp.i
+
+src/sound_talk.s: src/sound_talk.cpp.s
+
+.PHONY : src/sound_talk.s
+
+# target to generate assembly for a file
+src/sound_talk.cpp.s:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_talk.dir/build.make my_turtlebot/CMakeFiles/sound_talk.dir/src/sound_talk.cpp.s
+.PHONY : src/sound_talk.cpp.s
+
+src/speech_recognizer.o: src/speech_recognizer.c.o
+
+.PHONY : src/speech_recognizer.o
+
+# target to build an object file
+src/speech_recognizer.c.o:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/speech_recognizer.c.o
+.PHONY : src/speech_recognizer.c.o
+
+src/speech_recognizer.i: src/speech_recognizer.c.i
+
+.PHONY : src/speech_recognizer.i
+
+# target to preprocess a source file
+src/speech_recognizer.c.i:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/speech_recognizer.c.i
+.PHONY : src/speech_recognizer.c.i
+
+src/speech_recognizer.s: src/speech_recognizer.c.s
+
+.PHONY : src/speech_recognizer.s
+
+# target to generate assembly for a file
+src/speech_recognizer.c.s:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/speech_recognizer.c.s
+.PHONY : src/speech_recognizer.c.s
+
+src/tts_publish.o: src/tts_publish.cpp.o
+
+.PHONY : src/tts_publish.o
+
+# target to build an object file
+src/tts_publish.cpp.o:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/tts_publish.dir/build.make my_turtlebot/CMakeFiles/tts_publish.dir/src/tts_publish.cpp.o
+.PHONY : src/tts_publish.cpp.o
+
+src/tts_publish.i: src/tts_publish.cpp.i
+
+.PHONY : src/tts_publish.i
+
+# target to preprocess a source file
+src/tts_publish.cpp.i:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/tts_publish.dir/build.make my_turtlebot/CMakeFiles/tts_publish.dir/src/tts_publish.cpp.i
+.PHONY : src/tts_publish.cpp.i
+
+src/tts_publish.s: src/tts_publish.cpp.s
+
+.PHONY : src/tts_publish.s
+
+# target to generate assembly for a file
+src/tts_publish.cpp.s:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/tts_publish.dir/build.make my_turtlebot/CMakeFiles/tts_publish.dir/src/tts_publish.cpp.s
+.PHONY : src/tts_publish.cpp.s
+
+src/voice_assistant.o: src/voice_assistant.cpp.o
+
+.PHONY : src/voice_assistant.o
+
+# target to build an object file
+src/voice_assistant.cpp.o:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/voice_assistant.dir/build.make my_turtlebot/CMakeFiles/voice_assistant.dir/src/voice_assistant.cpp.o
+.PHONY : src/voice_assistant.cpp.o
+
+src/voice_assistant.i: src/voice_assistant.cpp.i
+
+.PHONY : src/voice_assistant.i
+
+# target to preprocess a source file
+src/voice_assistant.cpp.i:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/voice_assistant.dir/build.make my_turtlebot/CMakeFiles/voice_assistant.dir/src/voice_assistant.cpp.i
+.PHONY : src/voice_assistant.cpp.i
+
+src/voice_assistant.s: src/voice_assistant.cpp.s
+
+.PHONY : src/voice_assistant.s
+
+# target to generate assembly for a file
+src/voice_assistant.cpp.s:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/voice_assistant.dir/build.make my_turtlebot/CMakeFiles/voice_assistant.dir/src/voice_assistant.cpp.s
+.PHONY : src/voice_assistant.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -454,32 +628,52 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... list_install_components"
-	@echo "... install"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... edit_cache"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... test"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... rebuild_cache"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... client_follower"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... install/strip"
-	@echo "... _catkin_empty_exported_target"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... sound_play_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... voice_assistant"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... new_test"
+	@echo "... sound_play_generate_messages_eus"
+	@echo "... sound_talk"
+	@echo "... sound_play_generate_messages_cpp"
 	@echo "... install/local"
+	@echo "... sound_play_generate_messages_lisp"
+	@echo "... install/strip"
+	@echo "... sound_play_generate_messages_nodejs"
+	@echo "... client_follower"
+	@echo "... iat_publish"
+	@echo "... test"
+	@echo "... tts_publish"
+	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... install"
 	@echo "... src/client_follower.o"
 	@echo "... src/client_follower.i"
 	@echo "... src/client_follower.s"
+	@echo "... src/iat_publish.o"
+	@echo "... src/iat_publish.i"
+	@echo "... src/iat_publish.s"
+	@echo "... src/linuxrec.o"
+	@echo "... src/linuxrec.i"
+	@echo "... src/linuxrec.s"
+	@echo "... src/new_test.o"
+	@echo "... src/new_test.i"
+	@echo "... src/new_test.s"
+	@echo "... src/sound_talk.o"
+	@echo "... src/sound_talk.i"
+	@echo "... src/sound_talk.s"
+	@echo "... src/speech_recognizer.o"
+	@echo "... src/speech_recognizer.i"
+	@echo "... src/speech_recognizer.s"
+	@echo "... src/tts_publish.o"
+	@echo "... src/tts_publish.i"
+	@echo "... src/tts_publish.s"
+	@echo "... src/voice_assistant.o"
+	@echo "... src/voice_assistant.i"
+	@echo "... src/voice_assistant.s"
 .PHONY : help
 
 

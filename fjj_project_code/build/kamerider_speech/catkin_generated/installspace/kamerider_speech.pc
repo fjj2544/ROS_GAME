@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_project_code/install
+
+Name: kamerider_speech
+Description: Description of kamerider_speech
+Version: 0.0.0
+Cflags: -I/home/fjj/documents/fjj_ros_code/fjj_project_code/install/include
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_project_code/install/lib 
+Requires: 

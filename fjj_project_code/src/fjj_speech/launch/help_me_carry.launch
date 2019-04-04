@@ -1,18 +1,22 @@
 <launch>
-
+	<!--speak-->
 	<node name="soundplay_node" pkg="sound_play" type="soundplay_node.py" output="screen"/>
 
 	<node name="server2topic" pkg="fjj_socket" type="server2topic" output="screen">
-		<param name="voice" value="voice_cmu_us_clb_arctic_clunits"/>
+		<param name="voice" value="voice_kal_diphone"/>
 		<param name="wavepath" value="`rospack find fjj_speech`/sounds"/>
 	</node>
-
+	<!--launch 中是可以用rospack的节点中只能用find-->
 	<node name="help_me_carry" pkg="fjj_speech" type="help_me_carry.py" output="screen">
-
-		<param name="voice" value="voice_cmu_us_clb_arctic_clunits"/>				
+		<param name="voice" value="voice_kal_diphone"/>				
 		<param name="wavepath" value="`rospack find fjj_speech`/sounds"/>
-	
     </node>
+	<!--listen-->
+  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py" output="screen">
+    <param name="lm" value="$(find fjj_speech)/voice_lib/help_me_carry/help_me_carry.lm"/>
+    <param name="dict" value="$(find fjj_speech)/voice_lib/help_me_carry/help_me_carry.dic"/>
+    <param name="hmm" value="$(find fjj_speech)/config/pocketsphinx-en/model/hmm/en/hub4wsj_sc_8k"/>
+  </node>
 
 </launch>
 

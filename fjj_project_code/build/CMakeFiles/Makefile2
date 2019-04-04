@@ -988,7 +988,7 @@ fjj_socket/CMakeFiles/server2topic.dir/all: fjj_socket/CMakeFiles/std_msgs_gener
 fjj_socket/CMakeFiles/server2topic.dir/all: fjj_socket/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f fjj_socket/CMakeFiles/server2topic.dir/build.make fjj_socket/CMakeFiles/server2topic.dir/depend
 	$(MAKE) -f fjj_socket/CMakeFiles/server2topic.dir/build.make fjj_socket/CMakeFiles/server2topic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num=18,19 "Built target server2topic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num=25,26 "Built target server2topic"
 .PHONY : fjj_socket/CMakeFiles/server2topic.dir/all
 
 # Include target in all.
@@ -1035,6 +1035,433 @@ fjj_speech/clean:
 fjj_speech/preinstall:
 
 .PHONY : fjj_speech/preinstall
+
+#=============================================================================
+# Directory level rules for directory kamerider_speech
+
+# Convenience name for "all" pass in the directory.
+kamerider_speech/all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/all
+
+.PHONY : kamerider_speech/all
+
+# Convenience name for "clean" pass in the directory.
+kamerider_speech/clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/clean
+kamerider_speech/clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/clean
+kamerider_speech/clean: kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/clean
+kamerider_speech/clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/clean
+kamerider_speech/clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/clean
+kamerider_speech/clean: kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/clean
+kamerider_speech/clean: kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/clean
+kamerider_speech/clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/clean
+kamerider_speech/clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/clean
+kamerider_speech/clean: kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/clean
+kamerider_speech/clean: kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/clean
+kamerider_speech/clean: kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/clean
+
+.PHONY : kamerider_speech/clean
+
+# Convenience name for "preinstall" pass in the directory.
+kamerider_speech/preinstall:
+
+.PHONY : kamerider_speech/preinstall
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/all: fjj_socket/CMakeFiles/std_msgs_generate_messages_py.dir/all
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/all: kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/all
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num=21,22 "Built target kamerider_speech_generate_messages_py"
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/rule
+
+# Convenience name for target.
+kamerider_speech_generate_messages_py: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/rule
+
+.PHONY : kamerider_speech_generate_messages_py
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/all: fjj_socket/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/all: kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/all
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num=16 "Built target kamerider_speech_generate_messages_cpp"
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+kamerider_speech_generate_messages_cpp: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/rule
+
+.PHONY : kamerider_speech_generate_messages_cpp
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/all:
+	$(MAKE) -f kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/build.make kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/build.make kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num= "Built target _kamerider_speech_generate_messages_check_deps_mission"
+.PHONY : kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/rule
+
+# Convenience name for target.
+_kamerider_speech_generate_messages_check_deps_mission: kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/rule
+
+.PHONY : _kamerider_speech_generate_messages_check_deps_mission
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/build.make kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/all
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/all
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/all
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/all
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/all
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num= "Built target kamerider_speech_generate_messages"
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/all
+
+# Include target in all.
+all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/rule
+
+# Convenience name for target.
+kamerider_speech_generate_messages: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/rule
+
+.PHONY : kamerider_speech_generate_messages
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/all: fjj_socket/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/all: kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/all
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num=17,18 "Built target kamerider_speech_generate_messages_eus"
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+kamerider_speech_generate_messages_eus: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/rule
+
+.PHONY : kamerider_speech_generate_messages_eus
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_cpp.dir/all
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num= "Built target kamerider_speech_gencpp"
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/rule
+
+# Convenience name for target.
+kamerider_speech_gencpp: kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/rule
+
+.PHONY : kamerider_speech_gencpp
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/kamerider_speech_gencpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_eus.dir/all
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num= "Built target kamerider_speech_geneus"
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/rule
+
+# Convenience name for target.
+kamerider_speech_geneus: kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/rule
+
+.PHONY : kamerider_speech_geneus
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/kamerider_speech_geneus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/all: fjj_socket/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/all: kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/all
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num=20 "Built target kamerider_speech_generate_messages_nodejs"
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+kamerider_speech_generate_messages_nodejs: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/rule
+
+.PHONY : kamerider_speech_generate_messages_nodejs
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/all: fjj_socket/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/all: kamerider_speech/CMakeFiles/_kamerider_speech_generate_messages_check_deps_mission.dir/all
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num=19 "Built target kamerider_speech_generate_messages_lisp"
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+kamerider_speech_generate_messages_lisp: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/rule
+
+.PHONY : kamerider_speech_generate_messages_lisp
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_lisp.dir/all
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num= "Built target kamerider_speech_genlisp"
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/rule
+
+# Convenience name for target.
+kamerider_speech_genlisp: kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/rule
+
+.PHONY : kamerider_speech_genlisp
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/kamerider_speech_genlisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_py.dir/all
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num= "Built target kamerider_speech_genpy"
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/rule
+
+# Convenience name for target.
+kamerider_speech_genpy: kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/rule
+
+.PHONY : kamerider_speech_genpy
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/kamerider_speech_genpy.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir
+
+# All Build rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/all: kamerider_speech/CMakeFiles/kamerider_speech_generate_messages_nodejs.dir/all
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/depend
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num= "Built target kamerider_speech_gennodejs"
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/all
+
+# Build rule for subdir invocation for target.
+kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles 0
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/rule
+
+# Convenience name for target.
+kamerider_speech_gennodejs: kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/rule
+
+.PHONY : kamerider_speech_gennodejs
+
+# clean rule for target.
+kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/clean:
+	$(MAKE) -f kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/build.make kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/clean
+.PHONY : kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/clean
+
+# clean rule for target.
+clean: kamerider_speech/CMakeFiles/kamerider_speech_gennodejs.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory fjj_nav
@@ -1830,7 +2257,7 @@ fjj_nav/CMakeFiles/nav_help_me.dir/all: fjj_nav/CMakeFiles/actionlib_msgs_genera
 fjj_nav/CMakeFiles/nav_help_me.dir/all: fjj_nav/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f fjj_nav/CMakeFiles/nav_help_me.dir/build.make fjj_nav/CMakeFiles/nav_help_me.dir/depend
 	$(MAKE) -f fjj_nav/CMakeFiles/nav_help_me.dir/build.make fjj_nav/CMakeFiles/nav_help_me.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num=16,17 "Built target nav_help_me"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/CMakeFiles --progress-num=23,24 "Built target nav_help_me"
 .PHONY : fjj_nav/CMakeFiles/nav_help_me.dir/all
 
 # Include target in all.

@@ -121,6 +121,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/fjj/documents/fjj_ros_code/fjj_project_code/build/help_me_carry_test/cmake_install.cmake")
   include("/home/fjj/documents/fjj_ros_code/fjj_project_code/build/fjj_socket/cmake_install.cmake")
   include("/home/fjj/documents/fjj_ros_code/fjj_project_code/build/fjj_speech/cmake_install.cmake")
+  include("/home/fjj/documents/fjj_ros_code/fjj_project_code/build/kamerider_speech/cmake_install.cmake")
   include("/home/fjj/documents/fjj_ros_code/fjj_project_code/build/fjj_nav/cmake_install.cmake")
   include("/home/fjj/documents/fjj_ros_code/fjj_project_code/build/imgpcl_test/cmake_install.cmake")
 

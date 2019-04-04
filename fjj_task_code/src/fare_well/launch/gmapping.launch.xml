@@ -1,0 +1,111 @@
+<!--
+launch file:
+node file:  gmapping slam_gmapping
+input arg:  <arg name="scan_topic"  default="scan" />
+            <arg name="base_frame"  default="base_footprint"/>
+            <arg name="odom_frame"  default="odom"/>
+output res: 主要利用slam_gmapping这个节点实现动态定位建图的功能,注意开关功能，通过了解follower的开关进行不同的程序开关设计
+动态调参和开关设计，那么一切都很简单，实现软接口思想，缩短开发周期，提高产品更迭次数。
+-->
+
+
+<launch>
+<!--###############################################文件输入参数##########################-->
+  <!--扫描节点话题-->
+  <arg name="scan_topic"  default="scan" />
+  <!--底盘tf-->
+  <arg name="base_frame"  default="base_footprint"/>
+  <!--里程计tf-->
+  <arg name="odom_frame"  default="odom"/>
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+  <!--##########################接口参数##########################-->
+    <!--tf接口-->
+    <param name="base_frame" value="$(arg base_frame)"/>
+    <param name="odom_frame" value="$(arg odom_frame)"/>
+    <!--话题接口-->
+    <remap from="scan" to="$(arg scan_topic)"/>
+  <!--##########################算法优化参数##########################-->
+    <!--活跃参数-->
+    <!--地图更新间隔，间隔越小，更新频率越快-->
+    <param name="map_update_interval" value="5.0"/>
+    <!--
+    gmapping算法中的粒子数，因为gmapping使用的是粒子滤波算法，
+    粒子在不断地迭代更新，所以选取一个合适的粒子数可以让算法在保证比较准确的同时有较高的速度。
+    -->
+    <param name="particles" value="80"/>
+    <!--
+    最小匹配得分，这个参数很重要，它决定了对激光的一个置信度，
+    越高说明对激光匹配算法的要求越高，激光的匹配也越容易失败而转去使用里程计数据
+    而设的太低又会使地图中出现大量噪声，所以需要权衡调整。
+    -->
+    <param name="minimumScore" value="200"/>
+
+    <!--固定参数-->
+    <!--
+    最大激光雷达扫描距离（并非激光雷达本身的扫描距离）。
+    只有这个距离内的扫描数据会被使用，超过的会被丢弃。
+    -->
+    <param name="maxUrange" value="80.0"/><!--default 25-->
+    <!--
+    最大激光雷达范围。范围内的无障碍区域在地图上显示为空闲区域。
+    按maxUrange<实际激光雷达范围<=maxRange设置。
+    -->
+    <param name="maxRange" value="100.0"/>
+    <!--端点贪婪匹配使用的simga值-->
+    <param name="sigma" value="0.05"/>
+    <!--在多大的范围内寻找符合的-->
+    <param name="kernelSize" value="1"/>
+    <!--平移的优化步长-->
+    <param name="lstep" value="0.05"/>
+    <!--旋转的优化步长-->
+    <param name="astep" value="0.05"/>
+    <!--扫描匹配的迭代次数-->
+    <param name="iterations" value="5"/>
+    <!--激光的sigma值，用于似然计算-->
+    <param name="lsigma" value="0.075"/>
+    <!--评估似然度时使用的增益值，用来消除重采样的影响-->
+    <param name="ogain" value="3.0"/>
+    <!--每次扫描跳过的激光束。采用（n+1)个激光束（0=所有激光束）。-->
+    <param name="lskip" value="0"/>
+    <!--里程计平移误差，关于平移量的函数（rho/rho)-->
+    <param name="srr" value="0.01"/>
+    <!--里程计平移误差，关于旋转量的函数（rho/theta)-->
+    <param name="srt" value="0.02"/>
+    <!--里程计旋转误差，关于平移量的函数（theta/rho)-->
+    <param name="str" value="0.01"/>
+    <!--里程计旋转误差，关于旋转量的函数（theta/theta)-->
+    <param name="stt" value="0.02"/>
+    <!--每经过多少平移量后处理一次扫描数据-->
+    <param name="linearUpdate" value="0.5"/>
+    <!--每经过多少旋转量后处理一次扫描数据-->
+    <param name="angularUpdate" value="0.436"/>
+    <!--每距离上一次更新时间多久后处理一次扫描数据（秒）。<0关闭基于时间的更新。-->
+    <param name="temporalUpdate" value="-1.0"/>
+    <!--基于Neff的重采样阈值-->
+    <param name="resampleThreshold" value="0.5"/>
+    
+  <!--
+    <param name="xmin" value="-50.0"/>
+    <param name="ymin" value="-50.0"/>
+    <param name="xmax" value="50.0"/>
+    <param name="ymax" value="50.0"/>
+  make the starting size small for the benefit of the Android client's memory...
+  -->
+    <!--初始化地图大小-->
+    <param name="xmin" value="-50.0"/>
+    <param name="ymin" value="-50.0"/>
+    <param name="xmax" value="50.0"/>
+    <param name="ymax" value="50.0"/>
+    <!--地图分辨率（米/格栅网格）-->
+    <param name="delta" value="0.05"/>
+    <!--似然计算的位移采样范围-->
+    <param name="llsamplerange" value="0.01"/>
+    <!--似然计算的位移采样间隔-->
+    <param name="llsamplestep" value="0.01"/>
+    <!--似然计算的角度采样范围-->
+    <param name="lasamplerange" value="0.005"/>
+    <!--似然计算的角度采样间隔-->
+    <param name="lasamplestep" value="0.005"/>
+    
+  </node>
+</launch>

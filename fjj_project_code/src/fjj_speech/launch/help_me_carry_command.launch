@@ -1,0 +1,8 @@
+<launch>
+    <!--下面这个是英文版本的，可以进行相关的代码重构-->
+  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py" output="screen">
+    <param name="lm" value="$(find fjj_speech)/voice_lib/help_me_carry/help_me_carry.lm"/>
+    <param name="dict" value="$(find fjj_speech)/voice_lib/help_me_carry/help_me_carry.dic"/>
+    <param name="hmm" value="$(find fjj_speech)/config/pocketsphinx-en/model/hmm/en/hub4wsj_sc_8k"/>
+  </node>
+</launch>

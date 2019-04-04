@@ -1,0 +1,89 @@
+Language model created by QuickLM on Fri Mar 29 23:10:53 EDT 2019
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 14 sentences and 16 words
+
+\data\
+ngram 1=16
+ngram 2=28
+ngram 3=22
+
+\1-grams:
+-0.8539 </s> -0.3010
+-0.8539 <s> -0.2148
+-1.6990 BACK -0.2355
+-2.0000 BACKWARD -0.2355
+-2.0000 DOWN -0.2355
+-1.6990 FORWARD -0.2355
+-2.0000 FULL -0.2923
+-1.5229 GO -0.2788
+-2.0000 HALF -0.2923
+-1.6990 LEFT -0.2355
+-1.6990 RIGHT -0.2355
+-2.0000 SLOW -0.2967
+-1.6990 SPEED -0.2355
+-2.0000 START -0.2355
+-2.0000 STOP -0.2355
+-1.6990 TURN -0.2833
+
+\2-grams:
+-1.4472 <s> BACK 0.0000
+-1.4472 <s> FORWARD 0.0000
+-1.4472 <s> FULL 0.0000
+-0.9700 <s> GO 0.0000
+-1.4472 <s> HALF 0.0000
+-1.4472 <s> LEFT 0.0000
+-1.4472 <s> RIGHT 0.0000
+-1.4472 <s> SLOW 0.0000
+-1.4472 <s> START 0.0000
+-1.4472 <s> STOP 0.0000
+-1.1461 <s> TURN 0.0000
+-0.3010 BACK </s> -0.3010
+-0.3010 BACKWARD </s> -0.3010
+-0.3010 DOWN </s> -0.3010
+-0.3010 FORWARD </s> -0.3010
+-0.3010 FULL SPEED 0.0000
+-0.7782 GO BACK 0.0000
+-0.7782 GO BACKWARD 0.0000
+-0.7782 GO FORWARD 0.0000
+-0.3010 HALF SPEED 0.0000
+-0.3010 LEFT </s> -0.3010
+-0.3010 RIGHT </s> -0.3010
+-0.3010 SLOW DOWN 0.0000
+-0.3010 SPEED </s> -0.3010
+-0.3010 START </s> -0.3010
+-0.3010 STOP </s> -0.3010
+-0.6021 TURN LEFT 0.0000
+-0.6021 TURN RIGHT 0.0000
+
+\3-grams:
+-0.3010 <s> BACK </s>
+-0.3010 <s> FORWARD </s>
+-0.3010 <s> FULL SPEED
+-0.7782 <s> GO BACK
+-0.7782 <s> GO BACKWARD
+-0.7782 <s> GO FORWARD
+-0.3010 <s> HALF SPEED
+-0.3010 <s> LEFT </s>
+-0.3010 <s> RIGHT </s>
+-0.3010 <s> SLOW DOWN
+-0.3010 <s> START </s>
+-0.3010 <s> STOP </s>
+-0.6021 <s> TURN LEFT
+-0.6021 <s> TURN RIGHT
+-0.3010 FULL SPEED </s>
+-0.3010 GO BACK </s>
+-0.3010 GO BACKWARD </s>
+-0.3010 GO FORWARD </s>
+-0.3010 HALF SPEED </s>
+-0.3010 SLOW DOWN </s>
+-0.3010 TURN LEFT </s>
+-0.3010 TURN RIGHT </s>
+
+\end\

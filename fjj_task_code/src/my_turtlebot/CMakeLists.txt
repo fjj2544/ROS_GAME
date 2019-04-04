@@ -7,7 +7,7 @@ project(my_turtlebot)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS roscpp std_msgs sound_play)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -204,4 +204,49 @@ add_executable(client_follower
 add_dependencies(client_follower ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(client_follower
   ${catkin_LIBRARIES}
+)
+
+add_executable(sound_talk
+  src/sound_talk.cpp
+)
+add_dependencies(sound_talk ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(sound_talk
+  ${catkin_LIBRARIES}
+)
+
+add_executable(new_test
+  src/new_test.cpp
+)
+add_dependencies(new_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(new_test
+  ${catkin_LIBRARIES}
+)
+
+add_executable(iat_publish
+  src/iat_publish.cpp
+  src/speech_recognizer.c
+  src/linuxrec.c
+)
+add_dependencies(iat_publish ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(iat_publish 
+  ${catkin_LIBRARIES}
+  libmsc.so -ldl -lpthread -lm -lrt -lasound
+)
+
+add_executable(tts_publish
+  src/tts_publish.cpp
+)
+add_dependencies(tts_publish ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(tts_publish
+  ${catkin_LIBRARIES}
+  libmsc.so -ldl -pthread
+)
+
+add_executable(voice_assistant
+  src/voice_assistant.cpp
+)
+add_dependencies(voice_assistant ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(voice_assistant
+  ${catkin_LIBRARIES}
+  libmsc.so -ldl -pthread
 )

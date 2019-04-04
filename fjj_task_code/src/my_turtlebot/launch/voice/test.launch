@@ -1,0 +1,10 @@
+<launch>
+
+
+<node name="soundplay_node" type="soundplay_node.py" pkg="sound_play">
+</node>
+
+<node name="sound_talk" type="sound_talk" pkg="my_turtlebot">
+</node>
+
+</launch>

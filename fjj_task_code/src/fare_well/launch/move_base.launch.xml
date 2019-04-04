@@ -1,0 +1,51 @@
+<!-- 
+    ROS navigation stack with velocity smoother and safety (reactive) controller
+    重要参数文件块
+-->
+<launch>
+   <!--move_base输入参数-->
+  <arg name="type" default="amcl"/>
+  <arg name="odom_frame_id"   default="odom"/>
+  <arg name="base_frame_id"   default="base_footprint"/>
+  <arg name="global_frame_id" default="map"/>
+  <arg name="odom_topic" default="odom" />
+  <arg name="laser_topic" default="scan" />
+  <arg name="custom_param_file" default="$(find turtlebot_navigation)/param/dummy.yaml"/>
+  <!--速度平滑-->
+  <include file="$(find turtlebot_navigation)/launch/includes/velocity_smoother.launch.xml"/>
+  <!--避障-->
+  <include file="$(find turtlebot_navigation)/launch/includes/safety_controller.launch.xml"/>
+ 
+<!--参数板块-->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <!--##########################算法优化参数##########################-->
+    <!--##########################gobal_para##########################-->
+    <rosparam file="$(find fare_well)/param/$(arg type)/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find fare_well)/param/$(arg type)/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find fare_well)/param/$(arg type)/global_planner_params.yaml" command="load" />
+    <rosparam file="$(find fare_well)/param/$(arg type)/navfn_global_planner_params.yaml" command="load" />
+    <!--##########################local_para##########################-->
+    <rosparam file="$(find fare_well)/param/$(arg type)/costmap_common_params.yaml" command="load" ns="local_costmap" />   
+    <rosparam file="$(find fare_well)/param/$(arg type)/local_costmap_params.yaml" command="load" />   
+    <rosparam file="$(find fare_well)/param/$(arg type)/dwa_local_planner_params.yaml" command="load" />
+    <!--####################################################move_base核心参数##########################-->
+    <rosparam file="$(find fare_well)/param/$(arg type)/move_base_params.yaml" command="load" />
+    <!-- external params file that could be loaded into the move_base namespace -->
+    <!--扩展性优化参数-->
+    <rosparam file="$(arg custom_param_file)" command="load" />
+    
+    <!-- reset frame_id parameters using user input data -->
+    <!--##########################接口参数##########################-->
+    <!--tf接口变换-->
+    <param name="global_costmap/global_frame" value="$(arg global_frame_id)"/>
+    <param name="global_costmap/robot_base_frame" value="$(arg base_frame_id)"/>
+    <param name="local_costmap/global_frame" value="$(arg odom_frame_id)"/>
+    <param name="local_costmap/robot_base_frame" value="$(arg base_frame_id)"/>
+    <param name="DWAPlannerROS/global_frame_id" value="$(arg odom_frame_id)"/>
+    <!--话题接口变换-->
+    <remap from="cmd_vel" to="navigation_velocity_smoother/raw_cmd_vel"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+    <remap from="scan" to="$(arg laser_topic)"/>
+
+  </node>
+</launch>

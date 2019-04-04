@@ -5,7 +5,7 @@
     navigation.py - Say back what is heard by the pocketsphinx recognizer.
 """
 
-import roslib; roslib.load_manifest('speech')
+import roslib
 import rospy
 from std_msgs.msg import String
 from std_msgs.msg import Int8
@@ -18,7 +18,7 @@ class help_me_carry:
 	def __init__(self):
 
 		rospy.on_shutdown(self.cleanup)
-		self.voice = rospy.get_param("~voice", "voice_cmu_us_clb_arctic_clunits")
+		self.voice = rospy.get_param("~voice", "voice_kal_diphone")
 		self.wavepath = rospy.get_param("~wavepath", "")
 		self.state="true"
 		self.soundhandle=SoundClient()

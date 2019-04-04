@@ -1,0 +1,32 @@
+<!--
+launch file:
+            turtlebot_navigation amcl.launch.xml
+            turtlebot_navigation　move_base.launch.xml
+node file:  map_server　map_server 
+            还可以通过　initial_pose_x|y|z　来确定初始坐标
+input arg:  map_file TURTLEBOT_GAZEBO_MAP_FILE 主要调用自己gmapping创建的地图
+output res: 
+-->
+
+<launch>
+  <!-- 创建地图-->
+  <arg name="map_file" default="$(find fare_well)/maps/current_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+  <node name="laser_filter"  pkg="turtlebot_navigation" type="laser_footprint_filter" />
+  <!-- 利用ａｍｃｌ进行地图定位 -->
+
+<!--可以控制其发布变换-->
+  <include file="$(find fare_well)/launch/amcl.launch.xml">
+  <!--在这改吗。。应该在调用层改不是在被调用层改-->
+  <rosparam file="$(find fare_well)/param/amcl/amcl.yaml" command="load" />
+    <arg name="scan_topic" value="scan_filtered" />
+  </include>
+  <!--启动move_base底盘操作，这个是导航的核心节点,启动了导航相关的一切内容-->
+ <include file="$(find fare_well)/launch/move_base.launch.xml">
+ <arg name="type" value="amcl"/>
+  <arg name="laser_topic" value="scan_filtered" />
+ </include>
+     <!-- 启动rviz -->
+ <node name="rviz" pkg="rviz" type="rviz" args="-d $(find fare_well)/rviz/amcl.rviz" />
+
+</launch>

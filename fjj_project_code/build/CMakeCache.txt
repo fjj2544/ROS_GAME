@@ -386,6 +386,12 @@ imgpcl_test_BINARY_DIR:STATIC=/home/fjj/documents/fjj_ros_code/fjj_project_code/
 //Value Computed by CMake
 imgpcl_test_SOURCE_DIR:STATIC=/home/fjj/documents/fjj_ros_code/fjj_project_code/src/imgpcl_test
 
+//Value Computed by CMake
+kamerider_speech_BINARY_DIR:STATIC=/home/fjj/documents/fjj_ros_code/fjj_project_code/build/kamerider_speech
+
+//Value Computed by CMake
+kamerider_speech_SOURCE_DIR:STATIC=/home/fjj/documents/fjj_ros_code/fjj_project_code/src/kamerider_speech
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/kinetic/lib/libtf2.so
 
@@ -593,7 +599,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

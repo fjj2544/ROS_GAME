@@ -1,2 +1,2 @@
-fjj_arm:fjj_nav:fjj_socket:fjj_speech:help_me_carry_test:imgpcl_test
+fjj_arm:fjj_nav:fjj_socket:fjj_speech:help_me_carry_test:imgpcl_test:kamerider_speech
 -DCATKIN_DEVEL_PREFIX=/home/fjj/documents/fjj_ros_code/fjj_project_code/devel -DCMAKE_INSTALL_PREFIX=/home/fjj/documents/fjj_ros_code/fjj_project_code/install -G Unix Makefiles

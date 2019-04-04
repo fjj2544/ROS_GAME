@@ -7,8 +7,9 @@
   <!--############################################################启动机器人###########################################################################-->
   
   
-      <!--启动我们自己的机器人 只要机器人连接了之后就会识别出对应的机器人并且启动对应的驱动器-->
+    <!--启动我们自己的机器人 只要机器人连接了之后就会识别出对应的机器人并且启动对应的驱动器-->
     <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
+    
     <!--下面这个地方启动joint_state_publisher而robot中启动了对应的robot_state_publisher-->
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
    
@@ -27,51 +28,20 @@
         <param name="output_frame" value="odom"/>
     </node>
 
-  <!--这里利用3d_sensor来启动关键的传感器节点，启动kinect-->
-  <arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)"/>  <!-- r200, kinect, asus_xtion_pro -->
-  <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
-    <arg name="rgb_processing" value="false" />
-    <arg name="depth_registration" value="false" />
-    <arg name="depth_processing" value="false" />
-    <arg name="scan_topic" value="/scan" />
-    <arg name="publish_tf"                      value="false"/>
-    <arg name="scan_processing"                 value="true"/>
-  </include>
+  
   <!--############################################################实现follower_me相关操作###########################################################################-->
 
   <!--启动follower相关操作最后实现follower的部分功能-->
-  <include file="$(find turtlebot_follower)/launch/includes/velocity_smoother.launch.xml">
-      <arg name="nodelet_manager"  value="/mobile_base_nodelet_manager"/>
-      <arg name="navigation_topic" value="/cmd_vel_mux/input/navi"/>
-  </include>
-  <!--下面这个包已经不能用了-->
-  <include file="$(find turtlebot_follower)/launch/includes/safety_controller.launch.xml"/>
-  
-  <!--启动了摄像机管理节点，但是这个节点似乎是从某一个turtlebot里面抓出来的 也就是启动了turtlebot_follower 里面的关键节点-->
-  <node pkg="nodelet" type="nodelet" name="turtlebot_follower"
-        args="load turtlebot_follower/TurtlebotFollower camera/camera_nodelet_manager">
-  <!--remap the topic -->
-    <remap from="turtlebot_follower/cmd_vel" to="follower_velocity_smoother/raw_cmd_vel"/>
-    <remap from="depth/points" to="camera/depth/points"/>
-  <!--set the param-->
-    <param name="enabled" value="false" />
-    <param name="x_scale" value="7.0" /><!--changed!!!!! from 5.0->7.0-->
-    <param name="z_scale" value="2.0" />
-    <param name="min_x" value="-0.2" />
-    <param name="max_x" value="0.2" />
-    <param name="min_y" value="0.1" />
-    <param name="max_y" value="0.5" />
-    <param name="max_z" value="1.4" />
-    <param name="goal_z" value="0.7" />
-  </node>
-  <!--######################################################启动带有静态底图的amcl节点其实和amcl一样###########################################################################-->
+  <include file="$(find turtlebot_follower)/launch/follower.launch" />
+   <!--######################################################启动带有静态底图的amcl节点###########################################################################-->
   <node pkg="map_server" type="map_server" name="map_server" args="$(find fjj_nav)/maps/314.yaml" />
   <include file="$(find turtlebot_navigation)/launch/includes/amcl/amcl.launch.xml">
     <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
     <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
     <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+    <param name="tf_broadcast" value="true"/>
   </include>
-  <!--这个其实是一个基类泛型-->
+  <!--采用原生参数-->
   <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"/>
 
   <!--######################################################启动rviz可视化节点###########################################################################-->
@@ -83,9 +53,11 @@
   -->
   </include>
   <!--########################启动对应的辅助处理操作 可能还是需要加载静态坐标变换一般的都没有map的静态坐标变换###############################################################-->
+  
   <node pkg="fjj_nav" type="emergency" name="emergency"/> 
   <node pkg="fjj_nav" type="nav_help_me" name="nav_help_me" launch-prefix="xterm -e" /> 
   <node name="find_person" pkg="imgpcl_test" type="find_person" output="screen" />
+
 </launch>
 
 

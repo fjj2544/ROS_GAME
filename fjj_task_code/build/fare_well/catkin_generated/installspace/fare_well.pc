@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_task_code/install
+
+Name: fare_well
+Description: Description of fare_well
+Version: 0.0.0
+Cflags: -I/home/fjj/documents/fjj_ros_code/fjj_task_code/install/include
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_task_code/install/lib 
+Requires: 

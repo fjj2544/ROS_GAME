@@ -1,0 +1,44 @@
+<!--
+launch file:
+            gazebo_ros empty_world.launch
+            turtlebot_gazebo kobuki.launch.xml
+
+node file:  robot_state_publisher robot_state_publisher
+            nodelet nodelet
+input arg:  gui false or true
+            world_file TURTLEBOT_GAZEBO_WORLD_FILE
+output res: watch the file blow i will note them!
+-->
+<launch>
+  <!--input part-->
+  <arg name="gui"        default="true"/>
+  <arg name="world_file" default="$(env TURTLEBOT_GAZEBO_WORLD_FILE)"/>
+  <!--args which can not be changed-->
+  <arg name="base"       value="$(optenv TURTLEBOT_BASE kobuki)"/> <!-- create, roomba -->
+  <arg name="battery"    value="$(optenv TURTLEBOT_BATTERY /proc/acpi/battery/BAT0)"/>  <!-- /proc/acpi/battery/BAT0 -->
+  <arg name="stacks"     value="$(optenv TURTLEBOT_STACKS hexagons)"/>  <!-- circles, hexagons -->
+  <!--这个地方非常关键，如果要用就直接用它就好了-->
+  <arg name="3d_sensor"  value="hokuyo"/>  <!--rplidar kinect, asus_xtion_pro -->
+  
+  <!--以空白背景创建gazebo环境,同时可以加自己的gazebo地图-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="world_name" value="$(arg world_file)"/>
+  </include>
+  <!--创建机器人模型,这里相当于修改机器人参数文件-->
+  <include file="$(find turtlebot_gazebo)/launch/includes/$(arg base).launch.xml">
+    <arg name="base" value="$(arg base)"/>
+    <arg name="stacks" value="$(arg stacks)"/>
+    <arg name="3d_sensor" value="$(arg 3d_sensor)"/>
+  </include>
+
+  <!--发布与机器人状态相关的节点.发布机器人状态信息-->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0" />
+  </node>
+      <!-- 运行joint_state_publisher节点，发布机器人的关节状态  -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> 
+  <node pkg="nodelet" type="nodelet" name="laserscan_nodelet_manager" args="manager"/>
+</launch>

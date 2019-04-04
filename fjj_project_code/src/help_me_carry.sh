@@ -10,7 +10,7 @@ gnome-terminal -x bash -c "roslaunch fjj_speech help_me_carry.launch"
 
 sleep 1
 ##这里采用rospack find 的方法非常关键
-gnome-terminal -x bash -c " pocketsphinx_continuous -inmic yes -dict `rospack find speech`/voice_library/help_me_carry/help_me_carry.dic -lm `rospack find speech`/voice_library/help_me_carry/help_me_carry.lm"
+gnome-terminal -x bash -c " pocketsphinx_continuous -inmic yes -dict `rospack find fjj_speech`/voice_lib/help_me_carry/help_me_carry.dic -lm `rospack find fjj_speech`/voice_lib/help_me_carry/help_me_carry.lm"
 
 sleep 1
 

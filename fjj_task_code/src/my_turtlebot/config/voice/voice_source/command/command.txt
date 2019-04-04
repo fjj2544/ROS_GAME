@@ -1,0 +1,14 @@
+start
+go forward
+go backward
+go back
+forward
+full speed
+half speed
+left
+right
+back
+turn left
+turn right
+slow down
+stop

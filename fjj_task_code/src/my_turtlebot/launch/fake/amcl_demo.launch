@@ -1,16 +1,18 @@
 <launch>
   <!-- Map server -->
-
+  
     <!-- 设置地图的配置文件 -->
-    <arg name="map" default="current_map.yaml" />
+    <arg name="map" default="314.yaml" />
 
     <!-- 运行地图服务器，并且加载设置的地图-->
     <node name="map_server" pkg="map_server" type="map_server" args="$(find my_turtlebot)/maps/$(arg map)"/>
      
-     <include file="$(find my_turtlebot)/launch/fake/move_base_amcl.launch.xml" />
-     <include file="$(find my_turtlebot)/launch/fake/amcl.launch.xml"/>
+     <include file="$(find my_turtlebot)/launch/fake/move_base_gmapping.launch.xml" />
+     <include file="$(find my_turtlebot)/launch/fake/amcl.launch.xml">
+     
+     </include>
     <!--为什么虚拟定位要加一个静态变换？-->
-    <!-- 对于虚拟定位，需要设置一个/odom与/map之间的静态坐标变换 这个其实可以不用 -->
+    <!-- 对于虚拟定位，需要设置一个/odom与/map之间的静态坐标变换 这个其实可以不用 是不是本来就要发？-->
     <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster" args="0 0 0 0 0 0 /map /odom 100" />
     
     <node pkg="rviz" type="rviz" name="rviz"  args="-d $(find my_turtlebot)/rviz/amcl.rviz" />

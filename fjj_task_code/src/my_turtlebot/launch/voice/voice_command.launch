@@ -1,0 +1,8 @@
+<launch>
+    <!--下面这个是英文版本的，可以进行相关的代码重构-->
+  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py" output="screen">
+    <param name="lm" value="$(find my_turtlebot)/config/voice/voice_source/command/command.lm"/>
+    <param name="dict" value="$(find my_turtlebot)/config/voice/voice_source/command/command.dic"/>
+    <param name="hmm" value="$(find my_turtlebot)/config/voice/pocketsphinx-en/model/hmm/en/hub4wsj_sc_8k"/>
+  </node>
+</launch>
