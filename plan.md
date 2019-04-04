@@ -25,7 +25,6 @@ The primary goal is to escort multiple people to designated locations.
 2. Real-time obstacle avoidance function when moving (the effect of the current function package is not good, may hit people) and the recovery problem when slam, that is, behavior_recovery.
 2.1 Need to remember the target point and automatically navigate to the corresponding clothing placement point. Finally, return to the requester's location, to achieve a fetch function. It is possible to use amcl to enhance the positioning accuracy or not to return to the original location, which is related to the gmapping and amcl compatibility issues or the switching problem between the two.
 3. This place has to solve the robot's problem of passing the door, which is to solve the problem that the robot passes through the narrow area. (Because there is a certain expansion ratio in the costmap, the excessive expansion ratio will cause the robot to fail to pass through the narrow area. If it is too low, the robot will encounter obstacles.)
-3.1 3.2 
 4. The same reason is to achieve a classic problem of going out and returning. If the accuracy of the drawing is not high, the positioning effect is not good (that is, it cannot be compatible with gmapping and amcl) and may not return to the original point.
 
 ## The main solution to the problem and the expected implementation of the function:
@@ -60,7 +59,6 @@ The primary goal is to escort multiple people to designated locations.
 2. Real-time obstacle avoidance function when moving (the effect of the current function package is not good, may hit people) and the recovery problem when SLAM, that is, behavior_recovery. And you need to find the location of the requester again, you need to design a patrol algorithm.
 2.1 Need to remember the target point and automatically navigate to the corresponding clothing placement point. Finally, return to the requester's location, to achieve a fetch function. It is possible to use amcl to enhance the positioning accuracy or not to return to the original location, which is related to the gmapping and amcl compatibility issues or the switching problem between the two.
 3. This place has to solve the robot's problem of passing the door, which is to solve the problem that the robot passes through the narrow area. (Because there is a certain expansion ratio in the costmap, the expansion ratio is too high, which will cause the robot to fail to pass through the narrow area. If it is too low, the robot will encounter obstacles.) If you need dynamic mapping, you must combine gmapping and amcl. Add a PID speed controller to ensure human-machine coordination.
-3.1 3.2 
 4. The same reason is to achieve a classic problem of going out and returning. If the accuracy of the drawing is not high, the positioning effect is not good (that is, it cannot be compatible with gmapping and amcl) and may not return to the original point.
 The main problem solved and the expected implementation of the function:
 1. Double kinect is activated to measure the distance between human and robot.
