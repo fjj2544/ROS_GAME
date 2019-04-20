@@ -283,19 +283,6 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
-# Target rules for targets named server
-
-# Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 server
-.PHONY : server
-
-# fast build rule for target.
-server/fast:
-	$(MAKE) -f fare_well/CMakeFiles/server.dir/build.make fare_well/CMakeFiles/server.dir/build
-.PHONY : server/fast
-
-#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -556,19 +543,6 @@ rosgraph_msgs_generate_messages_lisp/fast:
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named fare_well_gencfg
-
-# Build rule for target.
-fare_well_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 fare_well_gencfg
-.PHONY : fare_well_gencfg
-
-# fast build rule for target.
-fare_well_gencfg/fast:
-	$(MAKE) -f fare_well/CMakeFiles/fare_well_gencfg.dir/build.make fare_well/CMakeFiles/fare_well_gencfg.dir/build
-.PHONY : fare_well_gencfg/fast
-
-#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -582,6 +556,19 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named vel_cmd
+
+# Build rule for target.
+vel_cmd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vel_cmd
+.PHONY : vel_cmd
+
+# fast build rule for target.
+vel_cmd/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/vel_cmd.dir/build.make my_turtlebot/CMakeFiles/vel_cmd.dir/build
+.PHONY : vel_cmd/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -593,19 +580,6 @@ actionlib_msgs_generate_messages_nodejs: cmake_check_build_system
 actionlib_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named sound_play_generate_messages_py
-
-# Build rule for target.
-sound_play_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sound_play_generate_messages_py
-.PHONY : sound_play_generate_messages_py
-
-# fast build rule for target.
-sound_play_generate_messages_py/fast:
-	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/build
-.PHONY : sound_play_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_cpp
@@ -647,17 +621,17 @@ voice_assistant/fast:
 .PHONY : voice_assistant/fast
 
 #=============================================================================
-# Target rules for targets named actionlib_msgs_generate_messages_lisp
+# Target rules for targets named sound_play_generate_messages_cpp
 
 # Build rule for target.
-actionlib_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_lisp
-.PHONY : actionlib_msgs_generate_messages_lisp
+sound_play_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sound_play_generate_messages_cpp
+.PHONY : sound_play_generate_messages_cpp
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
+sound_play_generate_messages_cpp/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build
+.PHONY : sound_play_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_eus
@@ -712,19 +686,6 @@ sound_talk/fast:
 .PHONY : sound_talk/fast
 
 #=============================================================================
-# Target rules for targets named sound_play_generate_messages_cpp
-
-# Build rule for target.
-sound_play_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sound_play_generate_messages_cpp
-.PHONY : sound_play_generate_messages_cpp
-
-# fast build rule for target.
-sound_play_generate_messages_cpp/fast:
-	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build
-.PHONY : sound_play_generate_messages_cpp/fast
-
-#=============================================================================
 # Target rules for targets named sound_play_generate_messages_lisp
 
 # Build rule for target.
@@ -736,6 +697,32 @@ sound_play_generate_messages_lisp: cmake_check_build_system
 sound_play_generate_messages_lisp/fast:
 	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_lisp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_lisp.dir/build
 .PHONY : sound_play_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named getnumofpeople
+
+# Build rule for target.
+getnumofpeople: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 getnumofpeople
+.PHONY : getnumofpeople
+
+# fast build rule for target.
+getnumofpeople/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/getnumofpeople.dir/build.make my_turtlebot/CMakeFiles/getnumofpeople.dir/build
+.PHONY : getnumofpeople/fast
+
+#=============================================================================
+# Target rules for targets named opencv_apps_generate_messages_eus
+
+# Build rule for target.
+opencv_apps_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 opencv_apps_generate_messages_eus
+.PHONY : opencv_apps_generate_messages_eus
+
+# fast build rule for target.
+opencv_apps_generate_messages_eus/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/opencv_apps_generate_messages_eus.dir/build.make my_turtlebot/CMakeFiles/opencv_apps_generate_messages_eus.dir/build
+.PHONY : opencv_apps_generate_messages_eus/fast
 
 #=============================================================================
 # Target rules for targets named sound_play_generate_messages_nodejs
@@ -751,30 +738,43 @@ sound_play_generate_messages_nodejs/fast:
 .PHONY : sound_play_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named client_follower
+# Target rules for targets named sound_play_generate_messages_py
 
 # Build rule for target.
-client_follower: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 client_follower
-.PHONY : client_follower
+sound_play_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sound_play_generate_messages_py
+.PHONY : sound_play_generate_messages_py
 
 # fast build rule for target.
-client_follower/fast:
-	$(MAKE) -f my_turtlebot/CMakeFiles/client_follower.dir/build.make my_turtlebot/CMakeFiles/client_follower.dir/build
-.PHONY : client_follower/fast
+sound_play_generate_messages_py/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/build
+.PHONY : sound_play_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named iat_publish
+# Target rules for targets named opencv_apps_generate_messages_cpp
 
 # Build rule for target.
-iat_publish: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 iat_publish
-.PHONY : iat_publish
+opencv_apps_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 opencv_apps_generate_messages_cpp
+.PHONY : opencv_apps_generate_messages_cpp
 
 # fast build rule for target.
-iat_publish/fast:
-	$(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/build
-.PHONY : iat_publish/fast
+opencv_apps_generate_messages_cpp/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/opencv_apps_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/opencv_apps_generate_messages_cpp.dir/build
+.PHONY : opencv_apps_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named opencv_apps_gencfg
+
+# Build rule for target.
+opencv_apps_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 opencv_apps_gencfg
+.PHONY : opencv_apps_gencfg
+
+# fast build rule for target.
+opencv_apps_gencfg/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/build.make my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/build
+.PHONY : opencv_apps_gencfg/fast
 
 #=============================================================================
 # Target rules for targets named tts_publish
@@ -788,6 +788,84 @@ tts_publish: cmake_check_build_system
 tts_publish/fast:
 	$(MAKE) -f my_turtlebot/CMakeFiles/tts_publish.dir/build.make my_turtlebot/CMakeFiles/tts_publish.dir/build
 .PHONY : tts_publish/fast
+
+#=============================================================================
+# Target rules for targets named opencv_apps_generate_messages_lisp
+
+# Build rule for target.
+opencv_apps_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 opencv_apps_generate_messages_lisp
+.PHONY : opencv_apps_generate_messages_lisp
+
+# fast build rule for target.
+opencv_apps_generate_messages_lisp/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/opencv_apps_generate_messages_lisp.dir/build.make my_turtlebot/CMakeFiles/opencv_apps_generate_messages_lisp.dir/build
+.PHONY : opencv_apps_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named client_follower
+
+# Build rule for target.
+client_follower: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client_follower
+.PHONY : client_follower
+
+# fast build rule for target.
+client_follower/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/client_follower.dir/build.make my_turtlebot/CMakeFiles/client_follower.dir/build
+.PHONY : client_follower/fast
+
+#=============================================================================
+# Target rules for targets named opencv_apps_generate_messages_nodejs
+
+# Build rule for target.
+opencv_apps_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 opencv_apps_generate_messages_nodejs
+.PHONY : opencv_apps_generate_messages_nodejs
+
+# fast build rule for target.
+opencv_apps_generate_messages_nodejs/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/opencv_apps_generate_messages_nodejs.dir/build.make my_turtlebot/CMakeFiles/opencv_apps_generate_messages_nodejs.dir/build
+.PHONY : opencv_apps_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_lisp
+
+# Build rule for target.
+actionlib_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_lisp
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named opencv_apps_generate_messages_py
+
+# Build rule for target.
+opencv_apps_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 opencv_apps_generate_messages_py
+.PHONY : opencv_apps_generate_messages_py
+
+# fast build rule for target.
+opencv_apps_generate_messages_py/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/opencv_apps_generate_messages_py.dir/build.make my_turtlebot/CMakeFiles/opencv_apps_generate_messages_py.dir/build
+.PHONY : opencv_apps_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named iat_publish
+
+# Build rule for target.
+iat_publish: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 iat_publish
+.PHONY : iat_publish
+
+# fast build rule for target.
+iat_publish/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/build
+.PHONY : iat_publish/fast
 
 # Help Target
 help:
@@ -811,7 +889,6 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... server"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... dynamic_reconfigure_gencfg"
@@ -832,24 +909,31 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... fare_well_gencfg"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... vel_cmd"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... sound_play_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... voice_assistant"
-	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... sound_play_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... new_test"
 	@echo "... sound_play_generate_messages_eus"
 	@echo "... sound_talk"
-	@echo "... sound_play_generate_messages_cpp"
 	@echo "... sound_play_generate_messages_lisp"
+	@echo "... getnumofpeople"
+	@echo "... opencv_apps_generate_messages_eus"
 	@echo "... sound_play_generate_messages_nodejs"
-	@echo "... client_follower"
-	@echo "... iat_publish"
+	@echo "... sound_play_generate_messages_py"
+	@echo "... opencv_apps_generate_messages_cpp"
+	@echo "... opencv_apps_gencfg"
 	@echo "... tts_publish"
+	@echo "... opencv_apps_generate_messages_lisp"
+	@echo "... client_follower"
+	@echo "... opencv_apps_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... opencv_apps_generate_messages_py"
+	@echo "... iat_publish"
 .PHONY : help
 
 

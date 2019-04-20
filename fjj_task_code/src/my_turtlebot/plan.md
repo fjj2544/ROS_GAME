@@ -18,7 +18,8 @@ The primary goal is to escort multiple people to designated locations.
 3. When the second step is completed, let the robot automatically navigate outside the door and take the person outside the door.
 3.1 Then identify and locate outside the door, find the corresponding cab (here because the recognition distance of the kinect is only 3m), so after the recognition, the person is guided to the corresponding cab position.
 3.2 The person puts the umbrella on the robot.
-4. After the third step is completed, the robot will return to the original coordinate point, and finally repeat the process of 2-4 to complete the escort operation. (still the construction error, preventing static map offset)
+4. Af
+ter the third step is completed, the robot will return to the original coordinate point, and finally repeat the process of 2-4 to complete the escort operation. (still the construction error, preventing static map offset)
 
 ## The basic difficulties of the corresponding process:
 1. Using kinect to map the accuracy error at the cm level, the error is too large, the mapping accuracy is not high. Sensors such as odometers have large noise interference and need to be compatible with imu to perform Kalman filtering. The difficulty here is how to implement the automatic mapping process Relocate the Cab Driver.

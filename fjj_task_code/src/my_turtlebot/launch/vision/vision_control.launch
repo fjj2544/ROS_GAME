@@ -1,0 +1,10 @@
+<launch>
+<include file="$(find usb_cam)/launch/usb_cam-test.launch">
+</include>
+<include file="$(find opencv_apps)/launch/camshift.launch">
+<arg name="image" value="/usb_cam/image_raw"/>
+</include>
+
+<node pkg="my_turtlebot" type="vision_cmd.py" name="vision_cmd"/>
+<!--不是节点名称而是节点py文件的名字-->
+</launch>

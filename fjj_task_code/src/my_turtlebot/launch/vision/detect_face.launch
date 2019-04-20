@@ -1,0 +1,14 @@
+<launch>
+<include file="$(find usb_cam)/launch/usb_cam-test.launch">
+</include>
+<include file="$(find opencv_apps)/launch/face_detection.launch"> 
+  <arg name="node_name" value="face_detection" />
+  <arg name="image" value="/usb_cam/image_raw" doc="The image topic. Should be remapped to the name of the real image topic." />
+  <arg name="use_camera_info" value="false" doc="Indicates that the camera_info topic should be subscribed to to get the value input_frame_id. Otherwise the frame from the image message will be used." />
+  <arg name="debug_view" value="true" doc="Specify whether the node displays a window to show edge image" />
+</include>
+<include file="$(find sound_play)/soundplay_node.launch"/> 
+
+<node pkg="my_turtlebot" type="getnumofpeople" name="getnumofpeople"/>
+
+</launch>

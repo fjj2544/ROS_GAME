@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     ros::Rate loop_rate(10);
 
     int count = 0;
-    while (ros::ok())
+    while (ros::ok())//我如果要他收到一个信息之后直接处理他们不合并在一起，那么如何同步信息？
     {
         // 初始化std_msgs::String类型的消息
         std_msgs::String msg;
@@ -49,3 +49,5 @@ int main(int argc, char **argv)
 
     return 0;
 }
+
+

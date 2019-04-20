@@ -33,22 +33,6 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/fare_well" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/include/fare_well/testConfig.h")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/fare_well" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/python2.7/dist-packages/fare_well/__init__.py")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/python2.7/dist-packages/fare_well/cfg")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/fare_well" TYPE DIRECTORY FILES "/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/python2.7/dist-packages/fare_well/cfg")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_task_code/build/fare_well/catkin_generated/installspace/fare_well.pc")
 endif()
 

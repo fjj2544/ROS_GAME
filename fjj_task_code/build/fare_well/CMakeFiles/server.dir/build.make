@@ -88,34 +88,34 @@ server_OBJECTS = \
 # External object files for target server
 server_EXTERNAL_OBJECTS =
 
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: fare_well/CMakeFiles/server.dir/src/server.cpp.o
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: fare_well/CMakeFiles/server.dir/build.make
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /opt/ros/kinetic/lib/libroscpp.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /opt/ros/kinetic/lib/librosconsole.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /opt/ros/kinetic/lib/librostime.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /opt/ros/kinetic/lib/libcpp_common.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server: fare_well/CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server"
+fare_well/server: fare_well/CMakeFiles/server.dir/src/server.cpp.o
+fare_well/server: fare_well/CMakeFiles/server.dir/build.make
+fare_well/server: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
+fare_well/server: /opt/ros/kinetic/lib/libroscpp.so
+fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+fare_well/server: /opt/ros/kinetic/lib/librosconsole.so
+fare_well/server: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+fare_well/server: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+fare_well/server: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+fare_well/server: /opt/ros/kinetic/lib/libroscpp_serialization.so
+fare_well/server: /opt/ros/kinetic/lib/libxmlrpcpp.so
+fare_well/server: /opt/ros/kinetic/lib/librostime.so
+fare_well/server: /opt/ros/kinetic/lib/libcpp_common.so
+fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_system.so
+fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+fare_well/server: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+fare_well/server: /usr/lib/x86_64-linux-gnu/libpthread.so
+fare_well/server: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+fare_well/server: fare_well/CMakeFiles/server.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable server"
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build/fare_well && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-fare_well/CMakeFiles/server.dir/build: /home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib/fare_well/server
+fare_well/CMakeFiles/server.dir/build: fare_well/server
 
 .PHONY : fare_well/CMakeFiles/server.dir/build
 

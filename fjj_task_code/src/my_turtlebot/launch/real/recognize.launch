@@ -1,0 +1,8 @@
+<launch>
+
+
+<include file="$(find opencv_apps)/launch/camshift.launch">
+<arg name="image" value="/camera/rgb/image_color" />
+</include>
+
+</launch>

@@ -166,21 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-fare_well/CMakeFiles/server.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 fare_well/CMakeFiles/server.dir/rule
-.PHONY : fare_well/CMakeFiles/server.dir/rule
-
-# Convenience name for target.
-server: fare_well/CMakeFiles/server.dir/rule
-
-.PHONY : server
-
-# fast build rule for target.
-server/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f fare_well/CMakeFiles/server.dir/build.make fare_well/CMakeFiles/server.dir/build
-.PHONY : server/fast
-
-# Convenience name for target.
 fare_well/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 fare_well/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 .PHONY : fare_well/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
@@ -481,21 +466,6 @@ rosgraph_msgs_generate_messages_lisp/fast:
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-fare_well/CMakeFiles/fare_well_gencfg.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 fare_well/CMakeFiles/fare_well_gencfg.dir/rule
-.PHONY : fare_well/CMakeFiles/fare_well_gencfg.dir/rule
-
-# Convenience name for target.
-fare_well_gencfg: fare_well/CMakeFiles/fare_well_gencfg.dir/rule
-
-.PHONY : fare_well_gencfg
-
-# fast build rule for target.
-fare_well_gencfg/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f fare_well/CMakeFiles/fare_well_gencfg.dir/build.make fare_well/CMakeFiles/fare_well_gencfg.dir/build
-.PHONY : fare_well_gencfg/fast
-
-# Convenience name for target.
 fare_well/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 fare_well/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 .PHONY : fare_well/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
@@ -510,33 +480,6 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f fare_well/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make fare_well/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
-src/server.o: src/server.cpp.o
-
-.PHONY : src/server.o
-
-# target to build an object file
-src/server.cpp.o:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f fare_well/CMakeFiles/server.dir/build.make fare_well/CMakeFiles/server.dir/src/server.cpp.o
-.PHONY : src/server.cpp.o
-
-src/server.i: src/server.cpp.i
-
-.PHONY : src/server.i
-
-# target to preprocess a source file
-src/server.cpp.i:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f fare_well/CMakeFiles/server.dir/build.make fare_well/CMakeFiles/server.dir/src/server.cpp.i
-.PHONY : src/server.cpp.i
-
-src/server.s: src/server.cpp.s
-
-.PHONY : src/server.s
-
-# target to generate assembly for a file
-src/server.cpp.s:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f fare_well/CMakeFiles/server.dir/build.make fare_well/CMakeFiles/server.dir/src/server.cpp.s
-.PHONY : src/server.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -548,7 +491,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... install/local"
-	@echo "... server"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... edit_cache"
@@ -571,11 +513,7 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... fare_well_gencfg"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... src/server.o"
-	@echo "... src/server.i"
-	@echo "... src/server.s"
 .PHONY : help
 
 

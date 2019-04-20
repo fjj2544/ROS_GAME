@@ -89,18 +89,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate dynamic reconfigure parameters in the 'cfg' folder
 
-generate_dynamic_reconfigure_options(
-  cfg/test.cfg
-  cfg/gmapping.cfg
-)
 
-add_executable(server
-  src/server.cpp
-)
-add_dependencies(server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_gencfg)
-target_link_libraries(server
-  ${catkin_LIBRARIES}
-)
 
 
 ###################################

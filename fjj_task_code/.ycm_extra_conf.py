@@ -21,6 +21,8 @@ flags = [
 '-isystem',
 '/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/include',
 '-isystem',
+'/home/fjj/documents/fjj_ros_code/fjj_task_code/src/fare_well/include',
+'-isystem',
 '/home/fjj/documents/fjj_ros_code/fjj_task_code/src/my_turtlebot/include'
 ]
 

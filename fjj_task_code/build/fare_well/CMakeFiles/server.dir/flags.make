@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"fare_well\"
 
-CXX_INCLUDES = -I/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/include -I/home/fjj/documents/fjj_ros_code/fjj_task_code/src/fare_well/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/fjj/documents/fjj_ros_code/fjj_task_code/src/fare_well/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

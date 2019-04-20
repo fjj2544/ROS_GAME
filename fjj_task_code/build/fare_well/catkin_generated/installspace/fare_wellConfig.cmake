@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(fare_well_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "include " STREQUAL " ")
+if(NOT " " STREQUAL " ")
   set(fare_well_INCLUDE_DIRS "")
-  set(_include_dirs "include")
+  set(_include_dirs "")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/fjj/documents/fjj_ros_code/fjj_task_code/install/lib;/home/fjj/documents/new_pack_code/rplidar_ros-master/devel/lib;/home/fjj/documents/new_pack_code/turtlebot_source_code/devel/lib;/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib;/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/lib;/home/fjj/documents/course_code/my_book_code/devel/lib;/home/fjj/documents/fjj_ros_code/fjj_project_code/devel/lib;/home/fjj/documents/course_code/ROS_FOR_BEGINER_COURSE_CODE/devel/lib;/home/fjj/documents/new_pack_code/my_robot_model/devel/lib;/home/fjj/documents/course_code/roslearn/devel/lib;/home/fjj/documents/course_code/ros_course_for_kinetic/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/fjj/documents/fjj_ros_code/fjj_task_code/install/lib;/home/fjj/documents/new_pack_code/objectTracking-master/devel/lib;/home/fjj/documents/new_pack_code/opencv_apps_kinect/devel/lib;/home/fjj/documents/new_pack_code/ork_ws/devel/lib;/home/fjj/documents/new_pack_code/rplidar_ros-master/devel/lib;/home/fjj/documents/new_pack_code/turtlebot_source_code/devel/lib;/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib;/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/lib;/home/fjj/documents/course_code/my_book_code/devel/lib;/home/fjj/documents/fjj_ros_code/fjj_project_code/devel/lib;/home/fjj/documents/course_code/ROS_FOR_BEGINER_COURSE_CODE/devel/lib;/home/fjj/documents/new_pack_code/my_robot_model/devel/lib;/home/fjj/documents/course_code/roslearn/devel/lib;/home/fjj/documents/course_code/ros_course_for_kinetic/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -152,7 +152,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(fare_well_EXPORTED_TARGETS "fare_well_gencfg")
+set(fare_well_EXPORTED_TARGETS "")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${fare_well_EXPORTED_TARGETS})
   if(NOT TARGET ${t})

@@ -7,7 +7,7 @@ project(my_turtlebot)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS roscpp std_msgs sound_play)
+find_package(catkin REQUIRED COMPONENTS roscpp std_msgs sound_play opencv_apps)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -249,4 +249,20 @@ add_dependencies(voice_assistant ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 target_link_libraries(voice_assistant
   ${catkin_LIBRARIES}
   libmsc.so -ldl -pthread
+)
+
+add_executable(getnumofpeople
+  src/getnumofpeople.cpp
+)
+add_dependencies(getnumofpeople ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(getnumofpeople
+  ${catkin_LIBRARIES}
+)
+
+add_executable(vel_cmd
+  src/vel_cmd.cpp
+)
+add_dependencies(vel_cmd ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(vel_cmd
+  ${catkin_LIBRARIES}
 )
