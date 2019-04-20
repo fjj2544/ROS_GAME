@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_task_code/install
+
+Name: fjj_test
+Description: Description of fjj_test
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_task_code/install/lib 
+Requires: 

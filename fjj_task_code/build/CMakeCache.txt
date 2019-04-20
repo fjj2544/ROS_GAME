@@ -277,6 +277,12 @@ fare_well_BINARY_DIR:STATIC=/home/fjj/documents/fjj_ros_code/fjj_task_code/build
 //Value Computed by CMake
 fare_well_SOURCE_DIR:STATIC=/home/fjj/documents/fjj_ros_code/fjj_task_code/src/fare_well
 
+//Value Computed by CMake
+fjj_test_BINARY_DIR:STATIC=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/fjj_test
+
+//Value Computed by CMake
+fjj_test_SOURCE_DIR:STATIC=/home/fjj/documents/fjj_ros_code/fjj_task_code/src/fjj_test
+
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/kinetic/share/gencpp/cmake
 
@@ -482,7 +488,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
