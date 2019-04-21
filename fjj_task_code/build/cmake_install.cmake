@@ -119,7 +119,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/fjj/documents/fjj_ros_code/fjj_task_code/build/gtest/cmake_install.cmake")
   include("/home/fjj/documents/fjj_ros_code/fjj_task_code/build/fare_well/cmake_install.cmake")
   include("/home/fjj/documents/fjj_ros_code/fjj_task_code/build/my_turtlebot/cmake_install.cmake")
-  include("/home/fjj/documents/fjj_ros_code/fjj_task_code/build/my_test/cmake_install.cmake")
 
 endif()
 

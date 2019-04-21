@@ -117,7 +117,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/fjj/documents/fjj_ros_code/fjj_test_code/build/gtest/cmake_install.cmake")
-  include("/home/fjj/documents/fjj_ros_code/fjj_test_code/build/my_test/cmake_install.cmake")
+  include("/home/fjj/documents/fjj_ros_code/fjj_test_code/build/test/cmake_install.cmake")
 
 endif()
 

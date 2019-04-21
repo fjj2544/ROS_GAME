@@ -7,4 +7,3 @@
 subdirs(gtest)
 subdirs(fare_well)
 subdirs(my_turtlebot)
-subdirs(my_test)

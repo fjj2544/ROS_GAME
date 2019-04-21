@@ -11,6 +11,7 @@ node file:    joint_state_publisher
               arbotix_driver
               建图建的不好非常麻烦.
 -->
+
 <launch>
     <arg name="world" default="test"/>
     <!--加载机器人并且建立了gazebo环境,这个参数没啥大用处-->

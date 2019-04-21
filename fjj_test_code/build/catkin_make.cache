@@ -1,2 +1,2 @@
-my_test
+test
 -DCATKIN_DEVEL_PREFIX=/home/fjj/documents/fjj_ros_code/fjj_test_code/devel -DCMAKE_INSTALL_PREFIX=/home/fjj/documents/fjj_ros_code/fjj_test_code/install -G Unix Makefiles

@@ -19,21 +19,9 @@ flags = [
 '-isystem',
 '/opt/ros/' + os.getenv('ROS_DISTRO') + '/include',
 '-isystem',
-'/home/fjj/documents/fjj_ros_code/fjj_code/devel/include',
-
-
+'/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/include',
 '-isystem',
-'/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/include',
-'-isystem',
-'/home/fjj/documents/fjj_ros_code/fjj_code/src/navi_fjj/include',
-'-isystem',
-'/home/fjj/documents/fjj_ros_code/fjj_code/src/test1/include',
-'-isystem',
-'/home/fjj/documents/fjj_ros_code/fjj_code/src/test2/include',
-'-isystem',
-'/home/fjj/documents/fjj_ros_code/fjj_code/src/test_nav/include',
-'-isystem',
-'/home/fjj/documents/fjj_ros_code/fjj_code/src/turtlebot_test/include'
+'/home/fjj/documents/fjj_ros_code/fjj_test_code/src/test/include'
 ]
 
 compilation_database_folder = ''
