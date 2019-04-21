@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/fjj/documents/fjj_ros_code/fjj_code/src/test1/src/parser.cpp
+/home/fjj/documents/fjj_ros_code/fjj_test_code/src/test1/src/parser.cpp
 urdf/model.h
-/home/fjj/documents/fjj_ros_code/fjj_code/src/test1/src/urdf/model.h
+/home/fjj/documents/fjj_ros_code/fjj_test_code/src/test1/src/urdf/model.h
 ros/ros.h
-/home/fjj/documents/fjj_ros_code/fjj_code/src/test1/src/ros/ros.h
+/home/fjj/documents/fjj_ros_code/fjj_test_code/src/test1/src/ros/ros.h
 
 /opt/ros/kinetic/include/ros/advertise_options.h
 ros/forwards.h

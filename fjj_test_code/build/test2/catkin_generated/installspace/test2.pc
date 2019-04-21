@@ -1,8 +1,8 @@
-prefix=/home/fjj/documents/fjj_ros_code/fjj_code/install
+prefix=/home/fjj/documents/fjj_ros_code/fjj_test_code/install
 
 Name: test2
 Description: Description of test2
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/fjj/documents/fjj_ros_code/fjj_code/install/lib 
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_test_code/install/lib 
 Requires: 

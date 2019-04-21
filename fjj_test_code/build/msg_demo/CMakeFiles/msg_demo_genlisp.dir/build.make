@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fjj/documents/fjj_ros_code/fjj_code/src
+CMAKE_SOURCE_DIR = /home/fjj/documents/fjj_ros_code/fjj_test_code/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fjj/documents/fjj_ros_code/fjj_code/build
+CMAKE_BINARY_DIR = /home/fjj/documents/fjj_ros_code/fjj_test_code/build
 
 # Utility rule file for msg_demo_genlisp.
 
@@ -63,10 +63,10 @@ msg_demo/CMakeFiles/msg_demo_genlisp.dir/build: msg_demo_genlisp
 .PHONY : msg_demo/CMakeFiles/msg_demo_genlisp.dir/build
 
 msg_demo/CMakeFiles/msg_demo_genlisp.dir/clean:
-	cd /home/fjj/documents/fjj_ros_code/fjj_code/build/msg_demo && $(CMAKE_COMMAND) -P CMakeFiles/msg_demo_genlisp.dir/cmake_clean.cmake
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build/msg_demo && $(CMAKE_COMMAND) -P CMakeFiles/msg_demo_genlisp.dir/cmake_clean.cmake
 .PHONY : msg_demo/CMakeFiles/msg_demo_genlisp.dir/clean
 
 msg_demo/CMakeFiles/msg_demo_genlisp.dir/depend:
-	cd /home/fjj/documents/fjj_ros_code/fjj_code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fjj/documents/fjj_ros_code/fjj_code/src /home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo /home/fjj/documents/fjj_ros_code/fjj_code/build /home/fjj/documents/fjj_ros_code/fjj_code/build/msg_demo /home/fjj/documents/fjj_ros_code/fjj_code/build/msg_demo/CMakeFiles/msg_demo_genlisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fjj/documents/fjj_ros_code/fjj_test_code/src /home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo /home/fjj/documents/fjj_ros_code/fjj_test_code/build /home/fjj/documents/fjj_ros_code/fjj_test_code/build/msg_demo /home/fjj/documents/fjj_ros_code/fjj_test_code/build/msg_demo/CMakeFiles/msg_demo_genlisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : msg_demo/CMakeFiles/msg_demo_genlisp.dir/depend
 

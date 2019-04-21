@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fjj/documents/fjj_ros_code/fjj_code/src
+CMAKE_SOURCE_DIR = /home/fjj/documents/fjj_ros_code/fjj_test_code/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fjj/documents/fjj_ros_code/fjj_code/build
+CMAKE_BINARY_DIR = /home/fjj/documents/fjj_ros_code/fjj_test_code/build
 
 # Utility rule file for dynamic_reconfigure_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ test_nav/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build: dynami
 .PHONY : test_nav/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
 
 test_nav/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/clean:
-	cd /home/fjj/documents/fjj_ros_code/fjj_code/build/test_nav && $(CMAKE_COMMAND) -P CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test_nav && $(CMAKE_COMMAND) -P CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : test_nav/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/clean
 
 test_nav/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/depend:
-	cd /home/fjj/documents/fjj_ros_code/fjj_code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fjj/documents/fjj_ros_code/fjj_code/src /home/fjj/documents/fjj_ros_code/fjj_code/src/test_nav /home/fjj/documents/fjj_ros_code/fjj_code/build /home/fjj/documents/fjj_ros_code/fjj_code/build/test_nav /home/fjj/documents/fjj_ros_code/fjj_code/build/test_nav/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fjj/documents/fjj_ros_code/fjj_test_code/src /home/fjj/documents/fjj_ros_code/fjj_test_code/src/test_nav /home/fjj/documents/fjj_ros_code/fjj_test_code/build /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test_nav /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test_nav/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test_nav/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/depend
 

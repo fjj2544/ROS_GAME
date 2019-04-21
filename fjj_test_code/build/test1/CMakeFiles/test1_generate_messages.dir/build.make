@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fjj/documents/fjj_ros_code/fjj_code/src
+CMAKE_SOURCE_DIR = /home/fjj/documents/fjj_ros_code/fjj_test_code/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fjj/documents/fjj_ros_code/fjj_code/build
+CMAKE_BINARY_DIR = /home/fjj/documents/fjj_ros_code/fjj_test_code/build
 
 # Utility rule file for test1_generate_messages.
 
@@ -63,10 +63,10 @@ test1/CMakeFiles/test1_generate_messages.dir/build: test1_generate_messages
 .PHONY : test1/CMakeFiles/test1_generate_messages.dir/build
 
 test1/CMakeFiles/test1_generate_messages.dir/clean:
-	cd /home/fjj/documents/fjj_ros_code/fjj_code/build/test1 && $(CMAKE_COMMAND) -P CMakeFiles/test1_generate_messages.dir/cmake_clean.cmake
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test1 && $(CMAKE_COMMAND) -P CMakeFiles/test1_generate_messages.dir/cmake_clean.cmake
 .PHONY : test1/CMakeFiles/test1_generate_messages.dir/clean
 
 test1/CMakeFiles/test1_generate_messages.dir/depend:
-	cd /home/fjj/documents/fjj_ros_code/fjj_code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fjj/documents/fjj_ros_code/fjj_code/src /home/fjj/documents/fjj_ros_code/fjj_code/src/test1 /home/fjj/documents/fjj_ros_code/fjj_code/build /home/fjj/documents/fjj_ros_code/fjj_code/build/test1 /home/fjj/documents/fjj_ros_code/fjj_code/build/test1/CMakeFiles/test1_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fjj/documents/fjj_ros_code/fjj_test_code/src /home/fjj/documents/fjj_ros_code/fjj_test_code/src/test1 /home/fjj/documents/fjj_ros_code/fjj_test_code/build /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test1 /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test1/CMakeFiles/test1_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test1/CMakeFiles/test1_generate_messages.dir/depend
 

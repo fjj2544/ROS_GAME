@@ -1,8 +1,8 @@
-# Install script for directory: /home/fjj/documents/fjj_ros_code/fjj_code/src/navi_fjj
+# Install script for directory: /home/fjj/documents/fjj_ros_code/fjj_test_code/src/navi_fjj
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/fjj/documents/fjj_ros_code/fjj_code/install")
+  set(CMAKE_INSTALL_PREFIX "/home/fjj/documents/fjj_ros_code/fjj_test_code/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_code/build/navi_fjj/catkin_generated/installspace/navi_fjj.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/build/navi_fjj/catkin_generated/installspace/navi_fjj.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/navi_fjj/cmake" TYPE FILE FILES
-    "/home/fjj/documents/fjj_ros_code/fjj_code/build/navi_fjj/catkin_generated/installspace/navi_fjjConfig.cmake"
-    "/home/fjj/documents/fjj_ros_code/fjj_code/build/navi_fjj/catkin_generated/installspace/navi_fjjConfig-version.cmake"
+    "/home/fjj/documents/fjj_ros_code/fjj_test_code/build/navi_fjj/catkin_generated/installspace/navi_fjjConfig.cmake"
+    "/home/fjj/documents/fjj_ros_code/fjj_test_code/build/navi_fjj/catkin_generated/installspace/navi_fjjConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/navi_fjj" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_code/src/navi_fjj/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/navi_fjj" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/navi_fjj/package.xml")
 endif()
 

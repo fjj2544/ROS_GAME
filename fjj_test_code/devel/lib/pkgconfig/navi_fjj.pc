@@ -1,8 +1,8 @@
-prefix=/home/fjj/documents/fjj_ros_code/fjj_code/devel
+prefix=/home/fjj/documents/fjj_ros_code/fjj_test_code/devel
 
 Name: navi_fjj
 Description: Description of navi_fjj
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/fjj/documents/fjj_ros_code/fjj_code/devel/lib 
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/lib 
 Requires: 

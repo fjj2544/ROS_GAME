@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fjj/documents/fjj_ros_code/fjj_code/src
+CMAKE_SOURCE_DIR = /home/fjj/documents/fjj_ros_code/fjj_test_code/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fjj/documents/fjj_ros_code/fjj_code/build
+CMAKE_BINARY_DIR = /home/fjj/documents/fjj_ros_code/fjj_test_code/build
 
 # Utility rule file for actionlib_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ navi_fjj/CMakeFiles/actionlib_generate_messages_nodejs.dir/build: actionlib_gene
 .PHONY : navi_fjj/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
 
 navi_fjj/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean:
-	cd /home/fjj/documents/fjj_ros_code/fjj_code/build/navi_fjj && $(CMAKE_COMMAND) -P CMakeFiles/actionlib_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build/navi_fjj && $(CMAKE_COMMAND) -P CMakeFiles/actionlib_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : navi_fjj/CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
 
 navi_fjj/CMakeFiles/actionlib_generate_messages_nodejs.dir/depend:
-	cd /home/fjj/documents/fjj_ros_code/fjj_code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fjj/documents/fjj_ros_code/fjj_code/src /home/fjj/documents/fjj_ros_code/fjj_code/src/navi_fjj /home/fjj/documents/fjj_ros_code/fjj_code/build /home/fjj/documents/fjj_ros_code/fjj_code/build/navi_fjj /home/fjj/documents/fjj_ros_code/fjj_code/build/navi_fjj/CMakeFiles/actionlib_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fjj/documents/fjj_ros_code/fjj_test_code/src /home/fjj/documents/fjj_ros_code/fjj_test_code/src/navi_fjj /home/fjj/documents/fjj_ros_code/fjj_test_code/build /home/fjj/documents/fjj_ros_code/fjj_test_code/build/navi_fjj /home/fjj/documents/fjj_ros_code/fjj_test_code/build/navi_fjj/CMakeFiles/actionlib_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navi_fjj/CMakeFiles/actionlib_generate_messages_nodejs.dir/depend
 

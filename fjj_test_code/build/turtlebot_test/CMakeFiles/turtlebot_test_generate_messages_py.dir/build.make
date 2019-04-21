@@ -43,25 +43,16 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fjj/documents/fjj_ros_code/fjj_code/src
+CMAKE_SOURCE_DIR = /home/fjj/documents/fjj_ros_code/fjj_test_code/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fjj/documents/fjj_ros_code/fjj_code/build
+CMAKE_BINARY_DIR = /home/fjj/documents/fjj_ros_code/fjj_test_code/build
 
 # Utility rule file for turtlebot_test_generate_messages_py.
 
 # Include the progress variables for this target.
 include turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py.dir/progress.make
 
-turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py: /home/fjj/documents/fjj_ros_code/fjj_code/devel/lib/python2.7/dist-packages/turtlebot_test/srv/__init__.py
-
-
-/home/fjj/documents/fjj_ros_code/fjj_code/devel/lib/python2.7/dist-packages/turtlebot_test/srv/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python srv __init__.py for turtlebot_test"
-	cd /home/fjj/documents/fjj_ros_code/fjj_code/build/turtlebot_test && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/fjj/documents/fjj_ros_code/fjj_code/devel/lib/python2.7/dist-packages/turtlebot_test/srv --initpy
-
-turtlebot_test_generate_messages_py: turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py
-turtlebot_test_generate_messages_py: /home/fjj/documents/fjj_ros_code/fjj_code/devel/lib/python2.7/dist-packages/turtlebot_test/srv/__init__.py
 turtlebot_test_generate_messages_py: turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py.dir/build.make
 
 .PHONY : turtlebot_test_generate_messages_py
@@ -72,10 +63,10 @@ turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py.dir/build: turtleb
 .PHONY : turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py.dir/build
 
 turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py.dir/clean:
-	cd /home/fjj/documents/fjj_ros_code/fjj_code/build/turtlebot_test && $(CMAKE_COMMAND) -P CMakeFiles/turtlebot_test_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build/turtlebot_test && $(CMAKE_COMMAND) -P CMakeFiles/turtlebot_test_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py.dir/clean
 
 turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py.dir/depend:
-	cd /home/fjj/documents/fjj_ros_code/fjj_code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fjj/documents/fjj_ros_code/fjj_code/src /home/fjj/documents/fjj_ros_code/fjj_code/src/turtlebot_test /home/fjj/documents/fjj_ros_code/fjj_code/build /home/fjj/documents/fjj_ros_code/fjj_code/build/turtlebot_test /home/fjj/documents/fjj_ros_code/fjj_code/build/turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fjj/documents/fjj_ros_code/fjj_test_code/src /home/fjj/documents/fjj_ros_code/fjj_test_code/src/turtlebot_test /home/fjj/documents/fjj_ros_code/fjj_test_code/build /home/fjj/documents/fjj_ros_code/fjj_test_code/build/turtlebot_test /home/fjj/documents/fjj_ros_code/fjj_test_code/build/turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : turtlebot_test/CMakeFiles/turtlebot_test_generate_messages_py.dir/depend
 

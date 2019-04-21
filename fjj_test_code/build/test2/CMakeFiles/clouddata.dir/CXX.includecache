@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/fjj/documents/fjj_ros_code/fjj_code/src/test2/src/clouddata.cpp
+/home/fjj/documents/fjj_ros_code/fjj_test_code/src/test2/src/clouddata.cpp
 ros/ros.h
 -
 sensor_msgs/PointCloud.h

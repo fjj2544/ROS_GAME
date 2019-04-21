@@ -2,7 +2,7 @@
 
 message(STATUS "msg_demo: 1 messages, 1 services")
 
-set(MSG_I_FLAGS "-Imsg_demo:/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Imsg_demo:/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,14 +17,14 @@ add_custom_target(msg_demo_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg" NAME_WE)
 add_custom_target(_msg_demo_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "msg_demo" "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "msg_demo" "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg" ""
 )
 
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
 add_custom_target(_msg_demo_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "msg_demo" "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "msg_demo" "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv" ""
 )
 
 #
@@ -34,7 +34,7 @@ add_custom_target(_msg_demo_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(msg_demo
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/msg_demo
@@ -42,7 +42,7 @@ _generate_msg_cpp(msg_demo
 
 ### Generating Services
 _generate_srv_cpp(msg_demo
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/msg_demo
@@ -60,9 +60,9 @@ add_custom_target(msg_demo_generate_messages_cpp
 add_dependencies(msg_demo_generate_messages msg_demo_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg" NAME_WE)
 add_dependencies(msg_demo_generate_messages_cpp _msg_demo_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
 add_dependencies(msg_demo_generate_messages_cpp _msg_demo_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -75,7 +75,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS msg_demo_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(msg_demo
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/msg_demo
@@ -83,7 +83,7 @@ _generate_msg_eus(msg_demo
 
 ### Generating Services
 _generate_srv_eus(msg_demo
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/msg_demo
@@ -101,9 +101,9 @@ add_custom_target(msg_demo_generate_messages_eus
 add_dependencies(msg_demo_generate_messages msg_demo_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg" NAME_WE)
 add_dependencies(msg_demo_generate_messages_eus _msg_demo_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
 add_dependencies(msg_demo_generate_messages_eus _msg_demo_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -116,7 +116,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS msg_demo_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(msg_demo
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/msg_demo
@@ -124,7 +124,7 @@ _generate_msg_lisp(msg_demo
 
 ### Generating Services
 _generate_srv_lisp(msg_demo
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/msg_demo
@@ -142,9 +142,9 @@ add_custom_target(msg_demo_generate_messages_lisp
 add_dependencies(msg_demo_generate_messages msg_demo_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg" NAME_WE)
 add_dependencies(msg_demo_generate_messages_lisp _msg_demo_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
 add_dependencies(msg_demo_generate_messages_lisp _msg_demo_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -157,7 +157,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS msg_demo_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(msg_demo
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/msg_demo
@@ -165,7 +165,7 @@ _generate_msg_nodejs(msg_demo
 
 ### Generating Services
 _generate_srv_nodejs(msg_demo
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/msg_demo
@@ -183,9 +183,9 @@ add_custom_target(msg_demo_generate_messages_nodejs
 add_dependencies(msg_demo_generate_messages msg_demo_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg" NAME_WE)
 add_dependencies(msg_demo_generate_messages_nodejs _msg_demo_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
 add_dependencies(msg_demo_generate_messages_nodejs _msg_demo_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -198,7 +198,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS msg_demo_generate_messages_nodejs)
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(msg_demo
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/msg_demo
@@ -206,7 +206,7 @@ _generate_msg_py(msg_demo
 
 ### Generating Services
 _generate_srv_py(msg_demo
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/msg_demo
@@ -224,9 +224,9 @@ add_custom_target(msg_demo_generate_messages_py
 add_dependencies(msg_demo_generate_messages msg_demo_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg" NAME_WE)
 add_dependencies(msg_demo_generate_messages_py _msg_demo_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg" NAME_WE)
+get_filename_component(_filename "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv" NAME_WE)
 add_dependencies(msg_demo_generate_messages_py _msg_demo_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

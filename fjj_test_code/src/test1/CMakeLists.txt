@@ -248,3 +248,19 @@ add_dependencies(control_base ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPOR
 target_link_libraries(control_base
   ${catkin_LIBRARIES}
 )
+
+add_executable(my_test
+  src/my_test.cpp
+)
+add_dependencies(my_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(my_test
+  ${catkin_LIBRARIES}
+)
+
+add_executable(my_test_pub
+  src/my_test_pub.cpp
+)
+add_dependencies(my_test_pub ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(my_test_pub
+  ${catkin_LIBRARIES}
+)

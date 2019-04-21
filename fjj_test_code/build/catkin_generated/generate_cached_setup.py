@@ -12,16 +12,16 @@ try:
     from catkin.environment_cache import generate_environment_script
 except ImportError:
     # search for catkin package in all workspaces and prepend to path
-    for workspace in "/home/fjj/documents/course_code/my_book_code/devel;/home/fjj/documents/new_pack_code/turtlebot_source_code/devel;/home/fjj/documents/fjj_ros_code/fjj_project_code/devel;/home/fjj/documents/fjj_ros_code/fjj_learn/devel;/home/fjj/documents/course_code/ROS_FOR_BEGINER_COURSE_CODE/devel;/home/fjj/documents/project_code/devel;/home/fjj/documents/new_pack_code/my_robot_model/devel;/home/fjj/documents/fjj_ros_code/fjj_code/devel;/home/fjj/documents/course_code/roslearn/devel;/home/fjj/documents/course_code/ros_course_for_kinetic/devel;/opt/ros/kinetic".split(';'):
+    for workspace in "/home/fjj/documents/new_pack_code/objectTracking-master/devel;/home/fjj/documents/new_pack_code/opencv_apps_kinect/devel;/home/fjj/documents/new_pack_code/ork_ws/devel;/home/fjj/documents/new_pack_code/rplidar_ros-master/devel;/home/fjj/documents/new_pack_code/turtlebot_source_code/devel;/home/fjj/documents/fjj_ros_code/fjj_task_code/devel;/home/fjj/documents/fjj_ros_code/fjj_test_code/devel;/home/fjj/documents/course_code/my_book_code/devel;/home/fjj/documents/fjj_ros_code/fjj_project_code/devel;/home/fjj/documents/course_code/ROS_FOR_BEGINER_COURSE_CODE/devel;/home/fjj/documents/new_pack_code/my_robot_model/devel;/home/fjj/documents/course_code/roslearn/devel;/home/fjj/documents/course_code/ros_course_for_kinetic/devel;/opt/ros/kinetic".split(';'):
         python_path = os.path.join(workspace, 'lib/python2.7/dist-packages')
         if os.path.isdir(os.path.join(python_path, 'catkin')):
             sys.path.insert(0, python_path)
             break
     from catkin.environment_cache import generate_environment_script
 
-code = generate_environment_script('/home/fjj/documents/fjj_ros_code/fjj_code/devel/env.sh')
+code = generate_environment_script('/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/env.sh')
 
-output_filename = '/home/fjj/documents/fjj_ros_code/fjj_code/build/catkin_generated/setup_cached.sh'
+output_filename = '/home/fjj/documents/fjj_ros_code/fjj_test_code/build/catkin_generated/setup_cached.sh'
 with open(output_filename, 'w') as f:
     #print('Generate script for cached setup "%s"' % output_filename)
     f.write('\n'.join(code))

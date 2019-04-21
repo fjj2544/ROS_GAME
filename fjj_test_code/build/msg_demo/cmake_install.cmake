@@ -1,8 +1,8 @@
-# Install script for directory: /home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo
+# Install script for directory: /home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/fjj/documents/fjj_ros_code/fjj_code/install")
+  set(CMAKE_INSTALL_PREFIX "/home/fjj/documents/fjj_ros_code/fjj_test_code/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,57 +33,57 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msg_demo/msg" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/msg/num.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msg_demo/msg" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/msg/num.msg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msg_demo/srv" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/srv/srv_demo.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msg_demo/srv" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/srv/srv_demo.srv")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msg_demo/cmake" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_code/build/msg_demo/catkin_generated/installspace/msg_demo-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msg_demo/cmake" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/build/msg_demo/catkin_generated/installspace/msg_demo-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/fjj/documents/fjj_ros_code/fjj_code/devel/include/msg_demo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/include/msg_demo")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/fjj/documents/fjj_ros_code/fjj_code/devel/share/roseus/ros/msg_demo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/share/roseus/ros/msg_demo")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/fjj/documents/fjj_ros_code/fjj_code/devel/share/common-lisp/ros/msg_demo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/share/common-lisp/ros/msg_demo")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/fjj/documents/fjj_ros_code/fjj_code/devel/share/gennodejs/ros/msg_demo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/share/gennodejs/ros/msg_demo")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/fjj/documents/fjj_ros_code/fjj_code/devel/lib/python2.7/dist-packages/msg_demo")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/lib/python2.7/dist-packages/msg_demo")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/fjj/documents/fjj_ros_code/fjj_code/devel/lib/python2.7/dist-packages/msg_demo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/lib/python2.7/dist-packages/msg_demo")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_code/build/msg_demo/catkin_generated/installspace/msg_demo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/build/msg_demo/catkin_generated/installspace/msg_demo.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msg_demo/cmake" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_code/build/msg_demo/catkin_generated/installspace/msg_demo-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msg_demo/cmake" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/build/msg_demo/catkin_generated/installspace/msg_demo-msg-extras.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msg_demo/cmake" TYPE FILE FILES
-    "/home/fjj/documents/fjj_ros_code/fjj_code/build/msg_demo/catkin_generated/installspace/msg_demoConfig.cmake"
-    "/home/fjj/documents/fjj_ros_code/fjj_code/build/msg_demo/catkin_generated/installspace/msg_demoConfig-version.cmake"
+    "/home/fjj/documents/fjj_ros_code/fjj_test_code/build/msg_demo/catkin_generated/installspace/msg_demoConfig.cmake"
+    "/home/fjj/documents/fjj_ros_code/fjj_test_code/build/msg_demo/catkin_generated/installspace/msg_demoConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msg_demo" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_code/src/msg_demo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/msg_demo" TYPE FILE FILES "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/msg_demo/package.xml")
 endif()
 

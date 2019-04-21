@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/fjj_odomtery.dir/src/fjj_odomtery.cpp.o"
-  "/home/fjj/documents/fjj_ros_code/fjj_code/devel/lib/navi_fjj/fjj_odomtery.pdb"
-  "/home/fjj/documents/fjj_ros_code/fjj_code/devel/lib/navi_fjj/fjj_odomtery"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/lib/navi_fjj/fjj_odomtery.pdb"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/lib/navi_fjj/fjj_odomtery"
 )
 
 # Per-language clean rules from dependency scanning.

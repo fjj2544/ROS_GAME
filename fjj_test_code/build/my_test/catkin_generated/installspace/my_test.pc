@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_test_code/install
+
+Name: my_test
+Description: Description of my_test
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_test_code/install/lib 
+Requires: 

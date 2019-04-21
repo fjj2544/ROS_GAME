@@ -1,2 +1,2 @@
-msg_demo:navi_fjj:test1:test2:test_nav:turtlebot_test
--DCATKIN_DEVEL_PREFIX=/home/fjj/documents/fjj_ros_code/fjj_code/devel -DCMAKE_INSTALL_PREFIX=/home/fjj/documents/fjj_ros_code/fjj_code/install -G Unix Makefiles
+msg_demo:my_test:navi_fjj:test1:test2:test_nav:turtlebot_test
+-DCATKIN_DEVEL_PREFIX=/home/fjj/documents/fjj_ros_code/fjj_test_code/devel -DCMAKE_INSTALL_PREFIX=/home/fjj/documents/fjj_ros_code/fjj_test_code/install -G Unix Makefiles

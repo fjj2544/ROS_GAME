@@ -10,7 +10,7 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
-: ${_CATKIN_SETUP_DIR:=/home/fjj/documents/fjj_ros_code/fjj_code/install}
+: ${_CATKIN_SETUP_DIR:=/home/fjj/documents/fjj_ros_code/fjj_test_code/install}
 _SETUP_UTIL="$_CATKIN_SETUP_DIR/_setup_util.py"
 unset _CATKIN_SETUP_DIR
 

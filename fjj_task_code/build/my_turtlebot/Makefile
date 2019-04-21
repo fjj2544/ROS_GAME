@@ -99,17 +99,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -120,6 +109,17 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
@@ -166,21 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/vel_cmd.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/vel_cmd.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/vel_cmd.dir/rule
-
-# Convenience name for target.
-vel_cmd: my_turtlebot/CMakeFiles/vel_cmd.dir/rule
-
-.PHONY : vel_cmd
-
-# fast build rule for target.
-vel_cmd/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/vel_cmd.dir/build.make my_turtlebot/CMakeFiles/vel_cmd.dir/build
-.PHONY : vel_cmd/fast
-
-# Convenience name for target.
 my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 .PHONY : my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
@@ -211,6 +196,21 @@ actionlib_msgs_generate_messages_cpp/fast:
 .PHONY : actionlib_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+my_turtlebot/CMakeFiles/vel_cmd.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/vel_cmd.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/vel_cmd.dir/rule
+
+# Convenience name for target.
+vel_cmd: my_turtlebot/CMakeFiles/vel_cmd.dir/rule
+
+.PHONY : vel_cmd
+
+# fast build rule for target.
+vel_cmd/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/vel_cmd.dir/build.make my_turtlebot/CMakeFiles/vel_cmd.dir/build
+.PHONY : vel_cmd/fast
+
+# Convenience name for target.
 my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
 .PHONY : my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
@@ -224,21 +224,6 @@ actionlib_msgs_generate_messages_py: my_turtlebot/CMakeFiles/actionlib_msgs_gene
 actionlib_msgs_generate_messages_py/fast:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
 .PHONY : actionlib_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-my_turtlebot/CMakeFiles/voice_assistant.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/voice_assistant.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/voice_assistant.dir/rule
-
-# Convenience name for target.
-voice_assistant: my_turtlebot/CMakeFiles/voice_assistant.dir/rule
-
-.PHONY : voice_assistant
-
-# fast build rule for target.
-voice_assistant/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/voice_assistant.dir/build.make my_turtlebot/CMakeFiles/voice_assistant.dir/build
-.PHONY : voice_assistant/fast
 
 # Convenience name for target.
 my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule:
@@ -331,21 +316,6 @@ sound_play_generate_messages_lisp/fast:
 .PHONY : sound_play_generate_messages_lisp/fast
 
 # Convenience name for target.
-my_turtlebot/CMakeFiles/getnumofpeople.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/getnumofpeople.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/getnumofpeople.dir/rule
-
-# Convenience name for target.
-getnumofpeople: my_turtlebot/CMakeFiles/getnumofpeople.dir/rule
-
-.PHONY : getnumofpeople
-
-# fast build rule for target.
-getnumofpeople/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/getnumofpeople.dir/build.make my_turtlebot/CMakeFiles/getnumofpeople.dir/build
-.PHONY : getnumofpeople/fast
-
-# Convenience name for target.
 my_turtlebot/CMakeFiles/opencv_apps_generate_messages_eus.dir/rule:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/opencv_apps_generate_messages_eus.dir/rule
 .PHONY : my_turtlebot/CMakeFiles/opencv_apps_generate_messages_eus.dir/rule
@@ -376,6 +346,36 @@ sound_play_generate_messages_nodejs/fast:
 .PHONY : sound_play_generate_messages_nodejs/fast
 
 # Convenience name for target.
+my_turtlebot/CMakeFiles/getnumofpeople.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/getnumofpeople.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/getnumofpeople.dir/rule
+
+# Convenience name for target.
+getnumofpeople: my_turtlebot/CMakeFiles/getnumofpeople.dir/rule
+
+.PHONY : getnumofpeople
+
+# fast build rule for target.
+getnumofpeople/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/getnumofpeople.dir/build.make my_turtlebot/CMakeFiles/getnumofpeople.dir/build
+.PHONY : getnumofpeople/fast
+
+# Convenience name for target.
+my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/rule
+
+# Convenience name for target.
+opencv_apps_gencfg: my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/rule
+
+.PHONY : opencv_apps_gencfg
+
+# fast build rule for target.
+opencv_apps_gencfg/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/build.make my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/build
+.PHONY : opencv_apps_gencfg/fast
+
+# Convenience name for target.
 my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/rule:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/rule
 .PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/rule
@@ -404,36 +404,6 @@ opencv_apps_generate_messages_cpp: my_turtlebot/CMakeFiles/opencv_apps_generate_
 opencv_apps_generate_messages_cpp/fast:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/opencv_apps_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/opencv_apps_generate_messages_cpp.dir/build
 .PHONY : opencv_apps_generate_messages_cpp/fast
-
-# Convenience name for target.
-my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/rule
-
-# Convenience name for target.
-opencv_apps_gencfg: my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/rule
-
-.PHONY : opencv_apps_gencfg
-
-# fast build rule for target.
-opencv_apps_gencfg/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/build.make my_turtlebot/CMakeFiles/opencv_apps_gencfg.dir/build
-.PHONY : opencv_apps_gencfg/fast
-
-# Convenience name for target.
-my_turtlebot/CMakeFiles/tts_publish.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/tts_publish.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/tts_publish.dir/rule
-
-# Convenience name for target.
-tts_publish: my_turtlebot/CMakeFiles/tts_publish.dir/rule
-
-.PHONY : tts_publish
-
-# fast build rule for target.
-tts_publish/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/tts_publish.dir/build.make my_turtlebot/CMakeFiles/tts_publish.dir/build
-.PHONY : tts_publish/fast
 
 # Convenience name for target.
 my_turtlebot/CMakeFiles/opencv_apps_generate_messages_lisp.dir/rule:
@@ -510,21 +480,6 @@ opencv_apps_generate_messages_py/fast:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/opencv_apps_generate_messages_py.dir/build.make my_turtlebot/CMakeFiles/opencv_apps_generate_messages_py.dir/build
 .PHONY : opencv_apps_generate_messages_py/fast
 
-# Convenience name for target.
-my_turtlebot/CMakeFiles/iat_publish.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/iat_publish.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/iat_publish.dir/rule
-
-# Convenience name for target.
-iat_publish: my_turtlebot/CMakeFiles/iat_publish.dir/rule
-
-.PHONY : iat_publish
-
-# fast build rule for target.
-iat_publish/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/build
-.PHONY : iat_publish/fast
-
 src/client_follower.o: src/client_follower.cpp.o
 
 .PHONY : src/client_follower.o
@@ -578,60 +533,6 @@ src/getnumofpeople.s: src/getnumofpeople.cpp.s
 src/getnumofpeople.cpp.s:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/getnumofpeople.dir/build.make my_turtlebot/CMakeFiles/getnumofpeople.dir/src/getnumofpeople.cpp.s
 .PHONY : src/getnumofpeople.cpp.s
-
-src/iat_publish.o: src/iat_publish.cpp.o
-
-.PHONY : src/iat_publish.o
-
-# target to build an object file
-src/iat_publish.cpp.o:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o
-.PHONY : src/iat_publish.cpp.o
-
-src/iat_publish.i: src/iat_publish.cpp.i
-
-.PHONY : src/iat_publish.i
-
-# target to preprocess a source file
-src/iat_publish.cpp.i:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.i
-.PHONY : src/iat_publish.cpp.i
-
-src/iat_publish.s: src/iat_publish.cpp.s
-
-.PHONY : src/iat_publish.s
-
-# target to generate assembly for a file
-src/iat_publish.cpp.s:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.s
-.PHONY : src/iat_publish.cpp.s
-
-src/linuxrec.o: src/linuxrec.c.o
-
-.PHONY : src/linuxrec.o
-
-# target to build an object file
-src/linuxrec.c.o:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/linuxrec.c.o
-.PHONY : src/linuxrec.c.o
-
-src/linuxrec.i: src/linuxrec.c.i
-
-.PHONY : src/linuxrec.i
-
-# target to preprocess a source file
-src/linuxrec.c.i:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/linuxrec.c.i
-.PHONY : src/linuxrec.c.i
-
-src/linuxrec.s: src/linuxrec.c.s
-
-.PHONY : src/linuxrec.s
-
-# target to generate assembly for a file
-src/linuxrec.c.s:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/linuxrec.c.s
-.PHONY : src/linuxrec.c.s
 
 src/new_test.o: src/new_test.cpp.o
 
@@ -687,60 +588,6 @@ src/sound_talk.cpp.s:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_talk.dir/build.make my_turtlebot/CMakeFiles/sound_talk.dir/src/sound_talk.cpp.s
 .PHONY : src/sound_talk.cpp.s
 
-src/speech_recognizer.o: src/speech_recognizer.c.o
-
-.PHONY : src/speech_recognizer.o
-
-# target to build an object file
-src/speech_recognizer.c.o:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/speech_recognizer.c.o
-.PHONY : src/speech_recognizer.c.o
-
-src/speech_recognizer.i: src/speech_recognizer.c.i
-
-.PHONY : src/speech_recognizer.i
-
-# target to preprocess a source file
-src/speech_recognizer.c.i:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/speech_recognizer.c.i
-.PHONY : src/speech_recognizer.c.i
-
-src/speech_recognizer.s: src/speech_recognizer.c.s
-
-.PHONY : src/speech_recognizer.s
-
-# target to generate assembly for a file
-src/speech_recognizer.c.s:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/iat_publish.dir/build.make my_turtlebot/CMakeFiles/iat_publish.dir/src/speech_recognizer.c.s
-.PHONY : src/speech_recognizer.c.s
-
-src/tts_publish.o: src/tts_publish.cpp.o
-
-.PHONY : src/tts_publish.o
-
-# target to build an object file
-src/tts_publish.cpp.o:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/tts_publish.dir/build.make my_turtlebot/CMakeFiles/tts_publish.dir/src/tts_publish.cpp.o
-.PHONY : src/tts_publish.cpp.o
-
-src/tts_publish.i: src/tts_publish.cpp.i
-
-.PHONY : src/tts_publish.i
-
-# target to preprocess a source file
-src/tts_publish.cpp.i:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/tts_publish.dir/build.make my_turtlebot/CMakeFiles/tts_publish.dir/src/tts_publish.cpp.i
-.PHONY : src/tts_publish.cpp.i
-
-src/tts_publish.s: src/tts_publish.cpp.s
-
-.PHONY : src/tts_publish.s
-
-# target to generate assembly for a file
-src/tts_publish.cpp.s:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/tts_publish.dir/build.make my_turtlebot/CMakeFiles/tts_publish.dir/src/tts_publish.cpp.s
-.PHONY : src/tts_publish.cpp.s
-
 src/vel_cmd.o: src/vel_cmd.cpp.o
 
 .PHONY : src/vel_cmd.o
@@ -768,33 +615,6 @@ src/vel_cmd.cpp.s:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/vel_cmd.dir/build.make my_turtlebot/CMakeFiles/vel_cmd.dir/src/vel_cmd.cpp.s
 .PHONY : src/vel_cmd.cpp.s
 
-src/voice_assistant.o: src/voice_assistant.cpp.o
-
-.PHONY : src/voice_assistant.o
-
-# target to build an object file
-src/voice_assistant.cpp.o:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/voice_assistant.dir/build.make my_turtlebot/CMakeFiles/voice_assistant.dir/src/voice_assistant.cpp.o
-.PHONY : src/voice_assistant.cpp.o
-
-src/voice_assistant.i: src/voice_assistant.cpp.i
-
-.PHONY : src/voice_assistant.i
-
-# target to preprocess a source file
-src/voice_assistant.cpp.i:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/voice_assistant.dir/build.make my_turtlebot/CMakeFiles/voice_assistant.dir/src/voice_assistant.cpp.i
-.PHONY : src/voice_assistant.cpp.i
-
-src/voice_assistant.s: src/voice_assistant.cpp.s
-
-.PHONY : src/voice_assistant.s
-
-# target to generate assembly for a file
-src/voice_assistant.cpp.s:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/voice_assistant.dir/build.make my_turtlebot/CMakeFiles/voice_assistant.dir/src/voice_assistant.cpp.s
-.PHONY : src/voice_assistant.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -805,12 +625,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... install/strip"
-	@echo "... vel_cmd"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... vel_cmd"
 	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... voice_assistant"
 	@echo "... install/local"
 	@echo "... sound_play_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_eus"
@@ -818,50 +636,34 @@ help:
 	@echo "... sound_play_generate_messages_eus"
 	@echo "... sound_talk"
 	@echo "... sound_play_generate_messages_lisp"
-	@echo "... getnumofpeople"
+	@echo "... install/strip"
 	@echo "... opencv_apps_generate_messages_eus"
 	@echo "... sound_play_generate_messages_nodejs"
+	@echo "... getnumofpeople"
+	@echo "... opencv_apps_gencfg"
 	@echo "... sound_play_generate_messages_py"
 	@echo "... opencv_apps_generate_messages_cpp"
-	@echo "... opencv_apps_gencfg"
-	@echo "... tts_publish"
 	@echo "... install"
 	@echo "... opencv_apps_generate_messages_lisp"
 	@echo "... client_follower"
 	@echo "... opencv_apps_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... opencv_apps_generate_messages_py"
-	@echo "... iat_publish"
 	@echo "... src/client_follower.o"
 	@echo "... src/client_follower.i"
 	@echo "... src/client_follower.s"
 	@echo "... src/getnumofpeople.o"
 	@echo "... src/getnumofpeople.i"
 	@echo "... src/getnumofpeople.s"
-	@echo "... src/iat_publish.o"
-	@echo "... src/iat_publish.i"
-	@echo "... src/iat_publish.s"
-	@echo "... src/linuxrec.o"
-	@echo "... src/linuxrec.i"
-	@echo "... src/linuxrec.s"
 	@echo "... src/new_test.o"
 	@echo "... src/new_test.i"
 	@echo "... src/new_test.s"
 	@echo "... src/sound_talk.o"
 	@echo "... src/sound_talk.i"
 	@echo "... src/sound_talk.s"
-	@echo "... src/speech_recognizer.o"
-	@echo "... src/speech_recognizer.i"
-	@echo "... src/speech_recognizer.s"
-	@echo "... src/tts_publish.o"
-	@echo "... src/tts_publish.i"
-	@echo "... src/tts_publish.s"
 	@echo "... src/vel_cmd.o"
 	@echo "... src/vel_cmd.i"
 	@echo "... src/vel_cmd.s"
-	@echo "... src/voice_assistant.o"
-	@echo "... src/voice_assistant.i"
-	@echo "... src/voice_assistant.s"
 .PHONY : help
 
 

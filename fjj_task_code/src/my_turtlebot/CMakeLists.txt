@@ -222,35 +222,6 @@ target_link_libraries(new_test
   ${catkin_LIBRARIES}
 )
 
-add_executable(iat_publish
-  src/iat_publish.cpp
-  src/speech_recognizer.c
-  src/linuxrec.c
-)
-add_dependencies(iat_publish ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(iat_publish 
-  ${catkin_LIBRARIES}
-  libmsc.so -ldl -lpthread -lm -lrt -lasound
-)
-
-add_executable(tts_publish
-  src/tts_publish.cpp
-)
-add_dependencies(tts_publish ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(tts_publish
-  ${catkin_LIBRARIES}
-  libmsc.so -ldl -pthread
-)
-
-add_executable(voice_assistant
-  src/voice_assistant.cpp
-)
-add_dependencies(voice_assistant ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(voice_assistant
-  ${catkin_LIBRARIES}
-  libmsc.so -ldl -pthread
-)
-
 add_executable(getnumofpeople
   src/getnumofpeople.cpp
 )

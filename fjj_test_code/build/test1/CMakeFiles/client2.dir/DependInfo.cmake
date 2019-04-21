@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/test1/src/client2.cpp" "/home/fjj/documents/fjj_ros_code/fjj_code/build/test1/CMakeFiles/client2.dir/src/client2.cpp.o"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/test1/src/client2.cpp" "/home/fjj/documents/fjj_ros_code/fjj_test_code/build/test1/CMakeFiles/client2.dir/src/client2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,8 +17,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/fjj/documents/fjj_ros_code/fjj_code/devel/include"
-  "/home/fjj/documents/fjj_ros_code/fjj_code/src/test1/include"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/include"
+  "/home/fjj/documents/fjj_ros_code/fjj_test_code/src/test1/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

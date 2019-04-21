@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/fjj/documents/fjj_ros_code/fjj_code/src/navi_fjj/src/fjj_scan_broadcaster.cpp
+/home/fjj/documents/fjj_ros_code/fjj_test_code/src/navi_fjj/src/fjj_scan_broadcaster.cpp
 ros/ros.h
 -
 sensor_msgs/LaserScan.h
