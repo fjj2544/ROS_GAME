@@ -2,12 +2,15 @@ cmake_minimum_required(VERSION 2.8.3)
 project(test)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS roscpp actionlib move_base_msgs)####居然是覆盖的。。
+find_package(catkin REQUIRED COMPONENTS 
+roscpp actionlib move_base_msgs tf2_ros tf
+rospy std_msgs
+)####居然是覆盖的。。
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -199,7 +202,7 @@ add_executable(set_goal
   src/set_goal.cpp
 )
 add_dependencies(set_goal ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(set_goal
+target_link_libraries(set_goal  
   ${catkin_LIBRARIES}
 )
 
@@ -210,4 +213,75 @@ add_dependencies(spawn ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TAR
 target_link_libraries(spawn
   ${catkin_LIBRARIES}
   -lncurses
+)
+
+add_executable(tts_subscribe src/tts_subscribe.cpp)
+target_link_libraries(
+   tts_subscribe
+   ${catkin_LIBRARIES} 
+   libmsc.so -ldl -pthread
+ )
+
+add_executable(voice_assistant src/voice_assistant.cpp)
+target_link_libraries(
+   voice_assistant
+   ${catkin_LIBRARIES} 
+   libmsc.so -ldl -pthread
+ )
+
+
+
+add_executable(iat_publish
+  src/iat_publish.cpp
+  src/speech_recognizer.c 
+  src/linuxrec.c 
+  
+ )
+ 
+target_link_libraries(
+   iat_publish
+   ${catkin_LIBRARIES} 
+   libmsc.so -ldl -lpthread -lm -lrt -lasound 
+ )
+ add_dependencies(iat_publish ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+
+add_executable(cmd_follow_me
+  src/cmd_follow_me.cpp
+)
+add_dependencies(cmd_follow_me ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(cmd_follow_me
+  ${catkin_LIBRARIES}
+)
+
+add_executable(open_voice
+  src/open_voice.cpp
+)
+add_dependencies(open_voice ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(open_voice
+  ${catkin_LIBRARIES}
+)
+
+add_executable(my_test
+  src/my_test.cpp
+)
+add_dependencies(my_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(my_test
+  ${catkin_LIBRARIES}
+)
+
+add_executable(control_core
+  src/control_core.cpp
+)
+add_dependencies(control_core ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(control_core
+  ${catkin_LIBRARIES}
+)
+
+add_executable(empty_node
+  src/empty_node.cpp
+)
+add_dependencies(empty_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(empty_node
+  ${catkin_LIBRARIES}
 )

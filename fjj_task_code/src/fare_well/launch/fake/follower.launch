@@ -1,0 +1,71 @@
+<!--
+-->
+<launch>
+  <arg name="simulation" default="false"/>
+  <arg name="open_3dsensor" default="false"/>
+  <!--真实机器人的follower功能-->
+  <group unless="$(arg simulation)"> <!-- Real robot -->
+    
+    <include file="$(find turtlebot_follower)/launch/includes/velocity_smoother.launch.xml">
+      <arg name="nodelet_manager"  value="/mobile_base_nodelet_manager"/>
+      <arg name="navigation_topic" value="/cmd_vel_mux/input/navi"/>
+    </include>
+    <group if="$(arg open_3dsensor)">
+    <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
+      <arg name="rgb_processing"                  value="true"/>  <!-- only required if we use android client -->
+      <arg name="depth_processing"                value="true"/>
+      <arg name="depth_registered_processing"     value="false"/>
+      <arg name="depth_registration"              value="false"/>
+      <arg name="disparity_processing"            value="false"/>
+      <arg name="disparity_registered_processing" value="false"/>
+      <arg name="scan_processing"                 value="false"/>
+    </include>
+    </group>
+  </group>
+
+  <!--仿真机器人的follow功能，这样就可以起到一个开关的作用-->
+  <group if="$(arg simulation)">
+    <!-- 为兼容性加载节点管理器 -->
+    <node pkg="nodelet" type="nodelet" ns="camera" name="camera_nodelet_manager" args="manager"/>
+
+    <include file="$(find turtlebot_follower)/launch/includes/velocity_smoother.launch.xml">
+      <arg name="nodelet_manager"  value="camera/camera_nodelet_manager"/>
+      <arg name="navigation_topic" value="cmd_vel_mux/input/navi"/>
+    </include>
+  </group>
+
+  <param name="camera/rgb/image_color/compressed/jpeg_quality" value="22"/>
+
+  <!-- Make a slower camera feed available; only required if we use android client -->
+  <node pkg="topic_tools" type="throttle" name="camera_throttle"
+        args="messages camera/rgb/image_color/compressed 5"/>
+  <!--下面这个在新的版本已经废弃-->
+  <include file="$(find turtlebot_follower)/launch/includes/safety_controller.launch.xml"/>
+
+  <!--  Real robot: 将Turtlebot追随者加载到3D传感器节点管理器中以避免点云序列化 -->
+  <!--  Simulation: 将Turtlebot Follower加载到Nodelet Manager中以实现兼容性 -->
+  <!--这个地方才是真正开启了follower的功能其实也就是一个类,重现follow me的功能？-->
+  <!--我猜测nodelet是一个泛型也就是一个广义节点加载器，什么样的节点都可以通过参数兼容加载-->
+
+  <!--关键的处理节点-->
+  <node pkg="nodelet" type="nodelet" name="turtlebot_follower"
+        args="load turtlebot_follower/TurtlebotFollower camera/camera_nodelet_manager">
+    <remap from="turtlebot_follower/cmd_vel" to="follower_velocity_smoother/raw_cmd_vel"/>
+    <remap from="depth/points" to="camera/depth/points"/>
+    <param name="enabled" value="true" />
+    <param name="x_scale" value="7.0" />
+    <param name="z_scale" value="2.0" />
+    <param name="min_x" value="-0.35" />
+    <param name="max_x" value="0.35" />
+    <param name="min_y" value="0.1" />
+    <param name="max_y" value="0.5" />
+    <param name="max_z" value="1.2" />
+    <param name="goal_z" value="0.6" />
+  </node>
+  <!-- 启动脚本，该脚本将根据操纵杆按钮打开和关闭Turtlebot。默认：开启 这个只是开启了一个服务借口，我们需要一个clinet去调用服务 -->
+  <node name="switch" pkg="turtlebot_follower" type="switch.py"/>
+</launch>
+
+
+
+

@@ -1,32 +1,48 @@
-<!--
-launch file:
-            turtlebot_navigation amcl.launch.xml
-            turtlebot_navigation　move_base.launch.xml
-node file:  map_server　map_server 
-            还可以通过　initial_pose_x|y|z　来确定初始坐标
-input arg:  map_file TURTLEBOT_GAZEBO_MAP_FILE 主要调用自己gmapping创建的地图
-output res: 
--->
-
 <launch>
-  <!-- 创建地图-->
-  <arg name="map_file" default="$(find fare_well)/maps/current_map.yaml"/>
-  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
-  <node name="laser_filter"  pkg="turtlebot_navigation" type="laser_footprint_filter" />
-  <!-- 利用ａｍｃｌ进行地图定位 -->
+  <arg name="have_map" default="true"/>
+  
+  <arg name="rviz" default="true"/>
+  <arg name="scan_process" default="true"/>
+  <arg name="scan_topic" default="scan_filtered"/>
+  
+  <group if="$(arg scan_process)">
+    <node name="laser_filter"  pkg="turtlebot_navigation" type="laser_footprint_filter" />
+  </group>
 
-<!--可以控制其发布变换-->
-  <include file="$(find fare_well)/launch/amcl.launch.xml">
-  <!--在这改吗。。应该在调用层改不是在被调用层改-->
-  <rosparam file="$(find fare_well)/param/amcl/amcl.yaml" command="load" />
-    <arg name="scan_topic" value="scan_filtered" />
-  </include>
-  <!--启动move_base底盘操作，这个是导航的核心节点,启动了导航相关的一切内容-->
- <include file="$(find fare_well)/launch/move_base.launch.xml">
- <arg name="type" value="amcl"/>
-  <arg name="laser_topic" value="scan_filtered" />
- </include>
-     <!-- 启动rviz -->
- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find fare_well)/rviz/amcl.rviz" />
-
+  <!--单独使用amcl-->
+  <group if="$(arg have_map)">
+     <arg name="map_file" default="$(find fare_well)/maps/current_map.yaml"/>
+     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+     
+     <include file="$(find fare_well)/launch/includes/amcl.launch.xml">
+       <arg name="scan_topic" value="$(arg scan_topic)" />
+         <arg name="initial_pose_x"  value="0.0"/>
+         <arg name="initial_pose_y"  value="0.0"/>
+         <arg name="initial_pose_a"  value="0.0"/>
+  
+     </include>
+     
+     <include file="$(find fare_well)/launch/includes/move_base.launch.xml">
+        <arg name="type" value="amcl"/>
+        <arg name="laser_topic" value="$(arg scan_topic)" />
+     </include>
+  
+  </group>
+  <!--这个时候就是要用gmapping的时候了-->
+  <group unless="$(arg have_map)">
+    <include file="$(find fare_well)/launch/includes/amcl.launch.xml">
+      <arg name="scan_topic" value="$(arg scan_topic)"/>
+      <arg name="use_map_topic"   value="true"/>
+      <arg name="initial_pose_x"  value="0.0"/>
+      <arg name="initial_pose_y"  value="0.0"/>
+      <arg name="initial_pose_a"  value="0.0"/>
+    </include>
+  </group>
+     
+  <group if="$(arg rviz)">
+    
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find fare_well)/rviz/amcl.rviz" /> 
+  
+  </group>
+ <node name="empty_node" type="empty_node" pkg="test" required="true" />
 </launch>

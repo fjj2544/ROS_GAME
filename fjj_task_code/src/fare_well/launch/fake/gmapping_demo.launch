@@ -1,23 +1,36 @@
-
+<!--这个就是模仿ros内部的gmapping写的-->
 <launch>
+  <arg name="rviz" default="true"/>
+  <arg name="scan_process" default="true"/>
+  <arg name="scan_topic" default="scan_filtered"/>
+  <arg name="custom_gmapping_launch_file" default="$(find fare_well)/launch/includes/gmapping.launch.xml"/>
+  <arg name="simulation" default="true"/>
 
-  <node name="laser_filter"  pkg="turtlebot_navigation" type="laser_footprint_filter" />
-  <!--启动gmaping-->
-  <arg name="custom_gmapping_launch_file" default="$(find turtlebot_navigation)/launch/includes/gmapping/gmapping.launch.xml"/>
+<!--开启激光雷达滤波器-->
+  <group if="$(arg scan_process)">
+    <node name="laser_filter"  pkg="turtlebot_navigation" type="laser_footprint_filter" />
+  </group>
+
+  <!--启动gmaping,全部采用自己的便于更换参数-->
   <include file="$(arg custom_gmapping_launch_file)">
-  <arg name="scan_topic" value="scan_filtered" />
+  <arg name="scan_topic" value="$(arg scan_topic)" />
   </include>
-
+  
   <!-- Move base -->
-  <include file="$(find fare_well)/launch/move_base.launch.xml">
-  <arg name="laser_topic" value="scan_filtered" />
+  <include file="$(find fare_well)/launch/includes/move_base.launch.xml">
+  <arg name="laser_topic" value="$(arg scan_topic)" />
   <arg name="type" value="gmapping"/>
   </include>
 
 
-  <!--启动虚拟辅助定位-->
-  <node pkg="fake_localization" type="fake_localization" name="fake_localization" output="screen" />
-    <!-- 启动rviz -->
-    <include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch"/>
+  <group if="$(arg simulation)">
 
+  <node pkg="fake_localization" type="fake_localization" name="fake_localization" output="screen" />
+  </group>
+  
+
+  <group if="$(arg rviz)">
+  <include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch"/>
+  </group>
+<node name="empty_node" type="empty_node" pkg="test" required="true" />
 </launch>

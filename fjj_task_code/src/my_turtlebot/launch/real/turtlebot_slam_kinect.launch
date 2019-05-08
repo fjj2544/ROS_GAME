@@ -1,0 +1,30 @@
+<launch>
+
+    
+    <!--启动我们自己的机器人 只要机器人连接了之后就会识别出对应的机器人并且启动对应的驱动器-->
+    <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
+    <!--下面这个地方启动joint_state_publisher而robot中启动了对应的robot_state_publisher-->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+   
+    <!--启动静态tf变换-->
+    <node name="base2laser" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 1 /base_link /laser 50"/>
+    
+    <!-- 里程计估算 这个地方是对于真实机器人的一个多传感器卡尔曼滤波 仿真的时候没有考虑用多个传感器的融合 odom 尝试至顶而下-->
+    <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf">
+        <remap from="robot_pose_ekf/odom_combined" to="odom_combined"/>
+        <param name="freq" value="10.0"/>
+        <param name="sensor_timeout" value="1.0"/>
+        <param name="publish_tf" value="true"/>
+        <param name="odom_used" value="true"/>
+        <param name="imu_used" value="false"/>
+        <param name="vo_used" value="false"/>
+        <param name="output_frame" value="odom"/>
+    </node>
+
+    <!-- 运行Kinect驱动 利用3dsensor来搞定这个驱动器 -->
+    <include file="$(find turtlebot_bringup)/launch/3dsensor.launch" >
+    <arg name="scan_processing"                 value="true"/>
+    <arg name="publish_tf"                      value="false"/>
+    </include>
+
+</launch>

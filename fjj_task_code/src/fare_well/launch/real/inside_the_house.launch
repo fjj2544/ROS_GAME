@@ -1,0 +1,37 @@
+<launch>
+
+<arg name="turtlebot_bringup_file" default="$(find fare_well)/launch/real/real_robot_bringup_with_kinect.launch"/>
+<arg name="simulation" default="true"/>
+
+
+<group unless="$(arg simulation)">
+
+<include file="$(arg turtlebot_bringup_file)">
+    <arg name="open_3dsensor" default="true"/>
+    <arg name="start_joint_pub" default="true"/>
+    <arg name="tf_laser_pose" default="0 0 0 0 0 0 1 /base_link /laser 50"/>
+</include>
+
+<include file="$(find fare_well)/launch/fake/gmapping_demo.launch"/>
+
+</group>
+<!--如果是仿真就添加仿真节点可以尝试增加集成化-->
+
+<group if="$(arg simulation)">
+
+<include file="$(find test)/launch/test_environment.launch"/>
+
+</group>
+
+<!--核心运动节点,自动导航功能-->
+<node pkg="test" name="navi_node" type="set_goal"/>
+
+<!--主要的说话节点-->
+<node pkg="sound_play" name="speak_node" type="soundplay_node.py"/>
+<!--主要的听话节点-->
+<node pkg="test" name="sound_node" type="iat_publish"/>
+<!--配合iat-->
+<include file="$(find test)/launch/robot_voice.launch"/>
+
+
+</launch>

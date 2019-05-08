@@ -1,0 +1,19 @@
+<launch>
+
+<!--它默认开启3dsensor-->
+
+<include file="$(find fare_well)/launch/fake/follower.launch">
+    <arg name="simulation" value="false"/>
+    <arg name="open_3dsensor" value="false"/>
+</include>
+
+<include file="$(find fare_well)/launch/fake/gmapping_demo.launch">
+  
+  <arg name="rviz" value="true"/>
+  <arg name="scan_process" value="true"/>
+  <arg name="scan_topic" value="scan_filtered"/>
+  <arg name="simulation" value="false"/>
+
+</include>
+
+</launch>
