@@ -31,6 +31,7 @@
 /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test/CMakeFiles/edit_cache.dir
 /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test/CMakeFiles/install/local.dir
 /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test/CMakeFiles/install/strip.dir
+/home/fjj/documents/fjj_ros_code/fjj_test_code/build/test/CMakeFiles/pub_present_pose.dir
 /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test/CMakeFiles/my_test.dir
 /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test/CMakeFiles/open_voice.dir
 /home/fjj/documents/fjj_ros_code/fjj_test_code/build/test/CMakeFiles/tts_subscribe.dir

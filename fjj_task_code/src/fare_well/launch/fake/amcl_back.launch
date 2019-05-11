@@ -1,0 +1,54 @@
+<launch>
+  <arg name="have_map" default="true"/>
+  
+  <arg name="rviz" default="true"/>
+  <arg name="scan_process" default="true"/>
+
+  <arg if="$(arg scan_process)" name="scan_topic" default="scan_filtered"/>
+  <arg unless="$(arg scan_process)" name="scan_topic" default="scan"/>
+  <!--这里设置接口点-->
+  <arg name="initial_pose_x"  default="-5.24"/>
+  <arg name="initial_pose_y"  default="-1.40"/>
+  <arg name="initial_pose_a"  default="-1.75"/>
+  
+  <group if="$(arg scan_process)">
+    <node name="laser_filter"  pkg="turtlebot_navigation" type="laser_footprint_filter" />
+  </group>
+
+  <!--单独使用amcl-->
+  <group if="$(arg have_map)">
+     <arg name="map_file" default="$(find fare_well)/maps/current_map.yaml"/>
+     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+     
+     <include file="$(find fare_well)/launch/includes/amcl.launch.xml">
+       <arg name="scan_topic" value="$(arg scan_topic)" />
+         <arg name="initial_pose_x"  value="$(arg initial_pose_x)"/>
+         <arg name="initial_pose_y"  value="$(arg initial_pose_y)"/>
+         <arg name="initial_pose_a"  value="$(arg initial_pose_a)"/>
+  
+     </include>
+     
+     <include file="$(find fare_well)/launch/includes/move_base.launch.xml">
+        <arg name="type" value="amcl"/>
+        <arg name="laser_topic" value="$(arg scan_topic)" />
+     </include>
+  
+  </group>
+  <!--这个时候就是要用gmapping的时候了-->
+  <group unless="$(arg have_map)">
+    <include file="$(find fare_well)/launch/includes/amcl.launch.xml">
+      <arg name="scan_topic" value="$(arg scan_topic)"/>
+      <arg name="use_map_topic"   value="true"/>
+         <arg name="initial_pose_x"  value="$(arg initial_pose_x)"/>
+         <arg name="initial_pose_y"  value="$(arg initial_pose_y)"/>
+         <arg name="initial_pose_a"  value="$(arg initial_pose_a)"/>
+    </include>
+  </group>
+     
+  <group if="$(arg rviz)">
+    
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find fare_well)/rviz/amcl.rviz" /> 
+  
+  </group>
+    <node name="empty_node" type="empty_node" pkg="test" required="true" />
+</launch>

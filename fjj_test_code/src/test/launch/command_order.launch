@@ -1,7 +1,0 @@
-
-<launch>
-<!--通过语音控制-->
-<node name="command_follower" pkg="test" type="cmd_follow_me" output="screen" respawn="true" />
-
-<include file="$(find test)/launch/robot_voice.launch" />
-</launch>

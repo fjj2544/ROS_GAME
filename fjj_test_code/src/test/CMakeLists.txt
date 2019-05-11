@@ -285,3 +285,19 @@ add_dependencies(empty_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTE
 target_link_libraries(empty_node
   ${catkin_LIBRARIES}
 )
+
+add_executable(pub_present_pose
+  src/pub_present_pose.cpp
+)
+add_dependencies(pub_present_pose ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(pub_present_pose
+  ${catkin_LIBRARIES}
+)
+
+add_executable(test
+  src/my_test.cpp
+)
+add_dependencies(test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(test
+  ${catkin_LIBRARIES}
+)

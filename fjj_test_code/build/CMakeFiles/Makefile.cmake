@@ -219,6 +219,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "gtest/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "gtest/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "gtest/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "test/CMakeFiles/pub_present_pose.dir/DependInfo.cmake"
   "test/CMakeFiles/my_test.dir/DependInfo.cmake"
   "test/CMakeFiles/open_voice.dir/DependInfo.cmake"
   "test/CMakeFiles/tts_subscribe.dir/DependInfo.cmake"

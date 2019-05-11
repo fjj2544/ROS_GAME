@@ -237,3 +237,11 @@ add_dependencies(vel_cmd ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_T
 target_link_libraries(vel_cmd
   ${catkin_LIBRARIES}
 )
+
+add_executable(my_test
+  src/my_test.cpp
+)
+add_dependencies(my_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(my_test
+  ${catkin_LIBRARIES}
+)

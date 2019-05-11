@@ -1,101 +1,60 @@
-
-#include <ros/ros.h>
-#include <ros/console.h>
-#include <actionlib/client/simple_action_client.h>
-#include <actionlib/client/simple_client_goal_state.h>
-#include <move_base_msgs/MoveBaseAction.h>
-#include <geometry_msgs/PoseStamped.h>
-#include <std_msgs/String.h>
-
-  typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ActionClient;
-
-  class NavGoalManager {
-    public:
-      /**
-       * @brief: Constructor for the goal manager.
-       */
-      NavGoalManager();
-
-      /**
-       * @brief: Handler for new goals sent to the basic interface.
-       */
-      void goalSimple(const geometry_msgs::PoseStamped::ConstPtr& goal);
-
-      /**
-       * @brief: Handler for cancelation signals sent to the basic interface.
-       */
-      void cancelSimple(const std_msgs::String::ConstPtr& goal);
-
-     private:
-      ActionClient actionClient;
-      ros::Subscriber goal_sub_;
-      ros::Subscriber cancel_sub_;
-      ros::NodeHandle goal_sub_nh;
-    public:
-      // Probably some internal helper methods.
-      void doneCallback(const actionlib::SimpleClientGoalState &state,
-                        const move_base_msgs::MoveBaseResultConstPtr &result);
-      void feedbackcb(
-          const move_base_msgs::MoveBaseFeedbackConstPtr & fb);
-      void activefb();
-  };
-
-
-  NavGoalManager::NavGoalManager():actionClient("move_base",true){
-    // Subscribe to the simple goal message.
-    ROS_INFO("To register subcribers");
-    goal_sub_nh = ros::NodeHandle("nav_manager");
-    goal_sub_ = goal_sub_nh.subscribe<geometry_msgs::PoseStamped>("goal", 1, boost::bind(&NavGoalManager::goalSimple, this, _1));
-    cancel_sub_ = goal_sub_nh.subscribe<std_msgs::String>("cancel", 1, boost::bind(&NavGoalManager::cancelSimple, this, _1));
-
-    ROS_INFO("To start action lib");
-    // Connect to the move_base action server
-   // actionClient = new ActionClient("move_base", true); // create a thread to handle subscriptions.
-    actionClient.waitForServer();
-    ROS_INFO("Server found");
-
-  }
-
-  void NavGoalManager::goalSimple(const geometry_msgs::PoseStamped::ConstPtr& goal) {
-    ROS_INFO_NAMED("nav goal manager","Goal Callback. Resending to move_base.");
-    // We should cancel previous goals here.
-    move_base_msgs::MoveBaseGoal action_goal;
-    action_goal.target_pose.header = goal->header;
-    action_goal.target_pose.pose = goal->pose;
-    actionClient.sendGoal(action_goal,
-                           boost::bind(&NavGoalManager::doneCallback, this, _1, _2),
-                           boost::bind(&NavGoalManager::activefb, this),
-                           boost::bind(&NavGoalManager::feedbackcb, this, _1));
-  }
-  void NavGoalManager::feedbackcb(const move_base_msgs::MoveBaseFeedbackConstPtr & fb)
-  {}
-  void NavGoalManager::doneCallback(const actionlib::SimpleClientGoalState &state,
-                                    const move_base_msgs::MoveBaseResultConstPtr &result) {
-  }
-  
-void NavGoalManager::activefb(){
-
-}
-  void NavGoalManager::cancelSimple(const std_msgs::String::ConstPtr& goal) {
-    ROS_INFO_NAMED("nav goal manager","Cancel Callback. Resending to move_base.");
-    // We should cancel previous goals here.
-    actionClient.cancelAllGoals();
-  }
-
-void subCallback(const std_msgs::StringConstPtr &msg)
+//实时位姿发布器,然后我就可以通过实时位姿给出对应的响应,储存当前位姿,那我必须有语音控制,核心节点,必须采用分立方式的编程
+#include "ros/ros.h"
+#include<iostream>
+#include<geometry_msgs/Pose.h>
+//这两个头文件便于输出当前的位姿信息，而且可以给出任意两个坐标系下面的位姿转换,这个必须存起来，这个很关键
+#include<tf2_msgs/TFMessage.h>
+#include<tf2_ros/transform_listener.h>
+//姿态估计
+#include<geometry_msgs/PoseWithCovarianceStamped.h>
+using namespace std;
+void get_present_pos(geometry_msgs::Pose & pre_pos )
 {
-    std::string mystr=msg->data;
-    if(mystr.compare("shut down")==0)
-    { 
-      ROS_INFO("I am here!");
-      ros::shutdown();
+    tf2_ros::Buffer tfBuffer;
+    tf2_ros::TransformListener tfListener(tfBuffer);
+    int flag=0;
+    while(ros::ok()&&flag==0)//真好拿到就跑..
+    {
+    geometry_msgs::TransformStamped transformStamped;//这个就是当前点的坐标..
+     try{
+        transformStamped = tfBuffer.lookupTransform("map", "base_link",
+                               ros::Time(0));
+        pre_pos.position.x = transformStamped.transform.translation.x;
+        pre_pos.position.y = transformStamped.transform.translation.y;
+        pre_pos.position.z = transformStamped.transform.translation.z;
+        pre_pos.orientation.x = transformStamped.transform.rotation.x;
+        pre_pos.orientation.y = transformStamped.transform.rotation.y;
+        pre_pos.orientation.z = transformStamped.transform.rotation.z;
+        pre_pos.orientation.w = transformStamped.transform.rotation.w;
+        flag=1;
+        }
+    catch (tf2::TransformException &ex) {
+      ROS_WARN("%s",ex.what());
+      ros::Duration(1.0).sleep();
+      continue;
+    }//必须try..
     }
 }
 int main(int argc, char *argv[])
 {
-  ros::init(argc, argv, "my_test");
-  ros::NodeHandle nh;
-  ros::Subscriber sub = nh.subscribe("control_command", 1000, subCallback);
-  ros::spin();
-  return 0;
+    ros::init(argc, argv, "pub_present_pose");//最好记录下来
+    ros::NodeHandle nh;
+    geometry_msgs::Pose cur_pose;
+    geometry_msgs::PoseWithCovarianceStamped est_pose;
+    ros::Publisher pub_est = nh.advertise<geometry_msgs::PoseWithCovarianceStamped>("initialpose",1000);
+    ros::Publisher pub = nh.advertise<geometry_msgs::Pose>("present_pose", 1000);//后期给出状态流动图
+    ros::Rate loop_rate(10);//10hz的频率发送当前的位姿信息,相对于地图坐标系下的
+    while(ros::ok())
+    {
+        
+        get_present_pos(cur_pose);//发布当前的位姿信息,我可以把这一切都自动化，也就是到了门自动储存当前的位姿信息，便于后续的进一步操作。
+        pub.publish(cur_pose);
+        est_pose.pose.pose = cur_pose;
+        est_pose.pose.pose.position.x = cur_pose.position.x+0.5;
+        pub_est.publish(est_pose);
+        loop_rate.sleep();
+        ros::spinOnce();
+    }
+    return 0;//语音控制前后左右移动，控制建图等等，优化图形建立过程，建立语音控制板块,这个可以后期再说
 }
+

@@ -283,6 +283,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named pub_present_pose
+
+# Build rule for target.
+pub_present_pose: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pub_present_pose
+.PHONY : pub_present_pose
+
+# fast build rule for target.
+pub_present_pose/fast:
+	$(MAKE) -f test/CMakeFiles/pub_present_pose.dir/build.make test/CMakeFiles/pub_present_pose.dir/build
+.PHONY : pub_present_pose/fast
+
+#=============================================================================
 # Target rules for targets named my_test
 
 # Build rule for target.
@@ -1084,6 +1097,7 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... pub_present_pose"
 	@echo "... my_test"
 	@echo "... open_voice"
 	@echo "... tts_subscribe"

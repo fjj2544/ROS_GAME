@@ -28,6 +28,8 @@ test/CMakeFiles/set_goal.dir/src/set_goal.cpp.o: /opt/ros/kinetic/include/boost_
 test/CMakeFiles/set_goal.dir/src/set_goal.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point.h
 test/CMakeFiles/set_goal.dir/src/set_goal.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
 test/CMakeFiles/set_goal.dir/src/set_goal.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
+test/CMakeFiles/set_goal.dir/src/set_goal.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovariance.h
+test/CMakeFiles/set_goal.dir/src/set_goal.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovarianceStamped.h
 test/CMakeFiles/set_goal.dir/src/set_goal.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
 test/CMakeFiles/set_goal.dir/src/set_goal.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Transform.h
 test/CMakeFiles/set_goal.dir/src/set_goal.cpp.o: /opt/ros/kinetic/include/geometry_msgs/TransformStamped.h

@@ -1,3 +1,5 @@
+<!--我们可以在不改变系统参数的前提下动态给出我们自己的参数，也就是每次启动可以保证不修改系统参数的前提下使用我们自己的参数-->
+<!--我们不再是使用硬连线的方式而是采用动态调参的方式加载参数 不同地方的move_base也就是变成了不同的参数而已-->
 <launch>
 
 <!--它默认开启3dsensor-->
@@ -6,7 +8,13 @@
     <arg name="simulation" value="false"/>
     <arg name="open_3dsensor" value="false"/>
 </include>
-
+<!--设置follower参数-->
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/turtlebot_follower"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/turtlebot_follower.yaml"/>
+</include>
+<!--同时开启了move_base 这个地方注意move_base冲突的问题，临时切换Move_base是否有问题？-->
 <include file="$(find fare_well)/launch/fake/gmapping_demo.launch">
   
   <arg name="rviz" value="true"/>
@@ -14,6 +22,9 @@
   <arg name="scan_topic" value="scan_filtered"/>
   <arg name="simulation" value="false"/>
 
+</include>
+<!--设置move_base参数-->
+<include file="$(find fare_well)/launch/set_move_base_param.launch">
 </include>
 
 </launch>

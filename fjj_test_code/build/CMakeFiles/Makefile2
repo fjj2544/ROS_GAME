@@ -390,6 +390,7 @@ clean: gtest/gtest/CMakeFiles/gtest_main.dir/clean
 # Directory level rules for directory test
 
 # Convenience name for "all" pass in the directory.
+test/all: test/CMakeFiles/pub_present_pose.dir/all
 test/all: test/CMakeFiles/my_test.dir/all
 test/all: test/CMakeFiles/open_voice.dir/all
 test/all: test/CMakeFiles/tts_subscribe.dir/all
@@ -404,6 +405,7 @@ test/all: test/CMakeFiles/empty_node.dir/all
 .PHONY : test/all
 
 # Convenience name for "clean" pass in the directory.
+test/clean: test/CMakeFiles/pub_present_pose.dir/clean
 test/clean: test/CMakeFiles/my_test.dir/clean
 test/clean: test/CMakeFiles/open_voice.dir/clean
 test/clean: test/CMakeFiles/tts_subscribe.dir/clean
@@ -471,6 +473,92 @@ test/clean: test/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 test/preinstall:
 
 .PHONY : test/preinstall
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/pub_present_pose.dir
+
+# All Build rule for target.
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/actionlib_generate_messages_eus.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/tf_generate_messages_cpp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/move_base_msgs_generate_messages_py.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/tf_generate_messages_eus.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/roscpp_generate_messages_eus.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/actionlib_generate_messages_py.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/move_base_msgs_generate_messages_eus.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/std_msgs_generate_messages_py.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/tf2_msgs_generate_messages_py.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/tf_generate_messages_lisp.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/roscpp_generate_messages_py.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/tf_generate_messages_nodejs.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/tf_generate_messages_py.dir/all
+test/CMakeFiles/pub_present_pose.dir/all: test/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+	$(MAKE) -f test/CMakeFiles/pub_present_pose.dir/build.make test/CMakeFiles/pub_present_pose.dir/depend
+	$(MAKE) -f test/CMakeFiles/pub_present_pose.dir/build.make test/CMakeFiles/pub_present_pose.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_test_code/build/CMakeFiles --progress-num=26,27 "Built target pub_present_pose"
+.PHONY : test/CMakeFiles/pub_present_pose.dir/all
+
+# Include target in all.
+all: test/CMakeFiles/pub_present_pose.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/pub_present_pose.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_test_code/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/pub_present_pose.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_test_code/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/pub_present_pose.dir/rule
+
+# Convenience name for target.
+pub_present_pose: test/CMakeFiles/pub_present_pose.dir/rule
+
+.PHONY : pub_present_pose
+
+# clean rule for target.
+test/CMakeFiles/pub_present_pose.dir/clean:
+	$(MAKE) -f test/CMakeFiles/pub_present_pose.dir/build.make test/CMakeFiles/pub_present_pose.dir/clean
+.PHONY : test/CMakeFiles/pub_present_pose.dir/clean
+
+# clean rule for target.
+clean: test/CMakeFiles/pub_present_pose.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target test/CMakeFiles/my_test.dir
@@ -651,7 +739,7 @@ clean: test/CMakeFiles/open_voice.dir/clean
 test/CMakeFiles/tts_subscribe.dir/all:
 	$(MAKE) -f test/CMakeFiles/tts_subscribe.dir/build.make test/CMakeFiles/tts_subscribe.dir/depend
 	$(MAKE) -f test/CMakeFiles/tts_subscribe.dir/build.make test/CMakeFiles/tts_subscribe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_test_code/build/CMakeFiles --progress-num=30,31 "Built target tts_subscribe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_test_code/build/CMakeFiles --progress-num=32,33 "Built target tts_subscribe"
 .PHONY : test/CMakeFiles/tts_subscribe.dir/all
 
 # Include target in all.
@@ -909,7 +997,7 @@ test/CMakeFiles/spawn.dir/all: test/CMakeFiles/tf_generate_messages_py.dir/all
 test/CMakeFiles/spawn.dir/all: test/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 	$(MAKE) -f test/CMakeFiles/spawn.dir/build.make test/CMakeFiles/spawn.dir/depend
 	$(MAKE) -f test/CMakeFiles/spawn.dir/build.make test/CMakeFiles/spawn.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_test_code/build/CMakeFiles --progress-num=28,29 "Built target spawn"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_test_code/build/CMakeFiles --progress-num=30,31 "Built target spawn"
 .PHONY : test/CMakeFiles/spawn.dir/all
 
 # Include target in all.
@@ -995,7 +1083,7 @@ test/CMakeFiles/set_goal.dir/all: test/CMakeFiles/tf_generate_messages_py.dir/al
 test/CMakeFiles/set_goal.dir/all: test/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 	$(MAKE) -f test/CMakeFiles/set_goal.dir/build.make test/CMakeFiles/set_goal.dir/depend
 	$(MAKE) -f test/CMakeFiles/set_goal.dir/build.make test/CMakeFiles/set_goal.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_test_code/build/CMakeFiles --progress-num=26,27 "Built target set_goal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_test_code/build/CMakeFiles --progress-num=28,29 "Built target set_goal"
 .PHONY : test/CMakeFiles/set_goal.dir/all
 
 # Include target in all.
@@ -1448,7 +1536,7 @@ clean: test/CMakeFiles/tf_generate_messages_eus.dir/clean
 test/CMakeFiles/voice_assistant.dir/all:
 	$(MAKE) -f test/CMakeFiles/voice_assistant.dir/build.make test/CMakeFiles/voice_assistant.dir/depend
 	$(MAKE) -f test/CMakeFiles/voice_assistant.dir/build.make test/CMakeFiles/voice_assistant.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_test_code/build/CMakeFiles --progress-num=32,33 "Built target voice_assistant"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_test_code/build/CMakeFiles --progress-num=34,35 "Built target voice_assistant"
 .PHONY : test/CMakeFiles/voice_assistant.dir/all
 
 # Include target in all.

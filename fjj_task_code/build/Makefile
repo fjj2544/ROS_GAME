@@ -608,19 +608,6 @@ actionlib_msgs_generate_messages_py/fast:
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named sound_play_generate_messages_cpp
-
-# Build rule for target.
-sound_play_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sound_play_generate_messages_cpp
-.PHONY : sound_play_generate_messages_cpp
-
-# fast build rule for target.
-sound_play_generate_messages_cpp/fast:
-	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build
-.PHONY : sound_play_generate_messages_cpp/fast
-
-#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -790,6 +777,32 @@ client_follower/fast:
 .PHONY : client_follower/fast
 
 #=============================================================================
+# Target rules for targets named sound_play_generate_messages_cpp
+
+# Build rule for target.
+sound_play_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sound_play_generate_messages_cpp
+.PHONY : sound_play_generate_messages_cpp
+
+# fast build rule for target.
+sound_play_generate_messages_cpp/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build
+.PHONY : sound_play_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named my_test
+
+# Build rule for target.
+my_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 my_test
+.PHONY : my_test
+
+# fast build rule for target.
+my_test/fast:
+	$(MAKE) -f my_turtlebot/CMakeFiles/my_test.dir/build.make my_turtlebot/CMakeFiles/my_test.dir/build
+.PHONY : my_test/fast
+
+#=============================================================================
 # Target rules for targets named opencv_apps_generate_messages_nodejs
 
 # Build rule for target.
@@ -875,7 +888,6 @@ help:
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... vel_cmd"
 	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... sound_play_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... new_test"
 	@echo "... sound_play_generate_messages_eus"
@@ -889,6 +901,8 @@ help:
 	@echo "... opencv_apps_generate_messages_cpp"
 	@echo "... opencv_apps_generate_messages_lisp"
 	@echo "... client_follower"
+	@echo "... sound_play_generate_messages_cpp"
+	@echo "... my_test"
 	@echo "... opencv_apps_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... opencv_apps_generate_messages_py"

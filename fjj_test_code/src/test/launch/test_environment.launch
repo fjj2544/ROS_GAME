@@ -1,7 +1,5 @@
 <launch>
     <include file="$(find fare_well)/launch/fake_turtlebot_nav.launch">
     </include>
-
-    <include file="$(find fare_well)/launch/fake/gmapping_demo.launch">
-    </include>
+    
 </launch>

@@ -1,0 +1,57 @@
+<launch>
+<!--设置move_base参数-->
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/move_base"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/move_base.yaml"/>
+</include>
+
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/move_base/DWAPlannerROS"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/move_base_DWAPlannerROS.yaml"/>
+</include>
+
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/move_base/global_costmap/inflation_layer"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/move_base_global_costmap_inflation_layer.yaml"/>
+</include>
+
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/move_base/global_costmap/obstacle_layer"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/move_base_global_costmap_obstacle_layer.yaml"/>
+</include>
+
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/move_base/global_costmap/static_layer"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/move_base_global_costmap_static_layer.yaml"/>
+</include>
+
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/move_base/global_costmap"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/move_base_global_costmap.yaml"/>
+</include>
+
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/move_base/local_costmap/inflation_layer"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/move_base_local_costmap_inflation_layer.yaml"/>
+</include>
+
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/move_base/local_costmap/obstacle_layer"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/move_base_local_costmap_obstacle_layer.yaml"/>
+</include>
+
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/navigation_velocity_smoother"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/navigation_velocity_smoother.yaml"/>
+</include>
+
+</launch>

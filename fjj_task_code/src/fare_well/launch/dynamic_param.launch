@@ -1,0 +1,9 @@
+<launch>
+<!--存参数dump还是取参数load-->
+<arg name="order" default="load"/>
+<arg name="node_name" default="/amcl"/>
+<arg name="yaml_file_path" default="$(find fare_well)/cfg/amcl.yaml"/>
+<!--利用命名空间实现多节点参数动态调节避免冲突-->
+<node ns="$(arg node_name)"  name="dynparam" type="dynparam" pkg="dynamic_reconfigure" args="$(arg order) $(arg node_name) $(arg yaml_file_path)" >
+</node>
+</launch>

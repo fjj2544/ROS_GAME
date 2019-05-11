@@ -1,0 +1,78 @@
+<!-- 这一阶段从私服等待启动 到fetch 最终到门口的过程 到了门口似乎无法导航出去，只能用follow -->
+<!--首先确定需要监督的地方，最后想办法看看能不能自动化 -->
+<!--由于真正的实验从这里开始所以这里仍然添加机器人启动节点-->
+<!--启动我们考虑用语音节点启动，唤醒机制很好，可以控制节点的运作与停止。-->
+<!--集成化参数管理,集成化的标注-->
+<!--我采用同步语音控制与异步信息控制的方式保证数据流的完整运行。-->
+<launch>
+    <arg name="turtlebot_bringup_file" default="$(find fare_well)/launch/real/real_robot_bringup_with_kinect.launch"/>
+    <arg name="simulation" default="true"/>
+    <arg name="initial_pose_x"  default="0.0"/>
+    <arg name="initial_pose_y"  default="0.0"/>
+    <arg name="initial_pose_a"  default="0.0"/>
+
+<!--启动机器人-->
+<group unless="$(arg simulation)">
+
+<include file="$(arg turtlebot_bringup_file)">
+    <arg name="open_3dsensor" default="true"/>
+    <arg name="start_joint_pub" default="true"/>
+    <arg name="tf_laser_pose" default="0 0 0 0 0 0 1 /base_link /laser 50"/>
+</include>
+
+<!--开启导航节点 考虑到状态转移之间不要冲突 为了多任务切换我们要在接口处给出信息-->
+<include file="$(find fare_well)/launch/fake/amcl_demo.launch">
+  <arg name="have_map" value="true"/>
+  <!--第一次开启rviz-->
+  <arg name="rviz" value="true"/>
+  <!--滤波操作-->
+  <arg name="scan_process" value="true"/>
+  <!--这个应该是设定rviz中的初始位置,由第一步确定-->
+  <arg name="initial_pose_x"  value="$(arg initial_pose_x)"/>
+  <arg name="initial_pose_y"  value="$(arg initial_pose_y)"/>
+  <arg name="initial_pose_a"  value="$(arg initial_pose_a)"/>
+</include>
+<!--动态加载amcl参数，如果可以动态加载那么不就可以自动控制了。。这个甚至可以封装成一个launch 文件专门搞定各种动态参数加载 性能参数动态加载非性能参数直接设为静态加载-->
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/amcl"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/amcl.yaml"/>
+</include>
+
+</group>
+
+<!--核心运动节点,自动导航功能 开启相关的导航功能 -->
+<node pkg="test" name="core_navi_node" type="set_goal" required="true"/>
+
+<!--主要的听说节点以及听的控制节点 为了启动 等下给出启动的方式 也就是一个传递-->
+<include file="$(find test)/launch/robot_voice.launch"/>
+
+<!--开启异步控制中心，除了语音控制，我们节点内部采用异步通信控制的机制 采用kill与empty_node双重保障机制实现动态算法整合-->
+<node name="core_control_node" pkg="test" type="control_core"/>
+
+<!--simulation-->
+<group if="$(arg simulation)">
+
+<include file="$(find test)/launch/test_environment.launch"/>
+
+<include file="$(find fare_well)/launch/fake/amcl_demo.launch">
+  <arg name="have_map" value="true"/>
+  <!--第一次开启rviz-->
+  <arg name="rviz" value="true"/>
+  <!--滤波操作-->
+  <arg name="scan_process" value="true"/>
+  <!--这个应该是设定rviz中的初始位置,由第一步确定-->
+  <arg name="initial_pose_x"  value="$(arg initial_pose_x)"/>
+  <arg name="initial_pose_y"  value="$(arg initial_pose_y)"/>
+  <arg name="initial_pose_a"  value="$(arg initial_pose_a)"/>
+</include>
+<!--动态加载amcl参数，如果可以动态加载那么不就可以自动控制了。。这个甚至可以封装成一个launch 文件专门搞定各种动态参数加载 性能参数动态加载非性能参数直接设为静态加载-->
+<include file="$(find fare_well)/launch/dynamic_param.launch">
+    <arg name="order" value="load"/>
+    <arg name="node_name" value="/amcl"/>
+    <arg name="yaml_file_path" value="$(find fare_well)/cfg/amcl.yaml"/>
+</include>
+
+</group>
+
+</launch>

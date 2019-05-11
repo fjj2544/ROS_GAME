@@ -1,8 +1,0 @@
-<launch>
-<!--主流的节点都在fare测试完全除了参数之外不需要修改的放在farewell-->
-
-<include file="$(find fare_well)/launch/fake/amcl_demo.launch"/>
-
-<include file="$(find fare_well)/launch/fake/gmapping_follower.launch"/>
-
-</launch>

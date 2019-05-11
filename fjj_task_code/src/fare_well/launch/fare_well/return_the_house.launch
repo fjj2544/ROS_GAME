@@ -1,0 +1,7 @@
+<launch>
+<!--主流的节点都在fare测试完全除了参数之外不需要修改的放在farewell 收到信息关闭follow根据新的地图导航回去 或者我原来的amcl能否不关闭，变成高阻态,能否不关闭？我解决了很多问题比如键盘问题但是怎么切换？ 我觉得甚至这个操作我可以在cpp文件中完成-->
+
+<include file="$(find fare_well)/launch/fake/amcl_demo.launch"/>
+
+
+</launch>

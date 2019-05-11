@@ -99,17 +99,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -132,6 +121,17 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -224,21 +224,6 @@ actionlib_msgs_generate_messages_py: my_turtlebot/CMakeFiles/actionlib_msgs_gene
 actionlib_msgs_generate_messages_py/fast:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
 .PHONY : actionlib_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
-.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sound_play_generate_messages_cpp: my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
-
-.PHONY : sound_play_generate_messages_cpp
-
-# fast build rule for target.
-sound_play_generate_messages_cpp/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build
-.PHONY : sound_play_generate_messages_cpp/fast
 
 # Convenience name for target.
 my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
@@ -436,6 +421,36 @@ client_follower/fast:
 .PHONY : client_follower/fast
 
 # Convenience name for target.
+my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sound_play_generate_messages_cpp: my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
+
+.PHONY : sound_play_generate_messages_cpp
+
+# fast build rule for target.
+sound_play_generate_messages_cpp/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build
+.PHONY : sound_play_generate_messages_cpp/fast
+
+# Convenience name for target.
+my_turtlebot/CMakeFiles/my_test.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/my_test.dir/rule
+.PHONY : my_turtlebot/CMakeFiles/my_test.dir/rule
+
+# Convenience name for target.
+my_test: my_turtlebot/CMakeFiles/my_test.dir/rule
+
+.PHONY : my_test
+
+# fast build rule for target.
+my_test/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/my_test.dir/build.make my_turtlebot/CMakeFiles/my_test.dir/build
+.PHONY : my_test/fast
+
+# Convenience name for target.
 my_turtlebot/CMakeFiles/opencv_apps_generate_messages_nodejs.dir/rule:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/opencv_apps_generate_messages_nodejs.dir/rule
 .PHONY : my_turtlebot/CMakeFiles/opencv_apps_generate_messages_nodejs.dir/rule
@@ -534,6 +549,33 @@ src/getnumofpeople.cpp.s:
 	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/getnumofpeople.dir/build.make my_turtlebot/CMakeFiles/getnumofpeople.dir/src/getnumofpeople.cpp.s
 .PHONY : src/getnumofpeople.cpp.s
 
+src/my_test.o: src/my_test.cpp.o
+
+.PHONY : src/my_test.o
+
+# target to build an object file
+src/my_test.cpp.o:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/my_test.dir/build.make my_turtlebot/CMakeFiles/my_test.dir/src/my_test.cpp.o
+.PHONY : src/my_test.cpp.o
+
+src/my_test.i: src/my_test.cpp.i
+
+.PHONY : src/my_test.i
+
+# target to preprocess a source file
+src/my_test.cpp.i:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/my_test.dir/build.make my_turtlebot/CMakeFiles/my_test.dir/src/my_test.cpp.i
+.PHONY : src/my_test.cpp.i
+
+src/my_test.s: src/my_test.cpp.s
+
+.PHONY : src/my_test.s
+
+# target to generate assembly for a file
+src/my_test.cpp.s:
+	cd /home/fjj/documents/fjj_ros_code/fjj_task_code/build && $(MAKE) -f my_turtlebot/CMakeFiles/my_test.dir/build.make my_turtlebot/CMakeFiles/my_test.dir/src/my_test.cpp.s
+.PHONY : src/my_test.cpp.s
+
 src/new_test.o: src/new_test.cpp.o
 
 .PHONY : src/new_test.o
@@ -625,18 +667,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... install/strip"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... vel_cmd"
 	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... install/local"
-	@echo "... sound_play_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... new_test"
 	@echo "... sound_play_generate_messages_eus"
 	@echo "... sound_talk"
 	@echo "... sound_play_generate_messages_lisp"
-	@echo "... install/strip"
 	@echo "... opencv_apps_generate_messages_eus"
 	@echo "... sound_play_generate_messages_nodejs"
 	@echo "... getnumofpeople"
@@ -646,6 +686,9 @@ help:
 	@echo "... install"
 	@echo "... opencv_apps_generate_messages_lisp"
 	@echo "... client_follower"
+	@echo "... install/local"
+	@echo "... sound_play_generate_messages_cpp"
+	@echo "... my_test"
 	@echo "... opencv_apps_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... opencv_apps_generate_messages_py"
@@ -655,6 +698,9 @@ help:
 	@echo "... src/getnumofpeople.o"
 	@echo "... src/getnumofpeople.i"
 	@echo "... src/getnumofpeople.s"
+	@echo "... src/my_test.o"
+	@echo "... src/my_test.i"
+	@echo "... src/my_test.s"
 	@echo "... src/new_test.o"
 	@echo "... src/new_test.i"
 	@echo "... src/new_test.s"

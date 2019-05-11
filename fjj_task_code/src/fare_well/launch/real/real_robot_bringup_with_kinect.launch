@@ -31,16 +31,16 @@
         <param name="output_frame" value="odom"/>
     </node>
     <group if="$(arg open_3dsensor)">
-    <!--开启kinect驱动-->
+    <!--开启kinect驱动 保证开启的时候是可以进行gmapping和follower的-->
     <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
       <arg name="rgb_processing"                  value="true"/>  <!-- only required if we use android client -->
       <arg name="depth_processing"                value="true"/>
+      <arg name="scan_processing"                 value="true"/>
       <arg name="depth_registered_processing"     value="false"/>
       <arg name="depth_registration"              value="false"/>
       <arg name="disparity_processing"            value="false"/>
       <arg name="disparity_registered_processing" value="false"/>
-      <arg name="scan_processing"                 value="true"/>
-      <arg name="publish_tf"   value="false"/>
+      <arg name="publish_tf"   value="false"/><!--避免重复发布tf-->
     </include>
     </group>
 </launch>

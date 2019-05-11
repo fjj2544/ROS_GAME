@@ -3,7 +3,7 @@
 <node pkg="sound_play" name="speak_node" type="soundplay_node.py"/>
 <!--主要的听话节点-->
 <node pkg="test" name="sound_node" type="iat_publish" output="screen"/>
-
+<!--主要的唤醒节点-->
 <node pkg="test" name="wake_up" type="open_voice"/>
 
 </launch>

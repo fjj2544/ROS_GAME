@@ -1,4 +1,4 @@
-<!--
+<!-- 默认为启动机器人的同时启动了follow
 -->
 <launch>
   <arg name="simulation" default="false"/>

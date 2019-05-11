@@ -1105,6 +1105,7 @@ my_turtlebot/all: my_turtlebot/CMakeFiles/new_test.dir/all
 my_turtlebot/all: my_turtlebot/CMakeFiles/sound_talk.dir/all
 my_turtlebot/all: my_turtlebot/CMakeFiles/getnumofpeople.dir/all
 my_turtlebot/all: my_turtlebot/CMakeFiles/client_follower.dir/all
+my_turtlebot/all: my_turtlebot/CMakeFiles/my_test.dir/all
 
 .PHONY : my_turtlebot/all
 
@@ -1113,7 +1114,6 @@ my_turtlebot/clean: my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_nod
 my_turtlebot/clean: my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/clean
 my_turtlebot/clean: my_turtlebot/CMakeFiles/vel_cmd.dir/clean
 my_turtlebot/clean: my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/clean
-my_turtlebot/clean: my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/clean
 my_turtlebot/clean: my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/clean
 my_turtlebot/clean: my_turtlebot/CMakeFiles/new_test.dir/clean
 my_turtlebot/clean: my_turtlebot/CMakeFiles/sound_play_generate_messages_eus.dir/clean
@@ -1127,6 +1127,8 @@ my_turtlebot/clean: my_turtlebot/CMakeFiles/sound_play_generate_messages_py.dir/
 my_turtlebot/clean: my_turtlebot/CMakeFiles/opencv_apps_generate_messages_cpp.dir/clean
 my_turtlebot/clean: my_turtlebot/CMakeFiles/opencv_apps_generate_messages_lisp.dir/clean
 my_turtlebot/clean: my_turtlebot/CMakeFiles/client_follower.dir/clean
+my_turtlebot/clean: my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/clean
+my_turtlebot/clean: my_turtlebot/CMakeFiles/my_test.dir/clean
 my_turtlebot/clean: my_turtlebot/CMakeFiles/opencv_apps_generate_messages_nodejs.dir/clean
 my_turtlebot/clean: my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/clean
 my_turtlebot/clean: my_turtlebot/CMakeFiles/opencv_apps_generate_messages_py.dir/clean
@@ -1223,7 +1225,7 @@ my_turtlebot/CMakeFiles/vel_cmd.dir/all: fare_well/CMakeFiles/rosgraph_msgs_gene
 my_turtlebot/CMakeFiles/vel_cmd.dir/all: fare_well/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f my_turtlebot/CMakeFiles/vel_cmd.dir/build.make my_turtlebot/CMakeFiles/vel_cmd.dir/depend
 	$(MAKE) -f my_turtlebot/CMakeFiles/vel_cmd.dir/build.make my_turtlebot/CMakeFiles/vel_cmd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles --progress-num=20,21 "Built target vel_cmd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles --progress-num=22,23 "Built target vel_cmd"
 .PHONY : my_turtlebot/CMakeFiles/vel_cmd.dir/all
 
 # Include target in all.
@@ -1286,38 +1288,6 @@ clean: my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir
-
-# All Build rule for target.
-my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/all:
-	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/depend
-	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles --progress-num= "Built target sound_play_generate_messages_cpp"
-.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles 0
-.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sound_play_generate_messages_cpp: my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
-
-.PHONY : sound_play_generate_messages_cpp
-
-# clean rule for target.
-my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/clean:
-	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/clean
-.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/clean
-
-# clean rule for target.
-clean: my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target my_turtlebot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir
 
 # All Build rule for target.
@@ -1370,7 +1340,7 @@ my_turtlebot/CMakeFiles/new_test.dir/all: fare_well/CMakeFiles/rosgraph_msgs_gen
 my_turtlebot/CMakeFiles/new_test.dir/all: fare_well/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f my_turtlebot/CMakeFiles/new_test.dir/build.make my_turtlebot/CMakeFiles/new_test.dir/depend
 	$(MAKE) -f my_turtlebot/CMakeFiles/new_test.dir/build.make my_turtlebot/CMakeFiles/new_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles --progress-num=16,17 "Built target new_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles --progress-num=18,19 "Built target new_test"
 .PHONY : my_turtlebot/CMakeFiles/new_test.dir/all
 
 # Include target in all.
@@ -1453,7 +1423,7 @@ my_turtlebot/CMakeFiles/sound_talk.dir/all: fare_well/CMakeFiles/rosgraph_msgs_g
 my_turtlebot/CMakeFiles/sound_talk.dir/all: fare_well/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f my_turtlebot/CMakeFiles/sound_talk.dir/build.make my_turtlebot/CMakeFiles/sound_talk.dir/depend
 	$(MAKE) -f my_turtlebot/CMakeFiles/sound_talk.dir/build.make my_turtlebot/CMakeFiles/sound_talk.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles --progress-num=18,19 "Built target sound_talk"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles --progress-num=20,21 "Built target sound_talk"
 .PHONY : my_turtlebot/CMakeFiles/sound_talk.dir/all
 
 # Include target in all.
@@ -1806,6 +1776,89 @@ my_turtlebot/CMakeFiles/client_follower.dir/clean:
 
 # clean rule for target.
 clean: my_turtlebot/CMakeFiles/client_follower.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir
+
+# All Build rule for target.
+my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/all:
+	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/depend
+	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles --progress-num= "Built target sound_play_generate_messages_cpp"
+.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles 0
+.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sound_play_generate_messages_cpp: my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/rule
+
+.PHONY : sound_play_generate_messages_cpp
+
+# clean rule for target.
+my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/clean:
+	$(MAKE) -f my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/build.make my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/clean
+.PHONY : my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: my_turtlebot/CMakeFiles/sound_play_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target my_turtlebot/CMakeFiles/my_test.dir
+
+# All Build rule for target.
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/roscpp_generate_messages_eus.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/std_msgs_generate_messages_py.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/roscpp_generate_messages_py.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+my_turtlebot/CMakeFiles/my_test.dir/all: fare_well/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+	$(MAKE) -f my_turtlebot/CMakeFiles/my_test.dir/build.make my_turtlebot/CMakeFiles/my_test.dir/depend
+	$(MAKE) -f my_turtlebot/CMakeFiles/my_test.dir/build.make my_turtlebot/CMakeFiles/my_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles --progress-num=16,17 "Built target my_test"
+.PHONY : my_turtlebot/CMakeFiles/my_test.dir/all
+
+# Include target in all.
+all: my_turtlebot/CMakeFiles/my_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+my_turtlebot/CMakeFiles/my_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 my_turtlebot/CMakeFiles/my_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fjj/documents/fjj_ros_code/fjj_task_code/build/CMakeFiles 0
+.PHONY : my_turtlebot/CMakeFiles/my_test.dir/rule
+
+# Convenience name for target.
+my_test: my_turtlebot/CMakeFiles/my_test.dir/rule
+
+.PHONY : my_test
+
+# clean rule for target.
+my_turtlebot/CMakeFiles/my_test.dir/clean:
+	$(MAKE) -f my_turtlebot/CMakeFiles/my_test.dir/build.make my_turtlebot/CMakeFiles/my_test.dir/clean
+.PHONY : my_turtlebot/CMakeFiles/my_test.dir/clean
+
+# clean rule for target.
+clean: my_turtlebot/CMakeFiles/my_test.dir/clean
 
 .PHONY : clean
 

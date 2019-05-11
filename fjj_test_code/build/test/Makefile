@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+test/CMakeFiles/pub_present_pose.dir/rule:
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/pub_present_pose.dir/rule
+.PHONY : test/CMakeFiles/pub_present_pose.dir/rule
+
+# Convenience name for target.
+pub_present_pose: test/CMakeFiles/pub_present_pose.dir/rule
+
+.PHONY : pub_present_pose
+
+# fast build rule for target.
+pub_present_pose/fast:
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f test/CMakeFiles/pub_present_pose.dir/build.make test/CMakeFiles/pub_present_pose.dir/build
+.PHONY : pub_present_pose/fast
+
+# Convenience name for target.
 test/CMakeFiles/my_test.dir/rule:
 	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/my_test.dir/rule
 .PHONY : test/CMakeFiles/my_test.dir/rule
@@ -1254,6 +1269,33 @@ src/open_voice.cpp.s:
 	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f test/CMakeFiles/open_voice.dir/build.make test/CMakeFiles/open_voice.dir/src/open_voice.cpp.s
 .PHONY : src/open_voice.cpp.s
 
+src/pub_present_pose.o: src/pub_present_pose.cpp.o
+
+.PHONY : src/pub_present_pose.o
+
+# target to build an object file
+src/pub_present_pose.cpp.o:
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f test/CMakeFiles/pub_present_pose.dir/build.make test/CMakeFiles/pub_present_pose.dir/src/pub_present_pose.cpp.o
+.PHONY : src/pub_present_pose.cpp.o
+
+src/pub_present_pose.i: src/pub_present_pose.cpp.i
+
+.PHONY : src/pub_present_pose.i
+
+# target to preprocess a source file
+src/pub_present_pose.cpp.i:
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f test/CMakeFiles/pub_present_pose.dir/build.make test/CMakeFiles/pub_present_pose.dir/src/pub_present_pose.cpp.i
+.PHONY : src/pub_present_pose.cpp.i
+
+src/pub_present_pose.s: src/pub_present_pose.cpp.s
+
+.PHONY : src/pub_present_pose.s
+
+# target to generate assembly for a file
+src/pub_present_pose.cpp.s:
+	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f test/CMakeFiles/pub_present_pose.dir/build.make test/CMakeFiles/pub_present_pose.dir/src/pub_present_pose.cpp.s
+.PHONY : src/pub_present_pose.cpp.s
+
 src/set_goal.o: src/set_goal.cpp.o
 
 .PHONY : src/set_goal.o
@@ -1398,6 +1440,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... pub_present_pose"
 	@echo "... my_test"
 	@echo "... open_voice"
 	@echo "... tts_subscribe"
@@ -1483,6 +1526,9 @@ help:
 	@echo "... src/open_voice.o"
 	@echo "... src/open_voice.i"
 	@echo "... src/open_voice.s"
+	@echo "... src/pub_present_pose.o"
+	@echo "... src/pub_present_pose.i"
+	@echo "... src/pub_present_pose.s"
 	@echo "... src/set_goal.o"
 	@echo "... src/set_goal.i"
 	@echo "... src/set_goal.s"
