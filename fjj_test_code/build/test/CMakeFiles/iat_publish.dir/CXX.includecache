@@ -39,6 +39,8 @@ test/speech_recognizer.h
 /home/fjj/documents/fjj_ros_code/fjj_test_code/src/test/src/test/speech_recognizer.h
 iconv.h
 -
+std_msgs/String.h
+/home/fjj/documents/fjj_ros_code/fjj_test_code/src/test/src/std_msgs/String.h
 ros/ros.h
 /home/fjj/documents/fjj_ros_code/fjj_test_code/src/test/src/ros/ros.h
 std_msgs/String.h

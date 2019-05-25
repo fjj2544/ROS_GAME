@@ -245,15 +245,6 @@ target_link_libraries(
  )
  add_dependencies(iat_publish ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-
-add_executable(cmd_follow_me
-  src/cmd_follow_me.cpp
-)
-add_dependencies(cmd_follow_me ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(cmd_follow_me
-  ${catkin_LIBRARIES}
-)
-
 add_executable(open_voice
   src/open_voice.cpp
 )

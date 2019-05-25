@@ -1,5 +1,0 @@
-<launch>
-    <include file="$(find fare_well)/launch/fake_turtlebot_nav.launch">
-    </include>
-    
-</launch>

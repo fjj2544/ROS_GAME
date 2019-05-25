@@ -1,0 +1,8 @@
+<!--主要用来仿真测试所有的导航和语音的功能-->
+<launch>
+    <include file="$(find fare_well)/launch/fake_turtlebot_nav.launch">
+    </include>
+    <include file="$(find test)/launch/robot_voice.launch">
+    </include>    
+    <!--<node name="core_control" type="control_core" pkg="test" />-->
+</launch>

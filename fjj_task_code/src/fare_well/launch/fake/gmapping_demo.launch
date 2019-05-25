@@ -1,18 +1,23 @@
 <!--这个就是模仿ros内部的gmapping写的-->
 <launch>
-  <arg name="rviz" default="true"/>
+  <arg name="rviz" default="false"/>
   <arg name="scan_process" default="true"/>
   <arg name="scan_topic" default="scan_filtered"/>
   <arg name="custom_gmapping_launch_file" default="$(find fare_well)/launch/includes/gmapping.launch.xml"/>
   <arg name="simulation" default="true"/>
   <arg name="move_base" default="true"/>
+  <arg name="laser_type" default="hokuyo" />
+
+  <!-- laser driver -->
+  <include file="$(find fare_well)/launch/includes/hokuyo_laser.launch" />
+
 
 <!--开启激光雷达滤波器-->
   <group if="$(arg scan_process)">
     <node name="laser_filter"  pkg="turtlebot_navigation" type="laser_footprint_filter" />
   </group>
 
-  <!--启动gmaping,全部采用自己的便于更换参数-->
+  <!--启动gmaping,全部采用自己的便于更换参数 应该装上hu的驱动-->
   <include file="$(arg custom_gmapping_launch_file)">
   <arg name="scan_topic" value="$(arg scan_topic)" />
   </include>

@@ -187,7 +187,6 @@ void key_cb(int ch)
             v_scale=0.0;//每次敲击才会有速度?还是一开始就有速度?
         }
     }
-
     set_vel(vel_cmd ,vel_cmd.linear.x*v_scale
                     ,vel_cmd.linear.y*v_scale
                     ,vel_cmd.linear.z*v_scale

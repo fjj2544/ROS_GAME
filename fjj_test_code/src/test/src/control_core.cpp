@@ -37,7 +37,7 @@ void open_sound_node()
 }
 void close_sound_node()//其实暂时的阻塞就好了。。
 {
-    system("rosnode kill /wake_up ");
+    system("rosnode kill /open_voice ");
 }
 void save_map()
 {

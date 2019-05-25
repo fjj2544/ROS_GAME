@@ -699,19 +699,6 @@ roscpp_generate_messages_cpp/fast:
 .PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named cmd_follow_me
-
-# Build rule for target.
-cmd_follow_me: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cmd_follow_me
-.PHONY : cmd_follow_me
-
-# fast build rule for target.
-cmd_follow_me/fast:
-	$(MAKE) -f test/CMakeFiles/cmd_follow_me.dir/build.make test/CMakeFiles/cmd_follow_me.dir/build
-.PHONY : cmd_follow_me/fast
-
-#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -1129,7 +1116,6 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"
-	@echo "... cmd_follow_me"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... move_base_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"

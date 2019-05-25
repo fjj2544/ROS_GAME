@@ -1,7 +1,7 @@
 <launch>
   <arg name="have_map" default="true"/>
   
-  <arg name="rviz" default="true"/>
+  <arg name="rviz" default="false"/>
   <arg name="scan_process" default="true"/>
 
   <arg if="$(arg scan_process)" name="scan_topic" default="scan_filtered"/>
@@ -9,6 +9,10 @@
   <arg name="initial_pose_x"  default="0.0"/>
   <arg name="initial_pose_y"  default="0.0"/>
   <arg name="initial_pose_a"  default="0.0"/>
+  <arg name="laser_type" default="hokuyo" />
+
+  <!-- laser driver -->
+  <include file="$(find fare_well)/launch/includes/hokuyo_laser.launch" />
   
   <group if="$(arg scan_process)">
     <node name="laser_filter"  pkg="turtlebot_navigation" type="laser_footprint_filter" />
@@ -16,7 +20,7 @@
 
   <!--单独使用amcl-->
   <group if="$(arg have_map)">
-     <arg name="map_file" default="$(find fare_well)/maps/current_map.yaml"/>
+     <arg name="map_file" default="$(find fare_well)/maps/map1.yaml"/>
      <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
      
      <include file="$(find fare_well)/launch/includes/amcl.launch.xml">

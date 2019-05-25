@@ -11,13 +11,13 @@
 #include "test/msp_errors.h"
 #include "test/speech_recognizer.h"
 #include <iconv.h>
-
+#include"std_msgs/String.h"
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 
 #define FRAME_LEN   640 
 #define BUFFER_SIZE 4096
-
+ros::Publisher pub;
 int wakeupFlag   = 0 ;
 int resultFlag   = 0 ;
 
@@ -62,6 +62,7 @@ void on_speech_begin()
     memset(g_result, 0, g_buffersize);
 
     printf("Start Listening...\n");
+   
 }
 void on_speech_end(int reason)
 {
@@ -130,7 +131,7 @@ int main(int argc, char* argv[])
     ros::Subscriber wakeUpSub = n.subscribe("voiceWakeup", 1000, WakeUp);   
     // 订阅唤醒语音识别的信号    
     ros::Publisher voiceWordsPub = n.advertise<std_msgs::String>("voiceWords", 1000);  
-
+    pub = n.advertise<std_msgs::String>("my_voice", 1000);
     ROS_INFO("Sleeping...");
     int count=0;
     while(ros::ok())
@@ -167,7 +168,11 @@ int main(int argc, char* argv[])
         if(resultFlag){
             resultFlag=0;
             std_msgs::String msg;
+            std::string my_str = g_result;
             msg.data = g_result;
+            std_msgs::String my_voice;
+            my_voice.data=my_str.c_str();
+            pub.publish(msg);
             voiceWordsPub.publish(msg);
         }
 

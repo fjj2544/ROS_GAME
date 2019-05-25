@@ -646,21 +646,6 @@ roscpp_generate_messages_cpp/fast:
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
-test/CMakeFiles/cmd_follow_me.dir/rule:
-	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/cmd_follow_me.dir/rule
-.PHONY : test/CMakeFiles/cmd_follow_me.dir/rule
-
-# Convenience name for target.
-cmd_follow_me: test/CMakeFiles/cmd_follow_me.dir/rule
-
-.PHONY : cmd_follow_me
-
-# fast build rule for target.
-cmd_follow_me/fast:
-	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f test/CMakeFiles/cmd_follow_me.dir/build.make test/CMakeFiles/cmd_follow_me.dir/build
-.PHONY : cmd_follow_me/fast
-
-# Convenience name for target.
 test/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
 	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 .PHONY : test/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
@@ -1080,33 +1065,6 @@ sensor_msgs_generate_messages_cpp/fast:
 	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f test/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make test/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
-src/cmd_follow_me.o: src/cmd_follow_me.cpp.o
-
-.PHONY : src/cmd_follow_me.o
-
-# target to build an object file
-src/cmd_follow_me.cpp.o:
-	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f test/CMakeFiles/cmd_follow_me.dir/build.make test/CMakeFiles/cmd_follow_me.dir/src/cmd_follow_me.cpp.o
-.PHONY : src/cmd_follow_me.cpp.o
-
-src/cmd_follow_me.i: src/cmd_follow_me.cpp.i
-
-.PHONY : src/cmd_follow_me.i
-
-# target to preprocess a source file
-src/cmd_follow_me.cpp.i:
-	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f test/CMakeFiles/cmd_follow_me.dir/build.make test/CMakeFiles/cmd_follow_me.dir/src/cmd_follow_me.cpp.i
-.PHONY : src/cmd_follow_me.cpp.i
-
-src/cmd_follow_me.s: src/cmd_follow_me.cpp.s
-
-.PHONY : src/cmd_follow_me.s
-
-# target to generate assembly for a file
-src/cmd_follow_me.cpp.s:
-	cd /home/fjj/documents/fjj_ros_code/fjj_test_code/build && $(MAKE) -f test/CMakeFiles/cmd_follow_me.dir/build.make test/CMakeFiles/cmd_follow_me.dir/src/cmd_follow_me.cpp.s
-.PHONY : src/cmd_follow_me.cpp.s
-
 src/control_core.o: src/control_core.cpp.o
 
 .PHONY : src/control_core.o
@@ -1475,7 +1433,6 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"
-	@echo "... cmd_follow_me"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... move_base_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
@@ -1505,9 +1462,6 @@ help:
 	@echo "... tf_generate_messages_nodejs"
 	@echo "... tf_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... src/cmd_follow_me.o"
-	@echo "... src/cmd_follow_me.i"
-	@echo "... src/cmd_follow_me.s"
 	@echo "... src/control_core.o"
 	@echo "... src/control_core.i"
 	@echo "... src/control_core.s"
