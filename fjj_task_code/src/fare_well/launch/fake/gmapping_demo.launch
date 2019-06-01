@@ -9,7 +9,7 @@
   <arg name="laser_type" default="hokuyo" />
 
   <!-- laser driver -->
-  <include file="$(find fare_well)/launch/includes/hokuyo_laser.launch" />
+  <!--<include file="$(find fare_well)/launch/includes/hokuyo_laser.launch" />-->
 
 
 <!--开启激光雷达滤波器-->

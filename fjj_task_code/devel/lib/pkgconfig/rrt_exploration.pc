@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_task_code/devel
+
+Name: rrt_exploration
+Description: Description of rrt_exploration
+Version: 1.0.0
+Cflags: -I/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/include
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_task_code/devel/lib 
+Requires: message_runtime

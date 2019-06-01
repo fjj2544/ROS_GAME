@@ -489,11 +489,7 @@ void fare_well::cmd_cb(const std_msgs::String::ConstPtr &msg)
         sleep(5);
         pub_cmd("start amcl");//开始导航回去 原来一直是gmapping的
         //接口位姿恢复,自动化位姿恢复技术,等下晚上来总结一下相关内容。
-
-        // for(int i=1;i<=10;i++)//10次位姿矫正，自动位姿矫正
-        // { correct_robot_pose.publish(return_pose);//进行位姿恢复
-        //      sleep(1);
-        // }
+        
         pub_cmd("go back to the serve place");
         cmd_str ="";
     }
@@ -521,7 +517,7 @@ void fare_well::cb(const std_msgs::String::ConstPtr & msg )
         clear_str(voice_command);
         cout<<voice_command<<endl;
        /*-----------------------------------------------------------------------------------------------语音开启机器人运动-------------------------------------------------------------*/
-       if(is_equal(voice_command,"i want to go")||is_equal(voice_command,"take me out"))
+       if(is_equal(voice_command,"i want to go")||is_equal(voice_command,"take me out")||is_equal(voice_command,"go"))
        {
            //阻塞语音节点
            pub_cmd("stop listen");
@@ -536,7 +532,7 @@ void fare_well::cb(const std_msgs::String::ConstPtr & msg )
        }
       /*-----------------------------------------------------------------------------------------------控制出门节点，准备到门的内部区域-------------------------------------------------------------*/
        //确定人是否想走,如果想走，那么我们就出去，其实我可以导航到固定的点，然后定点扫描,也就是不可能是follow,因为要我引导别人，就是说我要知道我要去哪，然后我要知道我要识别谁,我导航过去之后要能够回来,最后应该把雨伞取回来
-       if(work_begin && is_equal(voice_command,"i am ready to go out")||is_equal(voice_command,"go out"))
+       if(work_begin && is_equal(voice_command,"i am ready to go out")||is_equal(voice_command,"out"))
        {
            //阻塞语音节点
            pub_cmd("stop listen");
@@ -544,7 +540,7 @@ void fare_well::cb(const std_msgs::String::ConstPtr & msg )
            pub_cmd("robot ready to go out the door");//硬控
        }
      /*-----------------------------------------------------------------------------------------------最后一次语音通信控制他们离开-------------------------------------------------------------*/
-       if(work_begin && is_equal(voice_command,"you can go back")||is_equal(voice_command,"go back"))
+       if(work_begin && is_equal(voice_command,"you can go back")||is_equal(voice_command,"back"))
        {
            pub_cmd("stop listen");
            

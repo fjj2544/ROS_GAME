@@ -5,5 +5,7 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
+subdirs(rrt_exploration_tutorials)
 subdirs(fare_well)
 subdirs(my_turtlebot)
+subdirs(rrt_exploration)
