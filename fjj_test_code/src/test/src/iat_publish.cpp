@@ -14,13 +14,23 @@
 #include"std_msgs/String.h"
 #include "ros/ros.h"
 #include "std_msgs/String.h"
-
+#include<sound_play/SoundRequestActionGoal.h>
 #define FRAME_LEN   640 
 #define BUFFER_SIZE 4096
 ros::Publisher pub;
 int wakeupFlag   = 0 ;
 int resultFlag   = 0 ;
-
+ros::Publisher pub_voice;
+void speak(std::string str)
+{
+    sound_play::SoundRequestActionGoal voice;
+    voice.goal.sound_request.arg = str.c_str();
+    voice.goal.sound_request.arg2 = "voice_kal_diphone";
+    voice.goal.sound_request.sound = -3;
+    voice.goal.sound_request.volume = 1.0;
+    voice.goal.sound_request.command = 1;
+    pub_voice.publish(voice);
+}
 static void show_result(char *string, char is_over)
 {
     resultFlag=1;   
@@ -62,6 +72,7 @@ void on_speech_begin()
     memset(g_result, 0, g_buffersize);
 
     printf("Start Listening...\n");
+    
    
 }
 void on_speech_end(int reason)
@@ -94,6 +105,7 @@ static void demo_mic(const char* session_begin_params)
     errcode = sr_start_listening(&iat);
     if (errcode) {
         printf("start listen failed %d\n", errcode);
+       
     }
     /* demo 10 seconds recording */
     while(i++ < 10)
@@ -130,6 +142,7 @@ int main(int argc, char* argv[])
     // 订阅唤醒语音识别的信号
     ros::Subscriber wakeUpSub = n.subscribe("voiceWakeup", 1000, WakeUp);   
     // 订阅唤醒语音识别的信号    
+    pub_voice = n.advertise<sound_play::SoundRequestActionGoal>("/sound_play/goal", 1000);
     ros::Publisher voiceWordsPub = n.advertise<std_msgs::String>("voiceWords", 1000);  
     pub = n.advertise<std_msgs::String>("my_voice", 1000);
     ROS_INFO("Sleeping...");
@@ -155,7 +168,8 @@ int main(int argc, char* argv[])
 
             printf("Demo recognizing the speech from microphone\n");
             printf("Speak in 10 seconds\n");
-
+            speak("Start Listening");
+            sleep(1);
             demo_mic(session_begin_params);
 
             printf("10 sec passed\n");

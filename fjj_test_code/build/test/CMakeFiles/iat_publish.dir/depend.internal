@@ -21,6 +21,7 @@ test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o
  /home/fjj/documents/fjj_ros_code/fjj_test_code/src/test/include/test/qisr.h
  /home/fjj/documents/fjj_ros_code/fjj_test_code/src/test/include/test/speech_recognizer.h
  /home/fjj/documents/fjj_ros_code/fjj_test_code/src/test/src/iat_publish.cpp
+ /opt/ros/kinetic/include/actionlib_msgs/GoalID.h
  /opt/ros/kinetic/include/ros/advertise_options.h
  /opt/ros/kinetic/include/ros/advertise_service_options.h
  /opt/ros/kinetic/include/ros/assert.h
@@ -77,6 +78,10 @@ test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o
  /opt/ros/kinetic/include/ros/wall_timer.h
  /opt/ros/kinetic/include/ros/wall_timer_options.h
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
+ /opt/ros/kinetic/include/sound_play/SoundRequest.h
+ /opt/ros/kinetic/include/sound_play/SoundRequestActionGoal.h
+ /opt/ros/kinetic/include/sound_play/SoundRequestGoal.h
+ /opt/ros/kinetic/include/std_msgs/Header.h
  /opt/ros/kinetic/include/std_msgs/String.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

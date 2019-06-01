@@ -20,6 +20,7 @@ test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /home/fjj/documents/fjj_r
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /home/fjj/documents/fjj_ros_code/fjj_test_code/src/test/include/test/qisr.h
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /home/fjj/documents/fjj_ros_code/fjj_test_code/src/test/include/test/speech_recognizer.h
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /home/fjj/documents/fjj_ros_code/fjj_test_code/src/test/src/iat_publish.cpp
+test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/actionlib_msgs/GoalID.h
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -76,6 +77,10 @@ test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/sound_play/SoundRequest.h
+test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/sound_play/SoundRequestActionGoal.h
+test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/sound_play/SoundRequestGoal.h
+test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 test/CMakeFiles/iat_publish.dir/src/iat_publish.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
