@@ -1,6 +1,6 @@
 <!--主要用来便于老师测试-->
 <launch>
-    <include file="$(find fare_well)/launch/fake_turtlebot_nav.launch">
+    <include file="$(find fare_well)/launch/real/real_robot_bringup_with_kinect.launch">
     </include>
     <include file="$(find test)/launch/robot_voice.launch">
     </include>    

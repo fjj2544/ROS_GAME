@@ -25,6 +25,7 @@
 using namespace std;
 const double pi = 4*atan(1.0);
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;//任何action都可以用这个控制。
+/*----------------------------------------------------------------------------------------------实现位姿反转技术-------------------------------------------------------------*/
 void reverse_pose(geometry_msgs::Pose & pose)
 {
     tf2::Vector3 temp;
@@ -63,6 +64,7 @@ double  get_distance(geometry_msgs::Pose A,geometry_msgs::Pose B)
 /*----------------------------------------------------------------------------------------------格式化字符串，为语音节点服务-------------------------------------------------------------*/
 
 
+/*----------------------------------------------------------------------------------------------实现语音中的字符串分割-------------------------------------------------------------*/
 void stringSplit(string s,char splitchar,vector<string>& vec){
     if(vec.size()>0)
         vec.clear();
@@ -103,20 +105,20 @@ bool in_the_string(string target,string words)
     std::vector<string> res;
     clear_str(target);
     stringSplit(target,' ',res);
-    // for(int i=0;i<res.size();i++)
-    // {cout<<res[i]<<endl;}
+
     std::vector<string>::iterator result = find(res.begin(),res.end(),words);
     if(result==res.end())
     {
-        //cout<<"NO"<<endl;
+
         return false;
     }
     else
     {
-        //cout<<"YES"<<endl;
+
         return true;
     }
 }
+/*----------------------------------------------------------------------------------------------实现一般的字符串匹配-------------------------------------------------------------*/
 void clear_string(string & datastr)
 {
     for(int i=0;i<datastr.length();i++)
@@ -151,8 +153,6 @@ bool is_equal(string a,string b)
     }
     return true;
 }
-
-
 /*-----------------------------------------------------------------------------------------------得到当前点坐标-------------------------------------------------------------*/
 void get_present_pos(geometry_msgs::Pose & pre_pos )
 {
@@ -442,7 +442,7 @@ void fare_well::cmd_cb(const std_msgs::String::ConstPtr &msg)
     cmd_str = msg->data.c_str();
     //完成task1从启动到识别,这个可以考虑到一个固定位置
    /*----------------------------------------------------------------------------------------------任务一识别对应的人然后去柜子-------------------------------------------------------------*/
-    if( work_begin && is_equal(cmd_str,"robot finish recognize guest")||is_equal(cmd_str,"robot finish first task"))//大小写问题也要注意
+    if( work_begin && (is_equal(cmd_str,"robot finish recognize guest")||is_equal(cmd_str,"robot finish first task")|| (in_the_string(cmd_str,"recognize")&&in_the_string(cmd_str,"finish"))) )//大小写问题也要注意
     {
         robot_go_to_the_shelf = true;
 
@@ -450,23 +450,26 @@ void fare_well::cmd_cb(const std_msgs::String::ConstPtr &msg)
         ROS_INFO("plase wait a minute , and i will take back your coat! ");
         
         get_present_pos(this->last_pos);
+        
         go_to_the_shelf();//自己设置,应该会阻塞在这,到了之后应该发送对应的信息，说我到了，然后我就开始完成其他的操作
+        
         robot_go_to_the_shelf = false;
         cmd_str = "";
 
         speak("robot start get coat");
         ROS_INFO("robot start get coat ");
-        pub_cmd("robot start get coat");
+        pub_cmd("robot start grasp coat");
         return ;
     }
     /*----------------------------------------------------------------------------------------------任务二取得对应的物品然后回去-------------------------------------------------------------*/
     //完成task2取得物品
-    if( work_begin && is_equal(cmd_str,"robot  get the coat")||is_equal(cmd_str,"robot finish second task"))
+    if( work_begin && (is_equal(cmd_str,"robot get the coat")||is_equal(cmd_str,"robot finish second task") || (in_the_string(cmd_str,"get")&&in_the_string(cmd_str,"coat"))) )
     {
         robot_go_back_to_the_call_place = true;
         
         speak("ready to go back to the calling place!");
         ROS_INFO("ready to go back to the calling place!");
+       
         go_to_place(this->last_pos);//回到固定点之后可以考虑说走吧我们出去吧,到了地点之后就可以set_true了
 
         robot_go_back_to_the_call_place = false;
@@ -481,7 +484,7 @@ void fare_well::cmd_cb(const std_msgs::String::ConstPtr &msg)
         return ;
     }
     /*-----------------------------------------------------------------------------------------------任务三把衣服给对应的人然后出去-------------------------------------------------------------*/
-    if( work_begin && is_equal(cmd_str,"robot ready to go out the door"))
+    if( work_begin && (is_equal(cmd_str,"robot ready to go out the door") || (in_the_string(cmd_str,"out")&&in_the_string(cmd_str,"door"))) )
     {
         robot_go_out_the_door = true;
 
@@ -491,16 +494,21 @@ void fare_well::cmd_cb(const std_msgs::String::ConstPtr &msg)
         //假设我们要去一个没有地图的地方然后回来,或者我不开amcl直接开gmapping可不可以，如果可以那就没有问题，不用follow me 可以尝试一下 可以尝试不开gmapping 主要是固定位置扫描 出去没有必要开gmapping否则我回不去
         //或者说我出去不可能开gmapping否则我不可能知道位置然后也回不去所以就是一个导航,没有什么gmapping的过程，也没有follow的过程,进行测试发现不能开gmapping,除非gmapping是修补地图，否则不能用gmapping
         //比较关键的是导航的反馈 可以旋转识别人,如果不行我甚至可以导航到对应的位置,或者说amcl对应的map坐标系不同 因为我没有把地图发到对应的topic,或者我就是可以用gmapping不用amcl,没有必要切换,可以考虑一下
+        
         go_out_the_door();
-        //最后回归时刻的位置姿态,如何让机器人转过身来?
+        
+        
 
         robot_go_out_the_door =false;
         cmd_str = "";
+        
         get_present_pos(return_pose.pose.pose);
+        
         pub_cmd("close amcl");
         sleep(2);
         pub_cmd("start gmapping");
         sleep(3);
+        
         get_present_pos(this->last_pos);
 
         pub_cmd("start finding cab driver");
@@ -508,20 +516,20 @@ void fare_well::cmd_cb(const std_msgs::String::ConstPtr &msg)
         ROS_INFO("robot ready to find the cab driver");
         return ;
     }
-    //这个地方用gmapping,这个时候默认为已经找到了司机的位置，否则就用我自己设定的位置
-    if(work_begin && is_equal(cmd_str,"find the cab pose"))
-    {
-        robot_go_to_the_cab = true;
-        speak("this way please!");
-        ROS_INFO("this way please!");
-        sleep(5);//必须添加等待时间。。
-        //go_to_the_driver();//这个是当前坐标系下的driver
-        pub_cmd("robot arrive the cab");
-        cmd_str = "";
-        robot_go_to_the_cab =false;
-    }
+    // //这个地方用gmapping,这个时候默认为已经找到了司机的位置，否则就用我自己设定的位置
+    // if(work_begin && is_equal(cmd_str,"find the cab pose") || (in_the_string(cmd_str,"find")&&in_the_string(cmd_str,"pose")))
+    // {
+    //     robot_go_to_the_cab = true;
+    //     speak("this way please!");
+    //     ROS_INFO("this way please!");
+    //     sleep(5);//必须添加等待时间。。
+    //     //go_to_the_driver();//这个是当前坐标系下的driver
+    //     pub_cmd("robot arrive the cab");
+    //     cmd_str = "";
+    //     robot_go_to_the_cab =false;
+    // }
     /*-----------------------------------------------------------------------------------------------任务四通过识别到了位置然后取得雨伞准备回去-------------------------------------------------------------*/
-    if( work_begin && is_equal(cmd_str,"robot arrive the cab"))//这个时候应该把东西放下，然后问是否可以回去，然后说回去吧
+    if( work_begin && (is_equal(cmd_str,"robot arrive the cab")|| (in_the_string(cmd_str,"arrive")&&in_the_string(cmd_str,"cab"))) )//这个时候应该把东西放下，然后问是否可以回去，然后说回去吧
     {
         speak("thank you for your coming!");
         ROS_INFO("thank you for your coming!");
@@ -529,18 +537,19 @@ void fare_well::cmd_cb(const std_msgs::String::ConstPtr &msg)
         sleep(5);
         pub_cmd("start listen");
         sleep(1);
-        pub_cmd("start get umbrella");//控制权给机械臂
+        pub_cmd("start take back umbrella");//控制权给机械臂
         cmd_str = "";
     }
     //这个就是所谓的可以回去了,放完东西然后问是不是可以回去了,应该是给人手上或者桌子上,这里要放东西
     //最后一件任务就是放东西,或者把行李给人,采用双通道控制每一个通道进入之后立刻阻塞第二个通道
-    if( work_begin && is_equal(cmd_str,"robot get the umbrella")||is_equal(cmd_str,"robot  finish last task"))
+    if( work_begin && (is_equal(cmd_str,"robot get back the umbrella")||is_equal(cmd_str,"robot  finish last task")|| (in_the_string(cmd_str,"get")&&in_the_string(cmd_str,"umbrella"))) )
     {
         robot_go_back_to_the_door = true;
         speak("get back the door!");
         ROS_INFO("get back the door!");
 
         go_to_place(this->last_pos);//回到接口点,这个地方必须回到初始点
+       
         robot_go_back_to_the_door =false;
         pub_cmd("close gmapping");
         sleep(5);
@@ -550,12 +559,14 @@ void fare_well::cmd_cb(const std_msgs::String::ConstPtr &msg)
         pub_cmd("go back to the serve place");
         cmd_str ="";
     }
-    if(work_begin && is_equal(cmd_str,"go back to the serve place"))
+    if(work_begin && (is_equal(cmd_str,"go back to the serve place")|| (in_the_string(cmd_str,"back")&&in_the_string(cmd_str,"serve"))) )
         {
         sleep(5);
         correct_robot_pose.publish(return_pose);//进行位姿恢复
         robot_go_back_to_the_serving_place = true;
+        
         go_back_to_the_serve_place();
+       
         robot_go_back_to_the_serving_place = false;
         //状态回归
         pub_cmd("start listen");
@@ -573,7 +584,7 @@ void fare_well::cb(const std_msgs::String::ConstPtr & msg )
         clear_str(voice_command);
         cout<<voice_command<<endl;
        /*-----------------------------------------------------------------------------------------------语音开启机器人运动-------------------------------------------------------------*/
-       if(in_the_string(voice_command,"go")||in_the_string(voice_command,"leave")||in_the_string(voice_command,"want")||is_equal(voice_command,"i want to leave"))
+       if( !work_begin && (in_the_string(voice_command,"leave")||in_the_string(voice_command,"want")||is_equal(voice_command,"i want to leave")) )
        {
            //阻塞语音节点
            pub_cmd("stop listen");
@@ -588,15 +599,15 @@ void fare_well::cb(const std_msgs::String::ConstPtr & msg )
        }
       /*-----------------------------------------------------------------------------------------------控制出门节点，准备到门的内部区域-------------------------------------------------------------*/
        //确定人是否想走,如果想走，那么我们就出去，其实我可以导航到固定的点，然后定点扫描,也就是不可能是follow,因为要我引导别人，就是说我要知道我要去哪，然后我要知道我要识别谁,我导航过去之后要能够回来,最后应该把雨伞取回来
-       if(work_begin && in_the_string(voice_command,"out")||in_the_string(voice_command,"door")||is_equal(voice_command,"i want to go out"))
+       if(work_begin && (in_the_string(voice_command,"out")||in_the_string(voice_command,"door")||is_equal(voice_command,"i want to go out")) )
        {
            //阻塞语音节点
            pub_cmd("stop listen");
-           cout<<"11"<<endl;
+
            pub_cmd("robot ready to go out the door");//硬控
        }
      /*-----------------------------------------------------------------------------------------------最后一次语音通信控制他们离开-------------------------------------------------------------*/
-       if(work_begin && in_the_string(voice_command,"you")||in_the_string(voice_command,"back")||is_equal(voice_command,"you can go back"))
+       if(work_begin && (in_the_string(voice_command,"you")||in_the_string(voice_command,"back")||is_equal(voice_command,"you can go back")) )
        {
            pub_cmd("stop listen");
            
@@ -604,6 +615,8 @@ void fare_well::cb(const std_msgs::String::ConstPtr & msg )
        }
 
     }
+
+
 int main(int argc, char *argv[])
 {
     ros::init(argc, argv, "set_goal");//通过接收信息发送出去goal的指令
