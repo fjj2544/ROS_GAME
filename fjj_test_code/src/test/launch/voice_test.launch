@@ -1,0 +1,9 @@
+  <launch>
+  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py" output="screen">
+  
+    <param name="lm" value="$(find test)/config//command.lm"/>
+    <param name="dict" value="$(find test)/config//command.dic"/>
+    <param name="hmm" value="$(find test)/config/pocketsphinx-en/model/hmm/en/tidigits"/>
+  
+  </node>
+</launch>

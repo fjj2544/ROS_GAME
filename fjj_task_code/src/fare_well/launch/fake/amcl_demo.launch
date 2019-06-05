@@ -12,8 +12,8 @@
   <arg name="laser_type" default="hokuyo" />
 
   <!-- laser driver -->
-  <!--<include file="$(find fare_well)/launch/includes/hokuyo_laser.launch" />
-  -->
+  <include file="$(find fare_well)/launch/includes/hokuyo_laser.launch" />
+  
   <group if="$(arg scan_process)">
     <node name="laser_filter"  pkg="turtlebot_navigation" type="laser_footprint_filter" />
   </group>

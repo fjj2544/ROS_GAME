@@ -52,7 +52,7 @@ void close_amcl_back()
     system("rosnode kill /amcl");
     system("rosnode kill /empty_node ");//所有的切换的时候都用这个节点控制上一个状态的清除
 }
-//
+
 class order
 {
 public:

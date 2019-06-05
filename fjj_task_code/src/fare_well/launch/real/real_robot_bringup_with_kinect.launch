@@ -3,7 +3,7 @@
 <arg name="open_3dsensor" default="true"/>
 
 <arg name="start_joint_pub" default="true"/>
-
+<arg name="astra" default="true"/>
 
     <!--启动我们自己的机器人 只要机器人连接了之后就会识别出对应的机器人并且启动对应的驱动器-->
     <include file="$(find turtlebot_bringup)/launch/minimal.launch"/>
@@ -27,6 +27,18 @@
     </node>
     <group if="$(arg open_3dsensor)">
     <!--开启kinect驱动 保证开启的时候是可以进行gmapping和follower的-->
+    <group if="$(arg astra)">
+    <include file="$(find  astra_launch)/launch/astra.launch">
+      <arg name="rgb_processing"                  value="true"/>  <!-- only required if we use android client -->
+      <arg name="depth_processing"                value="false"/>
+      <arg name="depth_registered_processing"     value="false"/>
+      <arg name="depth_registration"              value="false"/>
+      <arg name="disparity_processing"            value="false"/>
+      <arg name="disparity_registered_processing" value="false"/>
+      <arg name="publish_tf"   value="false"/><!--避免重复发布tf-->
+    </include>
+    </group>
+    <group unless="$(arg astra)">
     <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
       <arg name="rgb_processing"                  value="true"/>  <!-- only required if we use android client -->
       <arg name="depth_processing"                value="true"/>
@@ -37,5 +49,6 @@
       <arg name="disparity_registered_processing" value="false"/>
       <arg name="publish_tf"   value="false"/><!--避免重复发布tf-->
     </include>
+    </group>
     </group>
 </launch>

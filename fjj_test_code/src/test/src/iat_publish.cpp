@@ -156,7 +156,7 @@ int main(int argc, char* argv[])
             const char* login_params = "appid = 5c9ee709, work_dir = .";
 
             const char* session_begin_params =
-                "sub = iat, domain = iat, language = zh_cn, "
+                "sub = iat, domain = iat, language = en_us, "
                 "accent = mandarin, sample_rate = 16000, "
                 "result_type = plain, result_encoding = utf8";
 
@@ -169,7 +169,7 @@ int main(int argc, char* argv[])
             printf("Demo recognizing the speech from microphone\n");
             printf("Speak in 10 seconds\n");
             speak("Start Listening");
-            sleep(1);
+            sleep(2);
             demo_mic(session_begin_params);
 
             printf("10 sec passed\n");

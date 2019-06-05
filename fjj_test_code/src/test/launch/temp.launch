@@ -1,0 +1,13 @@
+<launch>
+
+<!--主要的说话节点-->
+<node pkg="test" name="speak_node" type="tts_subscribe"/>
+
+<!--主要的听话节点-->
+<node pkg="test" name="sound_node" type="iat_publish" output="screen"/>
+
+<!--主要的唤醒节点-->
+<node pkg="test" name="open_voice" type="open_voice"/>
+
+
+</launch>

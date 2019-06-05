@@ -221,7 +221,6 @@ target_link_libraries(
    ${catkin_LIBRARIES} 
    libmsc.so -ldl -pthread
  )
-
 add_executable(voice_assistant src/voice_assistant.cpp)
 target_link_libraries(
    voice_assistant
@@ -290,5 +289,13 @@ add_executable(test
 )
 add_dependencies(test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(test
+  ${catkin_LIBRARIES}
+)
+
+add_executable(voice_test
+  src/voice_test.cpp
+)
+add_dependencies(voice_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(voice_test
   ${catkin_LIBRARIES}
 )

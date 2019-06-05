@@ -1,0 +1,8 @@
+prefix=/home/fjj/documents/fjj_ros_code/fjj_test_code/devel
+
+Name: homework
+Description: Description of homework
+Version: 0.0.0
+Cflags: -I/home/fjj/documents/fjj_ros_code/fjj_test_code/src/homework/include
+Libs: -L/home/fjj/documents/fjj_ros_code/fjj_test_code/devel/lib 
+Requires: 

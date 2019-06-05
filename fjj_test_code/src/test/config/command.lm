@@ -1,4 +1,4 @@
-Language model created by QuickLM on Thu May  2 12:21:09 EDT 2019
+Language model created by QuickLM on Sat Jun  1 05:49:16 EDT 2019
 Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
 
 The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
@@ -7,94 +7,59 @@ The code that was used to produce this language model is available in Open Sourc
 Please visit http://www.speech.cs.cmu.edu/tools/ for more information
 
 The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
-This model based on a corpus of 14 sentences and 19 words
+This model based on a corpus of 7 sentences and 11 words
 
 \data\
-ngram 1=19
-ngram 2=32
-ngram 3=26
+ngram 1=11
+ngram 2=16
+ngram 3=15
 
 \1-grams:
--0.8953 </s> -0.3010
--0.8953 <s> -0.2187
--2.0414 BACK -0.2419
--2.0414 CAN -0.2419
--2.0414 FORWARD -0.2419
--1.3424 GO -0.2328
--2.0414 HURRY -0.2971
--1.7404 I -0.2931
--1.7404 LEFT -0.2419
--2.0414 LET'S -0.2808
--2.0414 NO -0.2419
--1.7404 RIGHT -0.2419
--2.0414 TO -0.2808
--1.7404 TURN -0.2849
--2.0414 UP -0.2419
--2.0414 WAIT -0.2419
--1.7404 WANT -0.2767
--1.7404 YES -0.2374
--2.0414 YOU -0.2971
+-1.0122 </s> -0.3010
+-1.0122 <s> -0.2290
+-1.5563 BACK -0.2566
+-1.8573 CAN -0.2698
+-1.1584 GO -0.2290
+-1.3802 I -0.2825
+-1.5563 LEAVE -0.2566
+-1.5563 OUT -0.2566
+-1.3802 TO -0.2566
+-1.3802 WANT -0.2825
+-1.8573 YOU -0.2950
 
 \2-grams:
--1.1461 <s> GO -0.2041
--1.4472 <s> HURRY 0.0000
--1.1461 <s> I 0.0000
--1.4472 <s> LEFT 0.0000
--1.4472 <s> LET'S 0.0000
--1.4472 <s> NO 0.0000
--1.4472 <s> RIGHT 0.0000
--1.1461 <s> TURN 0.0000
--1.4472 <s> WAIT 0.0000
--1.1461 <s> YES 0.0000
+-0.8451 <s> GO -0.0792
+-0.6690 <s> I 0.0000
+-1.1461 <s> LEAVE 0.0000
+-1.1461 <s> YOU 0.0000
 -0.3010 BACK </s> -0.3010
--0.3010 CAN </s> -0.3010
--0.3010 FORWARD </s> -0.3010
--0.5229 GO </s> -0.3010
--1.0000 GO BACK 0.0000
--1.0000 GO FORWARD 0.0000
--0.3010 HURRY UP 0.0000
+-0.3010 CAN GO -0.2041
+-1.0000 GO </s> -0.3010
+-0.6990 GO BACK 0.0000
+-0.6990 GO OUT 0.0000
 -0.3010 I WANT 0.0000
--0.3010 LEFT </s> -0.3010
--0.3010 LET'S GO -0.1461
--0.3010 NO </s> -0.3010
--0.3010 RIGHT </s> -0.3010
--0.3010 TO GO -0.1461
--0.6021 TURN LEFT 0.0000
--0.6021 TURN RIGHT 0.0000
--0.3010 UP </s> -0.3010
--0.3010 WAIT </s> -0.3010
--0.6021 WANT GO -0.1461
--0.6021 WANT TO 0.0000
--0.6021 YES </s> -0.3010
--0.6021 YES YOU 0.0000
+-0.3010 LEAVE </s> -0.3010
+-0.3010 OUT </s> -0.3010
+-0.4771 TO GO -0.1461
+-0.7782 TO LEAVE 0.0000
+-0.3010 WANT TO 0.0000
 -0.3010 YOU CAN 0.0000
 
 \3-grams:
 -0.6021 <s> GO BACK
--0.6021 <s> GO FORWARD
--0.3010 <s> HURRY UP
+-0.6021 <s> GO OUT
 -0.3010 <s> I WANT
--0.3010 <s> LEFT </s>
--0.3010 <s> LET'S GO
--0.3010 <s> NO </s>
--0.3010 <s> RIGHT </s>
--0.6021 <s> TURN LEFT
--0.6021 <s> TURN RIGHT
--0.3010 <s> WAIT </s>
--0.6021 <s> YES </s>
--0.6021 <s> YES YOU
+-0.3010 <s> LEAVE </s>
+-0.3010 <s> YOU CAN
+-0.3010 CAN GO BACK
 -0.3010 GO BACK </s>
--0.3010 GO FORWARD </s>
--0.3010 HURRY UP </s>
--0.6021 I WANT GO
--0.6021 I WANT TO
--0.3010 LET'S GO </s>
--0.3010 TO GO </s>
--0.3010 TURN LEFT </s>
--0.3010 TURN RIGHT </s>
--0.3010 WANT GO </s>
--0.3010 WANT TO GO
--0.3010 YES YOU CAN
--0.3010 YOU CAN </s>
+-0.3010 GO OUT </s>
+-0.3010 I WANT TO
+-0.6021 TO GO </s>
+-0.6021 TO GO OUT
+-0.3010 TO LEAVE </s>
+-0.4771 WANT TO GO
+-0.7782 WANT TO LEAVE
+-0.3010 YOU CAN GO
 
 \end\

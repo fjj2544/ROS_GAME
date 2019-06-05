@@ -61,7 +61,63 @@ double  get_distance(geometry_msgs::Pose A,geometry_msgs::Pose B)
 }
 
 /*----------------------------------------------------------------------------------------------格式化字符串，为语音节点服务-------------------------------------------------------------*/
+
+
+void stringSplit(string s,char splitchar,vector<string>& vec){
+    if(vec.size()>0)
+        vec.clear();
+    int length=s.length();
+    int start=0;
+    for(int i=0;i<length;i++){
+        if(s[i]==splitchar && i==0)
+            start+=1;
+        else if(s[i]==splitchar){
+            vec.push_back(s.substr(start,i-start));
+            start=i+1;
+        }
+        else if(i==length-1){
+            vec.push_back(s.substr(start,i+1-start));
+        }
+    }
+}
 void clear_str(string & datastr)
+{
+    for(int i=0;i<datastr.length();i++)
+    {
+         if(datastr[i]>='a'&&datastr[i]<='z'||datastr[i]>='A'&&datastr[i]<='Z'||datastr[i]==' ')
+         {
+             if(datastr[i]>='A'&&datastr[i]<='Z')
+             {
+                 datastr[i] = datastr[i] - 'A' + 'a';//小写化
+             }
+             continue;
+         }
+         else 
+         {
+             datastr.erase(i,1);
+         }
+    }
+}
+bool in_the_string(string target,string words)
+{
+    std::vector<string> res;
+    clear_str(target);
+    stringSplit(target,' ',res);
+    // for(int i=0;i<res.size();i++)
+    // {cout<<res[i]<<endl;}
+    std::vector<string>::iterator result = find(res.begin(),res.end(),words);
+    if(result==res.end())
+    {
+        //cout<<"NO"<<endl;
+        return false;
+    }
+    else
+    {
+        //cout<<"YES"<<endl;
+        return true;
+    }
+}
+void clear_string(string & datastr)
 {
     for(int i=0;i<datastr.length();i++)
     {
@@ -81,8 +137,8 @@ void clear_str(string & datastr)
 }
 bool is_equal(string a,string b)
 {
-    clear_str(a);
-    clear_str(b);
+    clear_string(a);
+    clear_string(b);
     // cout<<a<<endl<<a.length()<<endl;
     // cout<<b<<endl<<b.length()<<endl;
     if(a.length()!=b.length())
@@ -95,6 +151,7 @@ bool is_equal(string a,string b)
     }
     return true;
 }
+
 
 /*-----------------------------------------------------------------------------------------------得到当前点坐标-------------------------------------------------------------*/
 void get_present_pos(geometry_msgs::Pose & pre_pos )
@@ -244,7 +301,7 @@ fare_well::fare_well():mbc(nh,"move_base",true)//记住应该旋转,不能不动
         cmd_str="";
         if(work_begin==false)
         {
-            go_to_serve_place();
+            //go_to_serve_place();
         }
         sleep(1);
     }
@@ -445,7 +502,7 @@ void fare_well::cmd_cb(const std_msgs::String::ConstPtr &msg)
         pub_cmd("start gmapping");
         sleep(3);
         get_present_pos(this->last_pos);
-        
+
         pub_cmd("start finding cab driver");
         speak("robot ready to find the cab driver");
         ROS_INFO("robot ready to find the cab driver");
@@ -489,7 +546,7 @@ void fare_well::cmd_cb(const std_msgs::String::ConstPtr &msg)
         sleep(5);
         pub_cmd("start amcl");//开始导航回去 原来一直是gmapping的
         //接口位姿恢复,自动化位姿恢复技术,等下晚上来总结一下相关内容。
-        
+
         pub_cmd("go back to the serve place");
         cmd_str ="";
     }
@@ -512,12 +569,11 @@ void fare_well::cb(const std_msgs::String::ConstPtr & msg )
     {
         std::string voice_command;
         voice_command = msg->data.c_str();
-        //语音反馈系统
-        //speak(voice_command);
+        
         clear_str(voice_command);
         cout<<voice_command<<endl;
        /*-----------------------------------------------------------------------------------------------语音开启机器人运动-------------------------------------------------------------*/
-       if(is_equal(voice_command,"i want to go")||is_equal(voice_command,"take me out")||is_equal(voice_command,"go"))
+       if(in_the_string(voice_command,"go")||in_the_string(voice_command,"leave")||in_the_string(voice_command,"want")||is_equal(voice_command,"i want to leave"))
        {
            //阻塞语音节点
            pub_cmd("stop listen");
@@ -532,15 +588,15 @@ void fare_well::cb(const std_msgs::String::ConstPtr & msg )
        }
       /*-----------------------------------------------------------------------------------------------控制出门节点，准备到门的内部区域-------------------------------------------------------------*/
        //确定人是否想走,如果想走，那么我们就出去，其实我可以导航到固定的点，然后定点扫描,也就是不可能是follow,因为要我引导别人，就是说我要知道我要去哪，然后我要知道我要识别谁,我导航过去之后要能够回来,最后应该把雨伞取回来
-       if(work_begin && is_equal(voice_command,"i am ready to go out")||is_equal(voice_command,"out"))
+       if(work_begin && in_the_string(voice_command,"out")||in_the_string(voice_command,"door")||is_equal(voice_command,"i want to go out"))
        {
            //阻塞语音节点
            pub_cmd("stop listen");
-           //进行传递控制
+           cout<<"11"<<endl;
            pub_cmd("robot ready to go out the door");//硬控
        }
      /*-----------------------------------------------------------------------------------------------最后一次语音通信控制他们离开-------------------------------------------------------------*/
-       if(work_begin && is_equal(voice_command,"you can go back")||is_equal(voice_command,"back"))
+       if(work_begin && in_the_string(voice_command,"you")||in_the_string(voice_command,"back")||is_equal(voice_command,"you can go back"))
        {
            pub_cmd("stop listen");
            

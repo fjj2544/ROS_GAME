@@ -143,7 +143,7 @@ int text_to_speech(const char* src_text, const char* des_path, const char* param
 
     return ret;
 }
-
+//可以把语音放在这个板块
 void voiceWordsCallback(const std_msgs::String::ConstPtr& msg)
 {
     char cmd[2000];
